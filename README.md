@@ -1,4 +1,3 @@
-https://im-01.gifer.com/4A9f.gif
 # Grupa5-Titanik
 ### Tema: Sistem putovanja
 ### Članovi tima:
