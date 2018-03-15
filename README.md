@@ -24,7 +24,8 @@ Na početnom prikazu aplikacije prikazuju se putovanja sortirana po datumu. Da b
 * Podaci o kreditnoj kartici
 
 #### Registracija agencija na aplikaciju
-Angencija se mora registrovati na aplikaciju, ako želi da kreira putovanje. Kod registracije agecija mora unijeti iduće informacije:
+Angencija se mora registrovati na aplikaciju, ako želi da kreira putovanje.<br/>
+Kod registracije agecija mora unijeti iduće informacije:
 * Naziv 
 * Adresu
 * Podatke o bankovnom računu
@@ -53,12 +54,15 @@ Putnici mogu otkazati putovanje do 10 dana pred putovanje, ali se uzima određen
 Korisnik može online odabrati putovanje i platiti kartično ili da ode na lokaciju **TravelBook** i uplati gotovinom putovanje.
 Ako je online korisnik uplatio više od 10 putovanja, preko kartice, ostvaruje određeni popust na iduća putovanja.
 
+#### Proces unosa podataka u poslovnici
+Korisnik daje sljedeće informacije uposleniku u agenciji:
+* Ime
+* Prezime
+* Kontakt telefon
+* JMBG
 
 
-
-
-### Funkcionalnosti
-
+### Funkcionalnosti:
 Funkcionalnosti aplikacije:
 * Pregled ponude putovanja
 * Pregled lokacije hotela
