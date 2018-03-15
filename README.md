@@ -66,4 +66,19 @@ Funkcionalnosti aplikacije:
 * Mogućnost ocjenjivanja agencija
 * Mogućnost sortiranja putovanja
 * Mogućnost kupovanja više karata s ličnim podacima svih putnika
-* 
+* Mogućnost otkazivanja putovanja 10 dana pred putovanje
+
+
+### Akteri
+* Putnička agencija(pravno lice): Kreiranje i pregled putovanja 
+* Obični korisnik: Izbor i uplata putovanja na lokaciji agencije **TravelBook**
+* Online korisnik: Izbor i uplata putovanja online sa kreditnom karticom
+* Administrator: Održava stranicu i pregleda validaciju
+* Šef: Krade zaradu!!!!
+* Uposlenik u agenciji: Rezerviše i naplaćuje putovanja običnih putnika(koji su došli na lokaciju)
+* Lejlin aerodrom: Preuzimanje informacija o letovima i rezervisanje 
+* Sistem za autorizaciju i naplatu karticom: Provjerava validnost uplate
+* Poštar: Dostavlja karte na adresu stanovanja online korisnicima, a obični preuzimaju u poslovnici
+
+
+
