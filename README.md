@@ -42,7 +42,7 @@ Pod kreiranjem putovanja se smatra sljedeće:
 * Odabir leta(interakcija sa timom **Grupa6-piloti**)
 * Cijena putovanja
 * Opis putovanja
-* Slike hotela i destinacije
+* Slike hotela i destinacije<br/>
 Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
 Zatim se putovanje prikaže na **TravelBook** početnoj stranici.
 
