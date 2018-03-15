@@ -1,4 +1,7 @@
 # Grupa5-Titanik
+
+\
+![slika](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Size_Titanic_2.jpg/1200px-Size_Titanic_2.jpg)
 ### Tema: Sistem putovanja
 ### Članovi tima:
 - Alma Ibrašimović
@@ -85,6 +88,8 @@ Funkcionalnosti aplikacije:
 * Lejlin aerodrom: Preuzimanje informacija o letovima i rezervisanje 
 * Sistem za autorizaciju i naplatu karticom: Provjerava validnost uplate
 * Poštar: Dostavlja karte na adresu stanovanja online korisnicima, a obični preuzimaju u poslovnici
+
+
 
 
 
