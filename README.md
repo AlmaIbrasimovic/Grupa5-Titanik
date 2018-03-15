@@ -12,7 +12,8 @@ Aplikacija **TravelBook** ima za cilj da pojednostavi traženje putovanja od str
 
 ## Procesi:
 #### Registracija korisnika na aplikaciju
-Na početnom prikazu aplikacije prikazuju se putovanja sortirana po datumu. Da bi se rezervisalo putovanje potrebna je registracija. Korisnik koji želi da uplati putovanje mora se logovati u aplikaciju. Korisnik se registruje sa osnovnim podacima o sebi, a to su:
+Na početnom prikazu aplikacije prikazuju se putovanja sortirana po datumu. Da bi se rezervisalo putovanje potrebna je registracija. Korisnik koji želi da uplati putovanje mora se logovati u aplikaciju.<br/>
+Korisnik se registruje sa osnovnim podacima o sebi, a to su:
 * Ime
 * Prezime
 * Datum rođenja
@@ -32,7 +33,7 @@ Kod registracije agecija mora unijeti iduće informacije:
 * Password
 
 #### Kreiranje putovanja
-Nakon kreiranja računa agencija dobiva pristup formi pomoću koje može kreirati putovanje. 
+Nakon kreiranja računa agencija dobiva pristup formi pomoću koje može kreirati putovanje.<br/> 
 Pod kreiranjem putovanja se smatra sljedeće:
 * Odabir destinacije
 * Datum početka i završetka putovanja
