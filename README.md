@@ -4,6 +4,7 @@
 - Alma Ibrašimović
 - Eldin Kapetanović
 - Zlata Karić
+@zkaric1
 
 ## Opis Teme:
 Aplikacija **TravelBook** ima za cilj da pojednostavi traženje putovanja od strane korisnika i kreiranje putovanja od strane raznih turističkih agencija. Agencija ima uvid na kreirana putovanja i broj korisnika koji su odabrali to putovanje. Korisnik ima mogućnost da pretražuje i sortira putovanja po cijeni, datumu, destinaciji i agenciji koja nudi putovanje. Omogućeno je plaćanje online karticom ili lično na adresi **TravelBook** gdje su obuhvaćene sve turističke agencije koje su dale ponude.
