@@ -6,11 +6,11 @@
 - Zlata Karić
 
 
-## Opis Teme:
+## Opis teme
 Aplikacija **TravelBook** ima za cilj da pojednostavi traženje putovanja od strane korisnika i kreiranje putovanja od strane raznih turističkih agencija. Agencija ima uvid na kreirana putovanja i broj korisnika koji su odabrali to putovanje. Korisnik ima mogućnost da pretražuje i sortira putovanja po cijeni, datumu, destinaciji i agenciji koja nudi putovanje. Omogućeno je plaćanje online karticom ili lično na adresi **TravelBook** gdje su obuhvaćene sve turističke agencije koje su dale ponude.
 
 
-## Procesi:
+## Procesi
 #### Registracija korisnika na aplikaciju
 Na početnom prikazu aplikacije prikazuju se putovanja sortirana po datumu. Da bi se rezervisalo putovanje potrebna je registracija. Korisnik koji želi da uplati putovanje mora se logovati u aplikaciju.<br/>
 Korisnik se registruje sa osnovnim podacima o sebi, a to su:
@@ -63,7 +63,7 @@ Korisnik daje sljedeće informacije uposleniku u agenciji:
 * JMBG
 
 
-### Funkcionalnosti:
+### Funkcionalnosti
 Funkcionalnosti aplikacije:
 * Pregled ponude putovanja
 * Pregled lokacije hotela
