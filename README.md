@@ -2,6 +2,10 @@
 
 \
 ![slika](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Size_Titanic_2.jpg/1200px-Size_Titanic_2.jpg)
+\
+\
+![gif](https://im-01.gifer.com/4A9f.gif)
+
 ### Tema: Sistem putovanja
 ### Članovi tima:
 - Alma Ibrašimović
