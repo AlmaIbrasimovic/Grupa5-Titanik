@@ -36,7 +36,7 @@ Pod kreiranjem putovanja se smatra sljedeće:
 * Datum početka i završetka putovanja
 * Minimalni i maximalni broj putnika
 * Navodi se hotel
-* Odabir leta(interakcija sa timom **Piloti**)
+* Odabir leta(interakcija sa timom @Grupa6-piloti)
 * Cijena putovanja
 * Opis putovanja
 * Slike hotela i destinacije
