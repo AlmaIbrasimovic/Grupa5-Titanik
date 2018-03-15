@@ -43,7 +43,8 @@ Pod kreiranjem putovanja se smatra sljedeće:
 * Cijena putovanja
 * Opis putovanja
 * Slike hotela i destinacije<br/>
-Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
+
+<left> Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
 Zatim se putovanje prikaže na **TravelBook** početnoj stranici.
 
 #### Evidencija broj putnika po putovanju
