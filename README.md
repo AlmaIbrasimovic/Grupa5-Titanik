@@ -48,7 +48,7 @@ Zatim se putovanje prikaže na **TravelBook** početnoj stranici.
 
 #### Evidencija broj putnika po putovanju
 Ukoliko se ne dostigne minimalni broj putnika, 10 dana prije putovanja, onda se putovanje otkazuje i vraća se novac putnicima.
-Ukoliko je dostignut maximalni broj putnika, označava se da je popunjeno.
+Ukoliko je dostignut maximalni broj putnika, označava se da je popunjeno. 
 Putnici mogu otkazati putovanje do 10 dana pred putovanje, ali se uzima određeni procenat.
 
 #### Proces naplate putovanja
