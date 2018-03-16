@@ -29,7 +29,7 @@ Korisnik se registruje sa osnovnim podacima o sebi, a to su:
 * Podaci o kreditnoj kartici
 
 #### Registracija agencija na aplikaciju
-Angencija se mora registrovati na aplikaciju, ako želi da kreira putovanje.<br/>
+Agencija se mora registrovati na aplikaciju ako želi da kreira putovanje.<br/>
 Kod registracije agecija mora unijeti iduće informacije:
 * Naziv 
 * Adresu
@@ -37,7 +37,7 @@ Kod registracije agecija mora unijeti iduće informacije:
 * Password
 
 #### Kreiranje putovanja
-Nakon kreiranja računa agencija dobiva pristup formi pomoću koje može kreirati putovanje.<br/> 
+Nakon kreiranja računa agencija dobija pristup formi pomoću koje može kreirati putovanje.<br/> 
 Pod kreiranjem putovanja se smatra sljedeće:
 * Odabir destinacije
 * Datum početka i završetka putovanja
@@ -51,9 +51,9 @@ Pod kreiranjem putovanja se smatra sljedeće:
 <left> Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
 Zatim se putovanje prikaže na **TravelBook** početnoj stranici.
 
-#### Evidencija broj putnika po putovanju
+#### Evidencija broja putnika po putovanju
 Ukoliko se ne dostigne minimalni broj putnika, 10 dana prije putovanja, onda se putovanje otkazuje i vraća se novac putnicima.
-Ukoliko je dostignut maximalni broj putnika, označava se da je popunjeno. 
+Ukoliko je dostignut maximalni broj putnika, označava se da je putovanje popunjeno. 
 Putnici mogu otkazati putovanje do 10 dana pred putovanje, ali se uzima određeni procenat.
 
 #### Proces naplate putovanja
@@ -85,8 +85,8 @@ Funkcionalnosti aplikacije:
 * Obični korisnik: Izbor i uplata putovanja na lokaciji agencije **TravelBook**
 * Online korisnik: Izbor i uplata putovanja online sa kreditnom karticom
 * Administrator: Održava stranicu i pregleda validaciju
-* Šef: Krade zaradu!!!!
-* Uposlenik u agenciji: Rezerviše i naplaćuje putovanja običnih putnika(koji su došli na lokaciju)
+* Šef: Krade zaradu!!!
+* Uposlenik u agenciji: Rezerviše i naplaćuje putovanja običnih putnika (koji su došli na lokaciju)
 * Lejlin aerodrom: Preuzimanje informacija o letovima i rezervisanje 
 * Sistem za autorizaciju i naplatu karticom: Provjerava validnost uplate
 * Poštar: Dostavlja karte na adresu stanovanja online korisnicima, a obični preuzimaju u poslovnici
