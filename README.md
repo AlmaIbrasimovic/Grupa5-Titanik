@@ -4,7 +4,7 @@
 \
 ![gif](https://im-01.gifer.com/4A9f.gif)
 
-### Tema: Sistem putovanja
+### Tema: Sistem kreiranja/traženja putovanja
 ### Članovi tima:
 - Alma Ibrašimović
 - Eldin Kapetanović
