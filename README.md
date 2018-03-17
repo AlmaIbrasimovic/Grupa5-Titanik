@@ -30,7 +30,7 @@ Korisnik se registruje sa osnovnim podacima o sebi, a to su:
 
 #### Registracija agencija na aplikaciju
 Agencija se mora registrovati na aplikaciju ako želi da kreira putovanje.<br/>
-Kod registracije agecija mora unijeti iduće informacije:
+Kod registracije agencija mora unijeti iduće informacije:
 * Naziv 
 * Adresu
 * Podatke o bankovnom računu
@@ -78,10 +78,11 @@ Funkcionalnosti aplikacije:
 * Mogućnost sortiranja putovanja
 * Mogućnost kupovanja više karata s ličnim podacima svih putnika
 * Mogućnost otkazivanja putovanja 10 dana pred putovanje
+* Mogućnost brisanja putovanja od strane agencije koja je kreirala
 
 
 ### Akteri
-* Putnička agencija(pravno lice): Kreiranje i pregled putovanja 
+* Putnička agencija (pravno lice): Kreiranje i pregled putovanja 
 * Obični korisnik: Izbor i uplata putovanja na lokaciji agencije **TravelBook**
 * Online korisnik: Izbor i uplata putovanja online sa kreditnom karticom
 * Administrator: Održava stranicu i pregleda validaciju
