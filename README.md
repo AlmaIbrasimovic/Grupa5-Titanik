@@ -11,7 +11,7 @@
 - Zlata Karić
 
 ## Opis teme
-Aplikacija **TravelBook** ima za cilj da pojednostavi traženje putovanja od strane korisnika i kreiranje putovanja od strane raznih turističkih agencija. Agencija ima uvid na kreirana putovanja i broj korisnika koji su odabrali to putovanje. Korisnik ima mogućnost da pretražuje i sortira putovanja po cijeni, datumu, destinaciji i agenciji koja nudi putovanje. Omogućeno je plaćanje online karticom ili lično na adresi **TravelBook** gdje su obuhvaćene sve turističke agencije koje su dale ponude.
+Aplikacija **TravelBook** ima za cilj da pojednostavi traženje putovanja od strane korisnika i kreiranje putovanja od strane turističkih agencija. Agencija ima uvid na kreirana putovanja i broj korisnika koji su odabrali to putovanje. Korisnik ima mogućnost da pretražuje i sortira putovanja po cijeni, datumu, destinaciji i agenciji koja nudi putovanje. Omogućeno je plaćanje online karticom ili lično na adresi **TravelBook** gdje su obuhvaćene sve turističke agencije koje su dale ponude.
 
 
 ## Procesi
@@ -32,8 +32,10 @@ Korisnik se registruje sa osnovnim podacima o sebi, a to su:
 Agencija se mora registrovati na aplikaciju ako želi da kreira putovanje.<br/>
 Kod registracije agencija mora unijeti iduće informacije:
 * Naziv 
-* Adresu
 * Podatke o bankovnom računu
+* Kontakt telefon
+* Adresu
+* E-mail
 * Password
 
 #### Kreiranje putovanja
@@ -43,13 +45,15 @@ Pod kreiranjem putovanja se smatra sljedeće:
 * Datum početka i završetka putovanja
 * Minimalni i maximalni broj putnika
 * Navodi se hotel
-* Odabir leta (interakcija sa timom **Grupa6-piloti**)
+* Odabir leta (interakcija sa timom **Grupa6-piloti**) ili autobusa
 * Cijena putovanja
 * Opis putovanja
 * Slike hotela i destinacije<br/>
 
-<left> Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
-Zatim se putovanje prikaže na **TravelBook** početnoj stranici.
+<left>Nakon kreiranja se putovanje prikaže na **TravelBook** početnoj stranici.
+ Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
+ Agencija može također platit za reklamu na stranici tj. da su njena putovanja prva na stranici(izdvojena). 
+
 
 #### Evidencija broja putnika po putovanju
 Ukoliko se ne dostigne minimalni broj putnika, 10 dana prije putovanja, onda se putovanje otkazuje i vraća se novac putnicima.
@@ -64,8 +68,10 @@ Ako je online korisnik uplatio više od 10 putovanja, preko kartice, ostvaruje o
 Korisnik daje sljedeće informacije uposleniku u agenciji:
 * Ime
 * Prezime
-* Kontakt telefon
 * JMBG
+* Kontakt telefon
+* E-mail
+
 
 
 ### Funkcionalnosti
@@ -76,8 +82,7 @@ Funkcionalnosti aplikacije:
 * Online plaćanje
 * Mogućnost ocjenjivanja agencija
 * Mogućnost sortiranja putovanja
-* Mogućnost kupovanja više karata s ličnim podacima svih putnika
-* Mogućnost otkazivanja putovanja 10 dana pred putovanje
+* Mogućnost kupovanja karte online
 * Mogućnost brisanja putovanja od strane agencije koja je kreirala
 
 
@@ -86,11 +91,11 @@ Funkcionalnosti aplikacije:
 * Obični korisnik: Izbor i uplata putovanja na lokaciji agencije **TravelBook**
 * Online korisnik: Izbor i uplata putovanja online sa kreditnom karticom
 * Administrator: Održava stranicu i pregleda validaciju
-* Šef: Krade zaradu!!!
+* Šef
 * Uposlenik u agenciji: Rezerviše i naplaćuje putovanja običnih putnika (koji su došli na lokaciju)
-* Lejlin aerodrom: Preuzimanje informacija o letovima i rezervisanje 
+* Aerodrom tima **Grupa6-piloti**: Preuzimanje informacija o letovima i rezervisanje 
 * Sistem za autorizaciju i naplatu karticom: Provjerava validnost uplate
-* Poštar: Dostavlja karte na adresu stanovanja online korisnicima, a obični preuzimaju u poslovnici
+
 
 
 
