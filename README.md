@@ -47,12 +47,13 @@ Pod kreiranjem putovanja se smatra sljedeće:
 * Navodi se hotel
 * Odabir leta (interakcija sa timom **Grupa6-piloti**) ili autobusa
 * Cijena putovanja
+* Zadnji dan do kojeg se može otkazat i koliko od uplate se vraća
 * Opis putovanja
 * Slike hotela i destinacije<br/>
 
-<left>Nakon kreiranja se putovanje prikaže na **TravelBook** početnoj stranici.
+<left>Nakon kreiranja putovanje se prikaže na **TravelBook** početnoj stranici kada se uplati fiksna cijena za usluge navedene stranice.
  Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
- Agencija može također platit za reklamu na stranici tj. da su njena putovanja prva na stranici(izdvojena). 
+ Agencija može također platit za reklamu na stranici tj. da su njena putovanja prva na stranici(izdvojena/preferirana). 
 
 
 #### Evidencija broja putnika po putovanju
@@ -79,10 +80,11 @@ Funkcionalnosti aplikacije:
 * Pregled ponude putovanja
 * Pregled lokacije hotela
 * Pregled lokacije **TravelBook**
-* Online plaćanje
+* Online plaćanje ili u glavnoj poslovnici
 * Mogućnost ocjenjivanja agencija
 * Mogućnost sortiranja putovanja
 * Mogućnost kupovanja karte online
+* Slanje karte na e-mail korisnika
 * Mogućnost brisanja putovanja od strane agencije koja je kreirala
 
 
