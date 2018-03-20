@@ -93,7 +93,6 @@ Funkcionalnosti aplikacije:
 * Obični korisnik: Izbor i uplata putovanja na lokaciji agencije **TravelBook**
 * Online korisnik: Izbor i uplata putovanja online sa kreditnom karticom
 * Administrator: Održava stranicu i pregleda validaciju
-* Šef
 * Uposlenik u agenciji: Rezerviše i naplaćuje putovanja običnih putnika (koji su došli na lokaciju)
 * Aerodrom tima **Grupa6-piloti**: Preuzimanje informacija o letovima i rezervisanje 
 * Sistem za autorizaciju i naplatu karticom: Provjerava validnost uplate
