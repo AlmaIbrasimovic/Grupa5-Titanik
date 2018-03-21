@@ -62,7 +62,7 @@ Ukoliko je dostignut maximalni broj putnika, označava se da je putovanje popunj
 Putnici mogu otkazati putovanje do 10 dana pred putovanje, ali gube određeni iznos uplate.
 
 #### Proces naplate putovanja
-Korisnik može online odabrati putovanje i platiti kartično ili da ode na lokaciju **TravelBook** i uplati gotovinom putovanje.
+Korisnik može online odabrati putovanje i platiti kreditnom karticom ili da ode na lokaciju **TravelBook** i uplati gotovinom.
 Ako je online korisnik uplatio više od 10 putovanja, preko kartice, ostvaruje određeni popust na iduća putovanja.
 
 #### Proces unosa podataka u poslovnici
