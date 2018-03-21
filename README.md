@@ -11,7 +11,7 @@
 - Zlata Karić
 
 ## Opis teme
-Aplikacija **TravelBook** ima za cilj da pojednostavi traženje putovanja od strane korisnika i kreiranje putovanja od strane turističkih agencija. Agencija ima uvid u kreirana putovanja i broj korisnika koji su odabrali to putovanje. Korisnik ima mogućnost da pretražuje i sortira putovanja po cijeni, datumu, destinaciji i agenciji koja nudi putovanje. Omogućeno je plaćanje online karticom ili lično na adresi **TravelBook** gdje su obuhvaćene sve turističke agencije koje su dale ponude.
+Aplikacija **TravelBook** ima za cilj da pojednostavi traženje putovanja od strane korisnika i kreiranje putovanja od strane turističkih agencija. Agencija ima uvid u kreirana putovanja i broj korisnika koji su odabrali to putovanje. Korisnik ima mogućnost da pretražuje i sortira putovanja po cijeni, datumu, destinaciji i agenciji koja nudi putovanje. Omogućeno je plaćanje online karticom ili lično na lokaciji **TravelBook**-a, gdje su obuhvaćene sve turističke agencije koje su kreirale putovanja.
 
 
 ## Procesi
