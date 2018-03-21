@@ -30,7 +30,7 @@ Korisnik se registruje sa osnovnim podacima o sebi, a to su:
 
 #### Registracija agencija na aplikaciju
 Agencija se mora registrovati na aplikaciju ako želi da kreira putovanje.<br/>
-Kod registracije agencija mora unijeti iduće informacije:
+Registracija agencije podrazumijeva unos sljedećih informacija:
 * Naziv 
 * Podatke o bankovnom računu
 * Kontakt telefon
@@ -53,7 +53,7 @@ Pod kreiranjem putovanja se smatra sljedeće:
 
 <left>Nakon kreiranja putovanje se prikaže na **TravelBook** početnoj stranici kada se uplati fiksna cijena za usluge navedene stranice.
  Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
- Agencija može također platit za reklamu na stranici tj. da su njena putovanja prva na stranici(izdvojena/preferirana). 
+ Agencija može također platiti za reklamu na stranici tj. da su njena putovanja prva na stranici(izdvojena/preferirana). 
 
 
 #### Evidencija broja putnika po putovanju
