@@ -63,7 +63,7 @@ Putnici mogu otkazati putovanje do 10 dana pred putovanje, ali gube određeni iz
 
 #### Proces naplate putovanja
 Korisnik može online odabrati putovanje i platiti kreditnom karticom ili da ode na lokaciju **TravelBook** i uplati gotovinom.
-Ako je online korisnik uplatio više od 10 putovanja, preko kartice, ostvaruje određeni popust na iduća putovanja.
+Ako je online korisnik uplatio više od 10 putovanja kreditnom karticom, ostvaruje određeni popust na iduća putovanja.
 
 #### Proces unosa podataka u poslovnici
 Korisnik daje sljedeće informacije uposleniku u agenciji:
