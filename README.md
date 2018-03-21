@@ -39,15 +39,15 @@ Registracija agencije podrazumijeva unos sljedećih informacija:
 * Password
 
 #### Kreiranje putovanja
-Nakon kreiranja računa agencija dobija pristup formi pomoću koje može kreirati putovanje.<br/> 
-Pod kreiranjem putovanja se smatra sljedeće:
+Nakon kreiranja računa, agencija dobija pristup formi pomoću koje može kreirati putovanje.<br/> 
+Mogućnost kreiranja putovanja zahtjeva određene informacije, kao što su:
 * Odabir destinacije
 * Datum početka i završetka putovanja
 * Minimalni i maximalni broj putnika
-* Navodi se hotel
+* Izbor hotela
 * Odabir leta (interakcija sa timom **Grupa6-piloti**) ili autobusa
 * Cijena putovanja
-* Zadnji dan do kojeg se može otkazati i koliko od uplate se vraća
+* Posljednji dan do kojeg se može otkazati putovanje i koliko od uplate se vraća
 * Opis putovanja
 * Slike hotela i destinacije<br/>
 
