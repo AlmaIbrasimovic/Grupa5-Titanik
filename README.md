@@ -47,7 +47,7 @@ Pod kreiranjem putovanja se smatra sljedeće:
 * Navodi se hotel
 * Odabir leta (interakcija sa timom **Grupa6-piloti**) ili autobusa
 * Cijena putovanja
-* Zadnji dan do kojeg se može otkazat i koliko od uplate se vraća
+* Zadnji dan do kojeg se može otkazati i koliko od uplate se vraća
 * Opis putovanja
 * Slike hotela i destinacije<br/>
 
