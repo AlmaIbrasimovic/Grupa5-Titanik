@@ -51,15 +51,15 @@ Mogućnost kreiranja putovanja zahtjeva određene informacije, kao što su:
 * Opis putovanja
 * Slike hotela i destinacije<br/>
 
-<left>Nakon kreiranja putovanje se prikaže na **TravelBook** početnoj stranici kada se uplati fiksna cijena za usluge navedene stranice.
+<left>Nakon kreiranja i uplate iznosa za usluge navedene stranice, putovanje se prikazuje na **TravelBook** početnoj stranici.
  Agencija može da vidi sva svoja kreirana putovanja i korisnike koji su učestvovali/učestvuju u putovanju.
- Agencija može također platiti za reklamu na stranici tj. da su njena putovanja prva na stranici(izdvojena/preferirana). 
+ Agencija također može platiti za izdvojenu reklamu na stranici tj. da su njena putovanja pri vrhu **TravelBook** stranice(preferirana). 
 
 
 #### Evidencija broja putnika po putovanju
 Ukoliko se ne dostigne minimalni broj putnika, 10 dana prije putovanja, onda se putovanje otkazuje i vraća se novac putnicima.
 Ukoliko je dostignut maximalni broj putnika, označava se da je putovanje popunjeno. 
-Putnici mogu otkazati putovanje do 10 dana pred putovanje, ali se uzima određeni procenat.
+Putnici mogu otkazati putovanje do 10 dana pred putovanje, ali gube određeni iznos uplate.
 
 #### Proces naplate putovanja
 Korisnik može online odabrati putovanje i platiti kartično ili da ode na lokaciju **TravelBook** i uplati gotovinom putovanje.
