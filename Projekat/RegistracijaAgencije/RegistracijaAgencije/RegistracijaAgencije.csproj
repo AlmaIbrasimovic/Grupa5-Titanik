@@ -108,7 +108,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Compass.jpg" />
-    <Content Include="Assets\IMG_20180310_170820.jpg" />
     <Content Include="Assets\putovanje.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
