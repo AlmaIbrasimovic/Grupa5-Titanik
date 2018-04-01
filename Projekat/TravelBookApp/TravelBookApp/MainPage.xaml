@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="TravelBookApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TravelBookApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,249,0,0" Text="Naziv : " TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="30"/>
+        <Image Source ="Assets/putovanje.jpg" Margin="0,0,65,467"/>
+        <TextBox HorizontalAlignment="Left" Margin="289,248,0,0" Text="" VerticalAlignment="Top" Width="305"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,312,0,0" Text="Kontakt telefon: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="289,312,0,0" Text="" VerticalAlignment="Top" Width="305"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,374,0,0" Text="Grad: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="289,374,0,0" Text="" VerticalAlignment="Top" Width="305"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,444,0,0" Text="Adresa: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="289,444,0,0" Text="" VerticalAlignment="Top" Width="305" RenderTransformOrigin="0.754,0.656"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,508,0,0" Text="E-mail adresa: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="289,508,0,0" Text="" VerticalAlignment="Top" Width="305"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,574,0,0" Text="Password: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="289,574,0,0" VerticalAlignment="Top" Width="305"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,635,0,0" Text="Ponovite password: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="289,634,0,0" VerticalAlignment="Top" Width="305"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left"  Margin="746,248,0,0" Text="Unesite podatke o bankovnom računu" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,313,0,0" Text="Broj računa: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="960,311,0,0" Text="" VerticalAlignment="Top" Width="340"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,373,0,0" Text="Broj usmjeravanja: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="960,373,0,0" Text="" VerticalAlignment="Top" Width="340"/>
+        <Button FontSize =" 21" Content="Registruj se" HorizontalAlignment="Left" Margin="746,614,0,0" VerticalAlignment="Top" Height="52" Width="214"/>
+        <Button FontSize =" 21" Content="Odustani" Foreground ="Black"  HorizontalAlignment="Left" Margin="1086,614,0,0" VerticalAlignment="Top" Height="52" Width="214"/>
+
+    </Grid>
+</Page>
