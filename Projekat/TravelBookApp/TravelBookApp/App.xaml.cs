@@ -48,7 +48,9 @@ namespace TravelBookApp
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
 
-                rootFrame.NavigationFailed += OnNavigationFailed;
+                //rootFrame.NavigationFailed += OnNavigationFailed;
+                rootFrame.Navigate(typeof(Prijava));
+
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
