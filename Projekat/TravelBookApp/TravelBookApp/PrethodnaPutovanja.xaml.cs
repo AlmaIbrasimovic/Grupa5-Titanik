@@ -26,5 +26,15 @@ namespace TravelBookApp
         {
             this.InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PocetnaStranica));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
     }
 }

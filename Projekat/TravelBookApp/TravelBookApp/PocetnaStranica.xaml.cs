@@ -20,21 +20,31 @@ namespace TravelBookApp
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Prijava : Page
+    public sealed partial class PocetnaStranica : Page
     {
-        public Prijava()
+        public PocetnaStranica()
         {
             this.InitializeComponent();
         }
 
-        private void bPrijava_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(PocetnaStranica));
-        }
-
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(RegistracijaAgencije));
+            Frame.Navigate(typeof(Prijava));
+        }
+
+        private void bKreirajPutovanje_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(KreiranjePutovanja));
+        }
+
+        private void bPregledHistorije_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PrethodnaPutovanja));
+        }
+
+        private void bPregledPutovanja_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(PrethodnaPutovanja));
         }
     }
 }

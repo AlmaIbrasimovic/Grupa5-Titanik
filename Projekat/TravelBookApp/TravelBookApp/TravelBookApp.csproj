@@ -95,11 +95,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PocetnaStranica.xaml.cs">
+      <DependentUpon>PocetnaStranica.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KreiranjePutovanja.xaml.cs">
       <DependentUpon>KreiranjePutovanja.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="RegistracijaAgencije.xaml.cs">
+      <DependentUpon>RegistracijaAgencije.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrethodnaPutovanja.xaml.cs">
       <DependentUpon>PrethodnaPutovanja.xaml</DependentUpon>
@@ -116,9 +119,12 @@
     <None Include="TravelBookApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\korisnik.jpg" />
     <Content Include="Assets\Prijava.jpg" />
     <Content Include="Assets\prijavaStr.jpg" />
+    <Content Include="Assets\putovanjaSlika.png" />
     <Content Include="Assets\putovanje.jpg" />
+    <Content Include="Assets\putuj.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -133,11 +139,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="PocetnaStranica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KreiranjePutovanja.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="RegistracijaAgencije.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

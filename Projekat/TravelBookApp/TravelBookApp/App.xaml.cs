@@ -49,7 +49,7 @@ namespace TravelBookApp
                 rootFrame = new Frame();
 
                 //rootFrame.NavigationFailed += OnNavigationFailed;
-                rootFrame.Navigate(typeof(PrethodnaPutovanja));
+                rootFrame.Navigate(typeof(Prijava));
 
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
@@ -68,7 +68,7 @@ namespace TravelBookApp
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(Prijava), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

@@ -43,7 +43,7 @@
             <RadioButton Content="NE" FontSize ="17" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="120" Margin="135,26,-135,-26"/>
         </RelativePanel>
         <Button Content="KREIRAJ" FontSize ="17" HorizontalAlignment="Left" Margin="1013,758,0,0" Height="40" VerticalAlignment="Top" Width="200"/>
-        <Button Content="ODUSTANI" FontSize ="17" HorizontalAlignment="Left" Margin="1245,758,0,0" Height="40" VerticalAlignment="Top" Width="200"/>
+        <Button Content="ODUSTANI" FontSize ="17" HorizontalAlignment="Left" Margin="1245,758,0,0" Height="40" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
 
     </Grid>
 </Page>

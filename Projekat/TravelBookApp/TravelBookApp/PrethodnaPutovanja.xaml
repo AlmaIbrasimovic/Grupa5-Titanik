@@ -20,7 +20,7 @@
         <TextBox HorizontalAlignment="Left" Margin="218,362,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
         <CalendarDatePicker HorizontalAlignment="Left" Margin="218,150,0,0" VerticalAlignment="Top" Width="200"/>
         <CalendarDatePicker HorizontalAlignment="Left" Margin="660,150,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button Content="Nazad" FontSize="17" HorizontalAlignment="Left" Margin="490,482,0,0" VerticalAlignment="Top" Height="40" Width="150"/>
-        <Button Content="Izlaz" FontSize="17" HorizontalAlignment="Left" Margin="710,482,0,0" VerticalAlignment="Top" Height="40" Width="150"/>
+        <Button Content="Nazad" FontSize="17" HorizontalAlignment="Left" Margin="490,482,0,0" VerticalAlignment="Top" Height="40" Width="150" Click="Button_Click"/>
+        <Button Content="Izlaz" FontSize="17" HorizontalAlignment="Left" Margin="710,482,0,0" VerticalAlignment="Top" Height="40" Width="150" Click="Button_Click_1"/>
     </Grid>
 </Page>
