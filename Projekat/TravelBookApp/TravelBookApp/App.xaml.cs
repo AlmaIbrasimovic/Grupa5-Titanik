@@ -49,7 +49,7 @@ namespace TravelBookApp
                 rootFrame = new Frame();
 
                 //rootFrame.NavigationFailed += OnNavigationFailed;
-                rootFrame.Navigate(typeof(KreiranjePutovanja));
+                rootFrame.Navigate(typeof(PrethodnaPutovanja));
 
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
