@@ -92,15 +92,27 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Administrator.cs" />
+    <Compile Include="Agencija.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Destinacija.cs" />
+    <Compile Include="Hotel.cs" />
+    <Compile Include="IPrint.cs" />
+    <Compile Include="Kartica.cs" />
+    <Compile Include="Korisnik.cs" />
+    <Compile Include="ObicniKorisnik.cs" />
+    <Compile Include="OnlineKorisnik.cs" />
     <Compile Include="PocetnaStranica.xaml.cs">
       <DependentUpon>PocetnaStranica.xaml</DependentUpon>
     </Compile>
     <Compile Include="KreiranjePutovanja.xaml.cs">
       <DependentUpon>KreiranjePutovanja.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Prevoz.cs" />
+    <Compile Include="Putovanje.cs" />
+    <Compile Include="Radnik.cs" />
     <Compile Include="RegistracijaAgencije.xaml.cs">
       <DependentUpon>RegistracijaAgencije.xaml</DependentUpon>
     </Compile>
@@ -111,6 +123,9 @@
       <DependentUpon>Prijava.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RezervisanoPutovanje.cs" />
+    <Compile Include="TravelBook.cs" />
+    <Compile Include="Uposlenik.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
