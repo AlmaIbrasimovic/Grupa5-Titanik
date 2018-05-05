@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TravelBookApp.ViewModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +23,16 @@ namespace TravelBookApp
     /// </summary>
     public sealed partial class PocetnaStranica : Page
     {
+        static AgencijaViewModel agencija = new AgencijaViewModel();
         public PocetnaStranica()
         {
+            Agencija a = agencija.vratiAgenciju();
             this.InitializeComponent();
+            tNazivT.Text= "Naziv agencije:  " + a.NazivAgencije;
+            tKontaktTel.Text = "Kontakt telefon:  " + a.KontaktTelefon;
+            tLokacija.Text = "Adresa:  " + a.Lokacija + " " + a.Grad;
+            tEmail.Text = "E-mail adresa:" + a.EmailAdresa;
+            
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

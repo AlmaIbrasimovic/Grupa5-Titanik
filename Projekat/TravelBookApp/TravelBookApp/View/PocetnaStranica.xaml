@@ -18,7 +18,7 @@
         <TextBlock x:Name="tKontaktTel" HorizontalAlignment="Left" Margin="874,416,0,0" Text="Kontakt telefon: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="tLokacija" HorizontalAlignment="Left" Margin="874,506,0,0" Text="Lokacija agencije: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="tEmail" HorizontalAlignment="Left" Margin="874,601,0,0" Text="E-mail adresa: " TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="tNaziv" HorizontalAlignment="Left" Margin="874,317,0,0" Text="Naziv agencije:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tNazivT" HorizontalAlignment="Left" Margin="874,317,0,0" Text="Naziv agencije:" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <HyperlinkButton Content="Odjavi se"  HorizontalAlignment="Left" Margin="1308,59,0,0" VerticalAlignment="Top" Click="HyperlinkButton_Click"/>
     </Grid>
 </Page>

@@ -8,27 +8,40 @@ namespace TravelBookApp
 {
     public class Agencija : IPrint
     {
-        static int id = 0;
+        int id = 0;
         private String nazivAgencije;
         private Kartica podaciOBankovnomRacunu;
         private String kontaktTelefon;
         private String emailAdresa;
+        private String grad;
         private String lokacija;
+        private String sifra;
 
-        public Agencija(String naziv, Kartica kartica, String telefon, String email, String adresa)
+        public Agencija()
         {
+
+        }
+
+        public Agencija(String naziv, Kartica kartica, String telefon, String email,String grad, String adresa, String sifra)
+        {
+            id++;
             NazivAgencije = naziv;
             PodaciOBankovnomRacunu = kartica;
             KontaktTelefon = telefon;
             EmailAdresa = email;
+            this.grad = grad;
             Lokacija = adresa;
+            this.Sifra = sifra;
         }
 
+        public int Id { get => id;  }
         public string NazivAgencije { get => nazivAgencije; set => nazivAgencije = value; }
         public Kartica PodaciOBankovnomRacunu { get => podaciOBankovnomRacunu; set => podaciOBankovnomRacunu = value; }
         public string KontaktTelefon { get => kontaktTelefon; set => kontaktTelefon = value; }
         public string EmailAdresa { get => emailAdresa; set => emailAdresa = value; }
         public string Lokacija { get => lokacija; set => lokacija = value; }
+        public string Grad { get => grad; set => grad = value; }
+        public string Sifra { get => sifra; set => sifra = value; }
 
         public string IspisiString()
         {

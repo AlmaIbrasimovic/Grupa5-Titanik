@@ -15,6 +15,8 @@ namespace TravelBookApp
         private String broj;
         private int csc;
 
+        public Kartica() { }
+
         public Kartica(VrstaKartice vrstaKatice, DateTime datumIstekaKartice, String brojK, int cscBroj)
         {
             vrsta = vrstaKatice;

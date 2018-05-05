@@ -16,6 +16,7 @@ namespace TravelBookApp
         private Double cijenaUsluge;
         private Double cijenaIstaknutogPutovanja;
         private List<Korisnik> korisnici;
+        private List<Agencija> agencije;
         private List<Putovanje> putovanja;
 
         public TravelBook() {
@@ -26,6 +27,7 @@ namespace TravelBookApp
             bankovniRacun = "1321000256000080"; //16 brojeva
             cijenaUsluge = 1000;
             cijenaIstaknutogPutovanja = 500;
+            agencije = new List<Agencija>();
             korisnici = new List<Korisnik>();
             putovanja = new List<Putovanje>();
         }
@@ -40,5 +42,6 @@ namespace TravelBookApp
         public double CijenaIstaknutogPutovanja { get => cijenaIstaknutogPutovanja; set => cijenaIstaknutogPutovanja = value; }
         public List<Korisnik> Korisnici { get => korisnici; set => korisnici = value; }
         public List<Putovanje> Putovanja { get => putovanja; set => putovanja = value; }
+        public List<Agencija> Agencije { get => agencije; set => agencije = value; }
     }
 }

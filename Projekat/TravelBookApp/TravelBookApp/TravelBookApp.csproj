@@ -92,12 +92,14 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Globalna.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Agencija.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Destinacija.cs" />
+    <Compile Include="ViewModel\AgencijaViewModel.cs" />
     <Compile Include="ViewModel\DestinacijaViewModel.cs" />
     <Compile Include="Model\Hotel.cs" />
     <Compile Include="ViewModel\HotelViewModel.cs" />
