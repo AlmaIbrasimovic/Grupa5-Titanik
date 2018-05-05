@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TravelBookApp
+namespace TravelBookApp.Model
 {
     public enum VrstaPrevoza { autobus, avion};
     public class Prevoz

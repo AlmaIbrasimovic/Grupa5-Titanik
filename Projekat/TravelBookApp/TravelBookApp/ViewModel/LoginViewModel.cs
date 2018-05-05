@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
+using TravelBookApp.Model;
 
-namespace TravelBookApp
+namespace TravelBookApp.ViewModel
 {
     public class LoginViewModel
     {

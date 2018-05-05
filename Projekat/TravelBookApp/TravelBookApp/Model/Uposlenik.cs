@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TravelBookApp
+namespace TravelBookApp.Model
 {
     public abstract class Uposlenik  : IPrint
     {
