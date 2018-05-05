@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,249,0,0" Text="Naziv : " TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="30"/>
-        <Image Source ="Assets/putovanje.jpg" Margin="0,0,65,467"/>
+        <Image Source ="/Assets/putovanje.jpg" Margin="0,0,65,467"/>
         <TextBox HorizontalAlignment="Left" Margin="289,248,0,0" Text="" VerticalAlignment="Top" Width="305"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,312,0,0" Text="Kontakt telefon: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="289,312,0,0" Text="" VerticalAlignment="Top" Width="305"/>

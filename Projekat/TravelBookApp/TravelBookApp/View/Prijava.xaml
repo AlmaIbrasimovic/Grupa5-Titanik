@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <Image Source="Assets/prijavaStr.jpg" Margin="-33,-61,-64,1"/>
+        <Image Source="/Assets/prijavaStr.jpg" Margin="-33,-61,-64,1"/>
         <Grid HorizontalAlignment="Left" Height="100" Margin="234.8,360,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1"/>
         <TextBox x:Name="tNaziv" HorizontalAlignment="Left" Margin="214,159,-457,0" Text="" VerticalAlignment="Top" Height="32" Width="243" RenderTransformOrigin="0.391,0.634" Grid.ColumnSpan="2"/>
         <Button x:Name="bPrijava" Content="Prijavi se" HorizontalAlignment="Left" Margin="214,314,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.432,0.114" Width="97" Height="33" Click="bPrijava_Click"/>
