@@ -98,10 +98,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Destinacija.cs" />
+    <Compile Include="DestinacijaViewModel.cs" />
     <Compile Include="Hotel.cs" />
+    <Compile Include="HotelViewModel.cs" />
     <Compile Include="IPrint.cs" />
+    <Compile Include="ISlanjeKarata.cs" />
     <Compile Include="Kartica.cs" />
     <Compile Include="Korisnik.cs" />
+    <Compile Include="KreiranjePutovanjaViewModel.cs" />
+    <Compile Include="LoginViewModel.cs" />
     <Compile Include="ObicniKorisnik.cs" />
     <Compile Include="OnlineKorisnik.cs" />
     <Compile Include="PocetnaStranica.xaml.cs">
@@ -123,8 +128,11 @@
       <DependentUpon>Prijava.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistracijaViewModel.cs" />
+    <Compile Include="RezervisanaPutovanjaViewModel.cs" />
     <Compile Include="RezervisanoPutovanje.cs" />
     <Compile Include="TravelBook.cs" />
+    <Compile Include="TravelBookViewModel.cs" />
     <Compile Include="Uposlenik.cs" />
   </ItemGroup>
   <ItemGroup>

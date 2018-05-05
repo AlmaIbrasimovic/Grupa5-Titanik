@@ -31,7 +31,7 @@ namespace TravelBookApp
         public string ImeKorisnika { get => imeKorisnika; set => imeKorisnika = value; }
         public string PrezimeKorisnika { get => prezimeKorisnika; set => prezimeKorisnika = value; }
         public string JmbgKorisnika { get => jmbgKorisnika; set => jmbgKorisnika = value; }
-        public DateTime DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
+        public DateTime DatumRodjenja { get => datumRodjenjaKorisnika; set => datumRodjenjaKorisnika = value; }
         public string KontaktTelefon { get => kontaktTelefon; set => kontaktTelefon = value; }
         public string EmailAdresa { get => emailAdresa; set => emailAdresa = value; }
 
@@ -41,7 +41,7 @@ namespace TravelBookApp
             return string.Format("Ime: {0}" + Environment.NewLine +
                                  "Prezime: {1}" + Environment.NewLine +
                                  "Maticni broj: {2}" + Environment.NewLine +
-                                 "Datum rođenja: {3}", imeKorisnika, prezimeKorisnika, jmbgKorisnika, datumRodjenja);
+                                 "Datum rođenja: {3}", imeKorisnika, prezimeKorisnika, jmbgKorisnika, datumRodjenjaKorisnika);
         }
     
     }
