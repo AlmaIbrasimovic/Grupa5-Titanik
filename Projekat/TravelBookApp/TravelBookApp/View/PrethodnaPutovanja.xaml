@@ -8,18 +8,18 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Left" Margin="56,38,0,0" FontSize="17" Text="Odaberite putovanje za koje želite vidjeti statistiku:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="390"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,232,0,0" FontSize="17" Text="Broj putnika:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,153,0,0" FontSize="17" Text="Datum polaska:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
-        <TextBlock HorizontalAlignment="Left" Margin="490,153,0,0" FontSize="17" Text="Datum povratka:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,300,0,0" FontSize="17" Text="Tip prevoza:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,367,0,0" FontSize="17" Text="Cijena putovanja:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
-        <ComboBox HorizontalAlignment="Left" Margin="490,35,0,0" FontSize="17" VerticalAlignment="Top" Height="30" Width="370"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,223,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,291,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
-        <TextBox HorizontalAlignment="Left" Margin="218,362,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
-        <CalendarDatePicker HorizontalAlignment="Left" Margin="218,150,0,0" VerticalAlignment="Top" Width="200"/>
-        <CalendarDatePicker HorizontalAlignment="Left" Margin="660,150,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,69,0,0" FontSize="17" Text="Odaberite putovanje za koje želite vidjeti statistiku:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="390"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,233,0,0" FontSize="17" Text="Broj putnika:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,167,0,0" FontSize="17" Text="Datum polaska:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="490,167,0,0" FontSize="17" Text="Datum povratka:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,298,0,0" FontSize="17" Text="Tip prevoza:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,362,0,0" FontSize="17" Text="Cijena putovanja:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
+        <ComboBox Name="comboPutovanja" HorizontalAlignment="Left" Margin="490,66,0,0" FontSize="17" VerticalAlignment="Top" Height="30" Width="370" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBox Name="txtBrojPutnika" HorizontalAlignment="Left" Margin="218,224,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
+        <TextBox Name="txtTipPrevoza" HorizontalAlignment="Left" Margin="218,289,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
+        <TextBox Name="txtCijenaPutovanja" HorizontalAlignment="Left" Margin="218,353,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
+        <CalendarDatePicker Name="dDatumPolaska" HorizontalAlignment="Left" Margin="218,164,0,0" VerticalAlignment="Top" Width="200"/>
+        <CalendarDatePicker Name="dDatumPovratka" HorizontalAlignment="Left" Margin="660,164,0,0" VerticalAlignment="Top" Width="200"/>
         <Button Content="Nazad" FontSize="17" HorizontalAlignment="Left" Margin="490,482,0,0" VerticalAlignment="Top" Height="40" Width="150" Click="Button_Click"/>
         <Button Content="Izlaz" FontSize="17" HorizontalAlignment="Left" Margin="710,482,0,0" VerticalAlignment="Top" Height="40" Width="150" Click="Button_Click_1"/>
     </Grid>

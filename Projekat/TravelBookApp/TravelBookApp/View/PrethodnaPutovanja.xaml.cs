@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TravelBookApp.Model;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,39 @@ namespace TravelBookApp
         public PrethodnaPutovanja()
         {
             this.InitializeComponent();
+
+            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
+            {
+                if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
+                {
+
+                    if (Globalna.trenutnaPutovanja)
+                    {
+                        if (DateTime.Now <= p.DatumPovratka)
+                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka));
+                    }
+                    else
+                    {
+                        if (p.DatumPovratka < DateTime.Now)
+                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka));
+                    }
+                }
+            }
+
+            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
+            {
+                if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
+                {
+                    if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
+                    {
+                        dDatumPolaska.SetDisplayDate(p.DatumPolaska);
+                        dDatumPovratka.SetDisplayDate(p.DatumPovratka);
+                        txtBrojPutnika.Text = Convert.ToString(p.TrenutniBrojPutnika);
+                        txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
+                        txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
+                    }
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,6 +69,24 @@ namespace TravelBookApp
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
+            {
+                if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
+                {
+                    if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
+                    {
+                        dDatumPolaska.SetDisplayDate(p.DatumPolaska);
+                        dDatumPovratka.SetDisplayDate(p.DatumPovratka);
+                        txtBrojPutnika.Text = Convert.ToString(p.TrenutniBrojPutnika);
+                        txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
+                        txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
+                    }
+                }
+            }
         }
     }
 }

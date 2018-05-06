@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace TravelBookApp.Model
 {
-    public enum VrstaKartice { VISA, MasterCard }; // dodat 
+    public enum VrstaKartice { VISA, MasterCard, AmericanExpress, Discover };
     public class Kartica
     {
         
         private VrstaKartice vrsta;
-        private DateTime datumIsteka;
+        private String datumIsteka;
         private String broj;
         private int csc;
 
         public Kartica() { }
 
-        public Kartica(VrstaKartice vrstaKatice, DateTime datumIstekaKartice, String brojK, int cscBroj)
+        public Kartica(VrstaKartice vrstaKatice, String datumIstekaKartice, String brojK, int cscBroj)
         {
-            vrsta = vrstaKatice;
-            datumIsteka = datumIstekaKartice;
-            broj = brojK;
-            csc = cscBroj;
+            Vrsta = vrstaKatice;
+            DatumIsteka = datumIstekaKartice;
+            Broj = brojK;
+            Csc = cscBroj;
         }
 
         private VrstaKartice Vrsta { get => vrsta; set => vrsta = value; }
-        public DateTime DatumIsteka { get => datumIsteka; set => datumIsteka = value; }
+        public String DatumIsteka { get => datumIsteka; set => datumIsteka = value; }
         public string Broj { get => broj; set => broj = value; }
         public int Csc { get => csc; set => csc = value; }
     }

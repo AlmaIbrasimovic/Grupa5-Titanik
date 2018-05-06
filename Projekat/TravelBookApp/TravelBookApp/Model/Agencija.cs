@@ -17,10 +17,7 @@ namespace TravelBookApp.Model
         private String lokacija;
         private String sifra;
 
-        public Agencija()
-        {
-
-        }
+        public Agencija() { }
 
         public Agencija(String naziv, Kartica kartica, String telefon, String email,String grad, String adresa, String sifra)
         {
@@ -29,9 +26,9 @@ namespace TravelBookApp.Model
             PodaciOBankovnomRacunu = kartica;
             KontaktTelefon = telefon;
             EmailAdresa = email;
-            this.grad = grad;
+            Grad = grad;
             Lokacija = adresa;
-            this.Sifra = sifra;
+            Sifra = sifra;
         }
 
         public int Id { get => id;  }

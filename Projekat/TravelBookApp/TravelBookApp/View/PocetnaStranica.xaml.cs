@@ -48,11 +48,13 @@ namespace TravelBookApp
 
         private void bPregledHistorije_Click(object sender, RoutedEventArgs e)
         {
+            Globalna.trenutnaPutovanja = false;
             Frame.Navigate(typeof(PrethodnaPutovanja));
         }
 
         private void bPregledPutovanja_Click(object sender, RoutedEventArgs e)
         {
+            Globalna.trenutnaPutovanja = true;
             Frame.Navigate(typeof(PrethodnaPutovanja));
         }
     }

@@ -20,21 +20,23 @@ namespace TravelBookApp.Model
         private Destinacija infoDestinacije;
         private Hotel infoHotela;
         private Prevoz infoPrevoza;
+        private Double cijena;
         private int trenutniBrojPutnika = 0;
 
-        public Putovanje(DateTime datumPolaska, DateTime datumPovratka, int minimalniBrojPutnika, int maximalniBrojPutnika, string opisPutovanja, bool istaknutoPutovanje, int idAgencije, Destinacija infoDestinacije, Hotel infoHotela, Prevoz infoPrevoza)
+        public Putovanje(DateTime datumPolaska, DateTime datumPovratka, int minimalniBrojPutnika, int maximalniBrojPutnika, string opisPutovanja, bool istaknutoPutovanje, int idAgencije, Destinacija infoDestinacije, Hotel infoHotela, Prevoz infoPrevoza, Double cijenaPut)
         {
             id++;
-            this.DatumPolaska = datumPolaska;
-            this.DatumPovratka = datumPovratka;
-            this.MinimalniBrojPutnika = minimalniBrojPutnika;
-            this.MaximalniBrojPutnika = maximalniBrojPutnika;
-            this.OpisPutovanja = opisPutovanja;
-            this.IstaknutoPutovanje = istaknutoPutovanje;
-            this.IdAgencije = idAgencije;
-            this.InfoDestinacije = infoDestinacije;
-            this.InfoHotela = infoHotela;
-            this.InfoPrevoza = infoPrevoza;
+            DatumPolaska = datumPolaska;
+            DatumPovratka = datumPovratka;
+            MinimalniBrojPutnika = minimalniBrojPutnika;
+            MaximalniBrojPutnika = maximalniBrojPutnika;
+            OpisPutovanja = opisPutovanja;
+            IstaknutoPutovanje = istaknutoPutovanje;
+            IdAgencije = idAgencije;
+            InfoDestinacije = infoDestinacije;
+            InfoHotela = infoHotela;
+            InfoPrevoza = infoPrevoza;
+            Cijena = cijenaPut;
         }
 
         public DateTime DatumPolaska { get => datumPolaska; set => datumPolaska = value; }
@@ -47,6 +49,7 @@ namespace TravelBookApp.Model
         public Destinacija InfoDestinacije { get => infoDestinacije; set => infoDestinacije = value; }
         public Hotel InfoHotela { get => infoHotela; set => infoHotela = value; }
         public Prevoz InfoPrevoza { get => infoPrevoza; set => infoPrevoza = value; }
+        public Double Cijena { get => cijena; set => cijena = value; }
         public int TrenutniBrojPutnika { get => trenutniBrojPutnika; set => trenutniBrojPutnika = value; }
     }
 }

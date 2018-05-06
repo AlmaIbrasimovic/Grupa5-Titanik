@@ -23,13 +23,17 @@
         <PasswordBox Name ="tSifra" HorizontalAlignment="Left" Margin="289,574,0,0" VerticalAlignment="Top" Width="305"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,635,0,0" Text="Ponovite password: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <PasswordBox Name="tSifraPonovo" HorizontalAlignment="Left" Margin="289,634,0,0" VerticalAlignment="Top" Width="305"/>
-        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left"  Margin="746,248,0,0" Text="Unesite podatke o bankovnom računu" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,313,0,0" Text="Broj računa: " TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Name ="tBrojRacuna" HorizontalAlignment="Left" Margin="960,311,0,0" Text="" VerticalAlignment="Top" Width="340"/>
-        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,373,0,0" Text="Broj usmjeravanja: " TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Name ="tBrojUsmjeravanja" HorizontalAlignment="Left" Margin="960,373,0,0" Text="" VerticalAlignment="Top" Width="340"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left"  Margin="746,248,0,0" Text="Unesite podatke o bankovnoj kartici" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,374,0,0" Text="Broj kartice: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Name ="tBrojKartice" HorizontalAlignment="Left" Margin="1007,373,0,0" Text="" VerticalAlignment="Top" Width="293"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,443,0,0" Text="Datum isteka(MM/GG): " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Name ="tDatumIsteka" HorizontalAlignment="Left" Margin="1007,443,0,0" Text="" VerticalAlignment="Top" Width="293"/>
         <Button FontSize =" 21" Content="Registruj se" HorizontalAlignment="Left" Margin="746,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click_1"/>
         <Button FontSize =" 21" Content="Odustani" Foreground ="Black"  HorizontalAlignment="Left" Margin="1086,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click"/>
+        <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,509,0,0" Text="CSC(3 cifre):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.565"/>
+        <TextBox Name ="tCSC" HorizontalAlignment="Left" Margin="1007,509,0,0" Text="" VerticalAlignment="Top" Width="293"/>
+        <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,312,0,0" Text="Tip kartice:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox Name ="tTipKartice" HorizontalAlignment="Left" Margin="1007,312,0,0" VerticalAlignment="Top" Width="293" SelectionChanged="tTipKartice_SelectionChanged"/>
 
     </Grid>
 </Page>

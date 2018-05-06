@@ -10,9 +10,8 @@ namespace TravelBookApp.Model
     {
         private String sifra;
 
-        public Administrator(String ime, String prezime, String jmbg, DateTime datumRodjenja, Double plata)
-           : base(ime, prezime, jmbg, datumRodjenja, plata) {
-            sifra = "travel123";
+        public Administrator(String ime, String prezime, String jmbg, DateTime datumRodjenja, Double plata):base(ime, prezime, jmbg, datumRodjenja, plata) {
+            Sifra = "travel123";
         }
 
         public string Sifra { get => sifra; set => sifra = value; }

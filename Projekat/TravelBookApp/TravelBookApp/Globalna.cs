@@ -11,7 +11,6 @@ namespace TravelBookApp
     {
         public static TravelBook nasaAgencija = new TravelBook();
         public static int prijavljenaAgencijaId = 0;
-
-        
+        public static bool trenutnaPutovanja = true;
     }
 }

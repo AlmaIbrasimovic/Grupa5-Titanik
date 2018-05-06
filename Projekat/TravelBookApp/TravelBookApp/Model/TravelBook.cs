@@ -23,17 +23,20 @@ namespace TravelBookApp.Model
         private List<Prevoz> prevozi;
 
         public TravelBook() {
-            naziv = "TravelBook";
-            lokacija = "Bosanska 77";
-            emailAdresa = "travelBookInfo@hotmail.com";
-            kontaktTelefon = "062/555-555";
-            bankovniRacun = "1321000256000080"; //16 brojeva
-            cijenaUsluge = 1000;
-            cijenaIstaknutogPutovanja = 500;
-            agencije = new List<Agencija>();
-            korisnici = new List<Korisnik>();
-            putovanja = new List<Putovanje>();
-        }
+            Naziv = "TravelBook";
+            Lokacija = "Bosanska 77";
+            EmailAdresa = "travelBookInfo@hotmail.com";
+            KontaktTelefon = "062/555-555";
+            BankovniRacun = "1321000256000080"; //16 brojeva
+            CijenaUsluge = 1000;
+            CijenaIstaknutogPutovanja = 500;
+            Agencije = new List<Agencija>();
+            Korisnici = new List<Korisnik>();
+            Putovanja = new List<Putovanje>();
+            Destinacije = new List<Destinacija>();
+            Hoteli = new List<Hotel>();
+            Prevozi = new List<Prevoz>();
+    }
                 
 
         public string Naziv { get => naziv; set => naziv = value; }

@@ -13,8 +13,8 @@ namespace TravelBookApp.Model
 
         public RezervisanoPutovanje(int idPutnika, int idPutovanja)
         {
-            this.IdPutnika = idPutnika;
-            this.IdPutovanja = idPutovanja;
+            IdPutnika = idPutnika;
+            IdPutovanja = idPutovanja;
         }
 
         public int IdPutnika { get => idPutnika; set => idPutnika = value; }

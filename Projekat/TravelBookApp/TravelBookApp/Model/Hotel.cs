@@ -18,12 +18,12 @@ namespace TravelBookApp.Model
 
         public Hotel(string ime, Image slikeHotela, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi)
         {
-            this.Ime = ime;
-            this.SlikeHotela = slikeHotela;
-            this.MaximalniKapacitet = maximalniKapacitet;
-            this.Kapacitet = kapacitet;
-            this.Lokacija = lokacija;
-            this.CijenaPoOsobi = cijenaPoOsobi;
+            Ime = ime;
+            SlikeHotela = slikeHotela;
+            MaximalniKapacitet = maximalniKapacitet;
+            Kapacitet = kapacitet;
+            Lokacija = lokacija;
+            CijenaPoOsobi = cijenaPoOsobi;
         }
 
         public string Ime { get => ime; set => ime = value; }

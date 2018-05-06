@@ -112,7 +112,7 @@ namespace TravelBookApp
             else
                 prevoz = null;
 
-            putovanjeVM.kreirajPutovanje(Convert.ToDateTime(dPolaska.DateFormat), Convert.ToDateTime(dPovratka.DateFormat), Convert.ToInt32(sMin.Value), Convert.ToInt32(sMax.Value), "opis putovanja", istaknuto, Globalna.prijavljenaAgencijaId, Globalna.nasaAgencija.Destinacije[cDestinacije.SelectedIndex], Globalna.nasaAgencija.Hoteli[cHoteli.SelectedIndex], prevoz);
+            putovanjeVM.kreirajPutovanje(Convert.ToDateTime(dPolaska.DateFormat), Convert.ToDateTime(dPovratka.DateFormat), Convert.ToInt32(sMin.Value), Convert.ToInt32(sMax.Value), "opis putovanja", istaknuto, Globalna.prijavljenaAgencijaId, Globalna.nasaAgencija.Destinacije[cDestinacije.SelectedIndex], Globalna.nasaAgencija.Hoteli[cHoteli.SelectedIndex], prevoz, Convert.ToDouble(tCijena));
 
         }
 
@@ -120,7 +120,7 @@ namespace TravelBookApp
 
         private void bDodajHotel_Click(object sender, RoutedEventArgs e)
         {
-            putovanjeVM.dodajNoviHotel(tHotel.Text, null, Convert.ToInt32(sMax.Value), Convert.ToInt32(sMin.Value), Globalna.nasaAgencija.Destinacije[cDestinacije.SelectedIndex], Convert.ToDouble(tCijena.Text));
+            putovanjeVM.dodajNoviHotel(tHotel.Text, null, Convert.ToInt32(sMax.Value), Convert.ToInt32(sMin.Value), Globalna.nasaAgencija.Destinacije[cDestinacije.SelectedIndex], Convert.ToDouble(100));
         }
 
         private void RadioButton_Checked_1(object sender, RoutedEventArgs e)

@@ -20,18 +20,18 @@ namespace TravelBookApp.Model
         public Korisnik(String ime, String prezime, String jmbg, DateTime datumRodjenja, String brojTelefona, String email)
         {
             id++;
-            imeKorisnika = ime;
-            prezimeKorisnika = prezime;
-            jmbgKorisnika = jmbg;
-            datumRodjenjaKorisnika = datumRodjenja;
-            kontaktTelefon = brojTelefona;
-            emailAdresa = email;
+            ImeKorisnika = ime;
+            PrezimeKorisnika = prezime;
+            JmbgKorisnika = jmbg;
+            DatumRodjenjaKorisnika = datumRodjenja;
+            KontaktTelefon = brojTelefona;
+            EmailAdresa = email;
         }
 
         public string ImeKorisnika { get => imeKorisnika; set => imeKorisnika = value; }
         public string PrezimeKorisnika { get => prezimeKorisnika; set => prezimeKorisnika = value; }
         public string JmbgKorisnika { get => jmbgKorisnika; set => jmbgKorisnika = value; }
-        public DateTime DatumRodjenja { get => datumRodjenjaKorisnika; set => datumRodjenjaKorisnika = value; }
+        public DateTime DatumRodjenjaKorisnika { get => datumRodjenjaKorisnika; set => datumRodjenjaKorisnika = value; }
         public string KontaktTelefon { get => kontaktTelefon; set => kontaktTelefon = value; }
         public string EmailAdresa { get => emailAdresa; set => emailAdresa = value; }
 
@@ -41,7 +41,7 @@ namespace TravelBookApp.Model
             return string.Format("Ime: {0}" + Environment.NewLine +
                                  "Prezime: {1}" + Environment.NewLine +
                                  "Maticni broj: {2}" + Environment.NewLine +
-                                 "Datum rođenja: {3}", imeKorisnika, prezimeKorisnika, jmbgKorisnika, datumRodjenjaKorisnika);
+                                 "Datum rođenja: {3}", ImeKorisnika, PrezimeKorisnika, JmbgKorisnika, DatumRodjenjaKorisnika);
         }
     
     }

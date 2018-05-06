@@ -10,7 +10,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="bKreirajPutovanje" Content="Kreiranje putovanja" HorizontalAlignment="Left" Margin="113,156,0,0" VerticalAlignment="Top" Height="94" Width="394" Click="bKreirajPutovanje_Click"/>
-        <Button x:Name="bPregledHistorije" Content="Pregled prijašnjih putovanja" HorizontalAlignment="Left" Margin="113,342,0,0" VerticalAlignment="Top" Height="94" Width="394" Click="bPregledHistorije_Click"/>
+        <Button x:Name="bPregledHistorije" Content="Pregled prethodnih putovanja" HorizontalAlignment="Left" Margin="113,342,0,0" VerticalAlignment="Top" Height="94" Width="394" Click="bPregledHistorije_Click"/>
         <Button x:Name="bPregledPutovanja" Content="Pregled trenutnih putovanja" HorizontalAlignment="Left" Margin="113,522,0,0" VerticalAlignment="Top" Height="94" Width="394" Click="bPregledPutovanja_Click"/>
         <Image Source="/Assets/putuj.png" Margin="170,666,840,10"/>
         <Image Source="/Assets/korisnik.jpg" Margin="-99,666,1109,0"/>

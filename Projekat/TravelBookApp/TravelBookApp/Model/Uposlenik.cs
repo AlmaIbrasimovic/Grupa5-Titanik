@@ -16,11 +16,11 @@ namespace TravelBookApp.Model
 
         public Uposlenik(String ime, String prezime, String jmbg, DateTime datumRodjenja, Double plata)
         {
-            imeUposlenika = ime;
-            prezimeUposlenika = prezime;
-            jmbgUposlenika = jmbg;
-            datumRodjenjaUposlenika = datumRodjenja;
-            plataUposlenika = plata;
+            ImeUposlenika = ime;
+            PrezimeUposlenika = prezime;
+            JmbgUposlenika = jmbg;
+            DatumRodjenjaUposlenika = datumRodjenja;
+            PlataUposlenika = plata;
         }
 
         public string ImeUposlenika { get => imeUposlenika; set => imeUposlenika = value; }

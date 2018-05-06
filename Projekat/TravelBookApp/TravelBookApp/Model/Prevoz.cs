@@ -18,12 +18,12 @@ namespace TravelBookApp.Model
 
         public Prevoz(string ime, VrstaPrevoza vrstaPrevoza, int maximalniKapacitet, int kapacitet, double cijenaPoOsobi, String destinacija)
         {
-            this.Ime = ime;
-            this.VrstaPrevoza = vrstaPrevoza;
-            this.MaximalniKapacitet = maximalniKapacitet;
-            this.Kapacitet = kapacitet;
-            this.CijenaPoOsobi = cijenaPoOsobi;
-            this.prevozDestinacija = destinacija;
+            Ime = ime;
+            VrstaPrevoza = vrstaPrevoza;
+            MaximalniKapacitet = maximalniKapacitet;
+            Kapacitet = kapacitet;
+            CijenaPoOsobi = cijenaPoOsobi;
+            PrevozDestinacija = destinacija;
         }
 
         public string Ime { get => ime; set => ime = value; }

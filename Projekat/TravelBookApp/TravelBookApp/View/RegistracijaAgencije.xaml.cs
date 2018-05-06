@@ -29,6 +29,11 @@ namespace TravelBookApp
         public RegistracijaAgencije()
         {
             this.InitializeComponent();
+
+            tTipKartice.Items.Add(VrstaKartice.VISA);
+            tTipKartice.Items.Add(VrstaKartice.MasterCard);
+            tTipKartice.Items.Add(VrstaKartice.AmericanExpress);
+            tTipKartice.Items.Add(VrstaKartice.Discover);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,9 +42,8 @@ namespace TravelBookApp
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            DateTime datum = DateTime.Now; // treba dodat za karticu sve
-            Kartica nova = new Kartica(VrstaKartice.MasterCard, datum, tBrojRacuna.Text, 1);
+        { 
+            Kartica nova = new Kartica((VrstaKartice)tTipKartice.SelectedItem, tDatumIsteka.Text, tBrojKartice.Text, Convert.ToInt32(tCSC.Text));
             if (tSifra.Password.ToString().Equals(tSifraPonovo.Password.ToString())) { 
             r.registrujAgneciju(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());
                 Frame.Navigate(typeof(Prijava));
@@ -49,10 +53,6 @@ namespace TravelBookApp
                 r.Poruka = new MessageDialog("Pogresna sifra! Unesite ponovo.");
                 r.Poruka.ShowAsync();
             }
-
-
-
-           
         }
     }
 }

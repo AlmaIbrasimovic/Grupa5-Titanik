@@ -18,7 +18,7 @@ namespace TravelBookApp.Model
             return string.Format("Ime: {0}" + Environment.NewLine +
                "Prezime: {1}" + Environment.NewLine +
                "Maticni broj: {2}" + Environment.NewLine +
-               "Datum rođenja: {3}", ImeKorisnika, PrezimeKorisnika, JmbgKorisnika, DatumRodjenja);
+               "Datum rođenja: {3}", ImeKorisnika, PrezimeKorisnika, JmbgKorisnika, DatumRodjenjaKorisnika);
         }
 
     }

@@ -11,17 +11,17 @@ namespace TravelBookApp.Model
 
     public class Destinacija
     {
-       private String naziv;
+        private String naziv;
         private String drzava;
         private Kontinenti kontinent;
         private Image slikeDestinacije;
 
         public Destinacija(string naziv, String drzava, Kontinenti kontinent, Image slikeDestinacije)
         {
-            this.Naziv = naziv;
-            this.Drzava = drzava;
-            this.Kontinent = kontinent;
-            this.SlikeDestinacije = slikeDestinacije;
+            Naziv = naziv;
+            Drzava = drzava;
+            Kontinent = kontinent;
+            SlikeDestinacije = slikeDestinacije;
         }
 
         public string Naziv { get => naziv; set => naziv = value; }
