@@ -54,5 +54,10 @@ namespace TravelBookApp
                 r.Poruka.ShowAsync();
             }
         }
+
+        private void tTipKartice_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

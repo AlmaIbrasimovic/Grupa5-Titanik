@@ -23,7 +23,7 @@
         <PasswordBox Name ="tSifra" HorizontalAlignment="Left" Margin="289,574,0,0" VerticalAlignment="Top" Width="305"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,635,0,0" Text="Ponovite password: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <PasswordBox Name="tSifraPonovo" HorizontalAlignment="Left" Margin="289,634,0,0" VerticalAlignment="Top" Width="305"/>
-        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left"  Margin="746,248,0,0" Text="Unesite podatke o bankovnoj kartici" TextWrapping="Wrap" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left"  Margin="746,248,0,0" Text="Unesite podatke o bankovnoj kartici" TextWrapping="Wrap" VerticalAlignment="Top" />
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,374,0,0" Text="Broj kartice: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox Name ="tBrojKartice" HorizontalAlignment="Left" Margin="1007,373,0,0" Text="" VerticalAlignment="Top" Width="293"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,443,0,0" Text="Datum isteka(MM/GG): " TextWrapping="Wrap" VerticalAlignment="Top"/>
