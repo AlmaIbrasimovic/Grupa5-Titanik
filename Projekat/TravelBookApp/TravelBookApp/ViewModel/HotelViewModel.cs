@@ -4,13 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelBookApp.Model;
+using Windows.UI.Xaml.Controls;
 
 namespace TravelBookApp.ViewModel
 {
     public class HotelViewModel
     {
-        public void dodajHotel(string ime, List<object> slikeHotela, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi) {
-            new Hotel(ime, slikeHotela, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi);
+        public void dodajHotel(string ime, Image slikeHotela, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi) {
+          Hotel hotel =  new Hotel(ime, slikeHotela, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi);
+            Globalna.nasaAgencija.Hoteli.Add(hotel);
+        }
+
+        public List<String> dajListuNazivaHotelaPoLokaciji(String destinacija)
+        {
+            List<String> lista = new List<string>();
+            foreach(Hotel h in Globalna.nasaAgencija.Hoteli)
+            {
+                if (h.Lokacija.Naziv == destinacija) lista.Add(h.Ime);
+            }
+            return lista;
         }
     }
 }

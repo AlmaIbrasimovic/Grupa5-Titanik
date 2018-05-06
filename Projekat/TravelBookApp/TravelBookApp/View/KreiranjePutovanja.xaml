@@ -7,43 +7,90 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Left" Margin="66,44,0,0" FontSize ="17" Text="Unesite destinaciju putovanja:" VerticalAlignment="Top" Height="30" Width="330" RenderTransformOrigin="0.478,0.45"/>
-        <TextBox HorizontalAlignment="Left" Margin="434,44,0,0" FontSize ="17" Text="" VerticalAlignment="Top" Height="30" Width="270"/>
-        <TextBlock HorizontalAlignment="Left" Margin="834,44,0,0" FontSize ="17" Text="Unesite cijenu putovanja:" VerticalAlignment="Top" Height="30" Width="290"/>
-        <TextBox HorizontalAlignment="Left" Margin="1154,44,0,0" FontSize ="17" Text="" VerticalAlignment="Top" Height="30" Width="270"/>
-        <TextBlock HorizontalAlignment="Left" Margin="66,106,0,0" FontSize ="17" Text="Odaberite datum polaska:" VerticalAlignment="Top" Height="30" Width="330"/>
-        <TextBlock HorizontalAlignment="Left" Margin="834,108,0,0" FontSize ="17" Text="Odaberite datum povratka:" VerticalAlignment="Top" Height="30" Width="290"/>
-        <CalendarDatePicker HorizontalAlignment="Left" Margin="434,108,0,0" VerticalAlignment="Top" Height="30" Width="270"/>
-        <TextBlock HorizontalAlignment="Left" Margin="66,202,0,0" FontSize ="17" Text="Odaberite tip prevoza:" VerticalAlignment="Top" Width="284"/>
-        <TextBlock HorizontalAlignment="Left" Margin="834,176,0,0" FontSize ="17" Text="Odaberite let za polazak:" VerticalAlignment="Top" Width="290"/>
-        <TextBlock HorizontalAlignment="Left" Margin="834,225,0,0" FontSize ="17" Text="Odaberite let za povratak:" VerticalAlignment="Top" Width="290"/>
-        <ComboBox HorizontalAlignment="Left" Margin="1154,176,0,0" VerticalAlignment="Top" Width="270" Height="30"/>
-        <ComboBox HorizontalAlignment="Left" Margin="1154,225,0,0" VerticalAlignment="Top" Height="30" Width="270"/>
-        <RelativePanel HorizontalAlignment="Left" Height="137" Margin="434,153,0,0" VerticalAlignment="Top" Width="270">
-            <RadioButton Content="Avion" HorizontalAlignment="Left" FontSize ="17" Height="32" VerticalAlignment="Top" Width="120" Margin="34,20,-34,-41"/>
-            <RadioButton Content="Autobus" HorizontalAlignment="Left" FontSize ="17"  Height="32" VerticalAlignment="Top" Width="120" Margin="34,85,-34,-78"/>
-        </RelativePanel>
-        <TextBlock HorizontalAlignment="Left" Margin="66,310,0,0" FontSize ="17" Text="Unesite minimalni broj putnika:" Height="30" VerticalAlignment="Top" Width="350"/>
-        <TextBlock HorizontalAlignment="Left" Margin="66,368,0,0" FontSize ="17" Text="Unesite maksimalni broj putnika:" Height="30" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Margin="434,310,0,0" VerticalAlignment="Top" Minimum="10" Maximum="60" Width="270" Height="30"/>
-        <Slider HorizontalAlignment="Left" Margin="434,361,0,0" VerticalAlignment="Top" Minimum="10" Maximum="60" Width="270" Height="30"/>
-        <TextBlock HorizontalAlignment="Left" Margin="66,502,0,0" FontSize ="17" Text="Slike destinacije:" Height="30" VerticalAlignment="Top" Width="197"/>
-        <TextBlock HorizontalAlignment="Left" Margin="834,310,0,0" FontSize ="17" Text="Unesite hotel:" Height="30" VerticalAlignment="Top" Width="173"/>
-        <TextBox HorizontalAlignment="Left" Margin="1041,310,0,0" FontSize ="17" Text="" Height="30" VerticalAlignment="Top" Width="270"/>
-        <TextBlock HorizontalAlignment="Left" Margin="834,460,0,0" FontSize ="17" Text="Slike hotela:" Height="30" VerticalAlignment="Top" Width="173"/>
-        <Image HorizontalAlignment="Left" Height="160" Margin="1041,394,0,0" VerticalAlignment="Top" Width="270"/>
-        <Image HorizontalAlignment="Left" Height="160" Margin="328,440,0,0" VerticalAlignment="Top" Width="270"/>
-        <Button Content="UČITAJ SLIKE" FontSize ="17" HorizontalAlignment="Left" Margin="386,626,0,0" VerticalAlignment="Top" Width="150"/>
-        <Button Content="UČITAJ SLIKE" FontSize ="17" HorizontalAlignment="Left" Margin="1109,576,0,0" VerticalAlignment="Top" Width="150"/>
-        <CalendarDatePicker HorizontalAlignment="Left" Margin="1154,106,0,0" VerticalAlignment="Top" Height="30" Width="270"/>
-        <TextBlock HorizontalAlignment="Left" Margin="66,732,0,0" FontSize ="17" Text="Istaknuto putovanje:" Height="30" VerticalAlignment="Top" Width="245"/>
-        <RelativePanel HorizontalAlignment="Left" Height="84" Margin="358,704,0,0" VerticalAlignment="Top" Width="240">
-            <RadioButton Content="DA" FontSize ="17" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="120" Margin="10,26,-10,-26"/>
-            <RadioButton Content="NE" FontSize ="17" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="120" Margin="135,26,-135,-26"/>
-        </RelativePanel>
-        <Button Content="KREIRAJ" FontSize ="17" HorizontalAlignment="Left" Margin="1013,758,0,0" Height="40" VerticalAlignment="Top" Width="200"/>
-        <Button Content="ODUSTANI" FontSize ="17" HorizontalAlignment="Left" Margin="1245,758,0,0" Height="40" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RenderTransformOrigin="0.496,0.516">
 
-    </Grid>
+        <Image Source="/Assets/pasos.jpg" Margin="-88,0,-147,1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Opacity="0.25"/>
+
+        <TextBox Name ="tCijena" HorizontalAlignment="Left" Margin="434,772,0,0" FontSize ="17" Text="" VerticalAlignment="Top" Height="30" Width="270"/>
+        <TextBlock HorizontalAlignment="Left" Margin="66,106,0,0" FontSize ="17" Text="Odaberite datum polaska:" VerticalAlignment="Top" Height="30" Width="330"/>
+        <TextBlock HorizontalAlignment="Left" Margin="64,173,0,0" FontSize ="17" Text="Odaberite datum povratka:" VerticalAlignment="Top" Height="30" Width="290"/>
+        <CalendarDatePicker Name="dPolaska" HorizontalAlignment="Left" Margin="435,108,0,0" VerticalAlignment="Top" Height="30" Width="270"/>
+        <TextBlock HorizontalAlignment="Left" Margin="64,498,0,0" FontSize ="17" Text="Odaberite tip prevoza:" VerticalAlignment="Top" Width="284"/>
+        <Grid x:Name="gLet"  Margin="905,553,54,293">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="textBlock" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="55,42,-240,-65" Grid.RowSpan="2" Text="Odaberite let za polazak:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="57,98,-250,-121" Grid.RowSpan="2" Text="Odaberite let za povratak:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <ComboBox x:Name="comboBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="313,33,-505,-65" Grid.RowSpan="2" VerticalAlignment="Top" Width="192"/>
+            <ComboBox x:Name="comboBox1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="313,100,-505,-132" Grid.RowSpan="2" VerticalAlignment="Top"  Width="192"/>
+
+        </Grid>
+        <RelativePanel Name="rPanel" HorizontalAlignment="Left" Height="137" Margin="422,433,0,0" VerticalAlignment="Top" Width="270">
+            <RadioButton Name="rAvion" Content="Avion" HorizontalAlignment="Left" FontSize ="17" Height="32" VerticalAlignment="Top" Width="120" Margin="34,20,-34,-41" Checked="RadioButton_Checked"/>
+            <RadioButton Name="rAutobus" Content="Autobus" HorizontalAlignment="Left" FontSize ="17"  Height="32" VerticalAlignment="Top" Width="120" Margin="34,85,-34,-78" Checked="rAutobus_Checked"/>
+        </RelativePanel>
+        <TextBlock HorizontalAlignment="Left" Margin="59,237,0,0" FontSize ="17" Text="Unesite minimalni broj putnika:" Height="30" VerticalAlignment="Top" Width="350"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,295,0,0" FontSize ="17" Text="Unesite maksimalni broj putnika:" Height="30" VerticalAlignment="Top"/>
+        <Slider Name="sMin" HorizontalAlignment="Left" Margin="427,237,0,0" VerticalAlignment="Top" Minimum="10" Maximum="60" Width="270" Height="30"/>
+        <Slider Name="sMax" HorizontalAlignment="Left" Margin="427,288,0,0" VerticalAlignment="Top" Minimum="10" Maximum="60" Width="270" Height="30"/>
+        <CalendarDatePicker Name ="dPovratka" HorizontalAlignment="Left" Margin="434,170,0,0" VerticalAlignment="Top" Height="30" Width="270"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,368,0,0" FontSize ="17" Text="Istaknuto putovanje:" Height="30" VerticalAlignment="Top" Width="245"/>
+        <RelativePanel HorizontalAlignment="Left" Height="84" Margin="427,336,0,0" VerticalAlignment="Top" Width="240">
+            <RadioButton Content="DA" FontSize ="17" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="120" Margin="10,26,-10,-26" Checked="RadioButton_Checked_1"/>
+            <RadioButton Content="NE" FontSize ="17" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="120" Margin="135,26,-135,-26" Checked="RadioButton_Checked_2"/>
+        </RelativePanel>
+        <Button Content="KREIRAJ" FontSize ="17" HorizontalAlignment="Left" Margin="931,750,0,0" Height="40" VerticalAlignment="Top" Width="200" Click="Button_Click_1"/>
+        <Button Content="ODUSTANI" FontSize ="17" HorizontalAlignment="Left" Margin="1200,750,0,0" Height="40" VerticalAlignment="Top" Width="200" Click="Button_Click"/>
+        <TextBlock x:Name="textBlock2" FontSize ="17"  HorizontalAlignment="Left" Margin="66,44,0,0" Text="Odaberite destinaciju:" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <ComboBox x:Name="cDestinacije" HorizontalAlignment="Left"   Margin="434,38,0,0" VerticalAlignment="Top" Width="271" SelectionChanged="cDestinacije_SelectionChanged"/>
+
+        <Grid x:Name="gDestinacija"  Margin="879,18,99,733">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="textBlock3" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,10,-96,-30" Grid.RowSpan="2" Text="Unesite destinaciju putovanja:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="tDestinacija"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="260,10,-486,-42" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="226"/>
+            <TextBlock x:Name="textBlock4" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,101,-149,-121" Grid.RowSpan="2" Text="Slika destinacije:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+            <Image x:Name="iSlikaDestinacije" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="95" Margin="260,70,-486,-165" Grid.RowSpan="2" VerticalAlignment="Top" Width="226" />
+
+            <Button x:Name="bUcitajSliku" FontSize ="17"  Content="Učitaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,141,-173,-177" Grid.RowSpan="2" VerticalAlignment="Top" Height="36" Width="139"/>
+            <Button x:Name="bDodajDestinaciju" FontSize ="17"  Content="DodajDestinaciju" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="338,176,-486,-212" Grid.RowSpan="2" VerticalAlignment="Top" Click="bDodajDestinaciju_Click_1"/>
+
+        </Grid>
+
+        <Grid x:Name="gHotel"  Margin="879,272,100,469">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="textBlock5" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="54,43,-116,-63" Grid.RowSpan="2" Text="Unesite naziv hotela:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBox x:Name="tHotel" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="260,43,-444,-75" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="184"/>
+            <TextBlock x:Name="textBlock6" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="72,97,-134,-117" Grid.RowSpan="2" Text="Slika hotela: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Image x:Name="iHotel" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="100" Margin="240,97,-444,-197" Grid.RowSpan="2" VerticalAlignment="Top" Width="204"/>
+            <Button x:Name="bUcitajHotel" FontSize ="17" Content="Učiatj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="71,137,-209,-172" Grid.RowSpan="2" VerticalAlignment="Top" Height="35" Width="138"/>
+            <Button x:Name="bDodajHotel" FontSize ="17" Content="Dodaj hotel" HorizontalAlignment="Left" Margin="85,40.2,-44,10.2" VerticalAlignment="Stretch" Grid.Column="1" Grid.Row="1" Click="bDodajHotel_Click"/>
+        </Grid>
+        <TextBlock x:Name="textBlock7" FontSize ="17" HorizontalAlignment="Left" Margin="64,772,0,0" Text="Unesite cijenu putovanja:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock8" FontSize ="17" HorizontalAlignment="Left" Margin="69,609,0,0" Text="Odaberite hotel:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cHoteli" HorizontalAlignment="Left" Margin="434,609,0,0" VerticalAlignment="Top" Width="271" SelectionChanged="cHoteli_SelectionChanged"/>
+        <TextBlock x:Name="textBlock9" FontSize ="17" HorizontalAlignment="Left" Margin="69,696,0,0" Text="Odaberite prevoz: " TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cPrevoz" HorizontalAlignment="Left" Margin="434,686,0,0" VerticalAlignment="Top" Width="270"/>
+        </Grid>
+
 </Page>

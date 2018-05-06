@@ -145,11 +145,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\korisnik.jpg" />
+    <Content Include="Assets\papir.JPG" />
+    <Content Include="Assets\pasos.jpg" />
     <Content Include="Assets\Prijava.jpg" />
     <Content Include="Assets\prijavaStr.jpg" />
     <Content Include="Assets\putovanjaSlika.png" />
     <Content Include="Assets\putovanje.jpg" />
     <Content Include="Assets\putuj.png" />
+    <Content Include="Assets\travelPrag.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

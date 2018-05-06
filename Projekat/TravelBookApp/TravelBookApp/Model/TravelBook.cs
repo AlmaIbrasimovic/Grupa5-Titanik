@@ -18,10 +18,13 @@ namespace TravelBookApp.Model
         private List<Korisnik> korisnici;
         private List<Agencija> agencije;
         private List<Putovanje> putovanja;
+        private List<Destinacija> destinacije;
+        private List<Hotel> hoteli;
+        private List<Prevoz> prevozi;
 
         public TravelBook() {
             naziv = "TravelBook";
-            lokacija = "Hamdije Čemerlića 77";
+            lokacija = "Bosanska 77";
             emailAdresa = "travelBookInfo@hotmail.com";
             kontaktTelefon = "062/555-555";
             bankovniRacun = "1321000256000080"; //16 brojeva
@@ -43,5 +46,8 @@ namespace TravelBookApp.Model
         public List<Korisnik> Korisnici { get => korisnici; set => korisnici = value; }
         public List<Putovanje> Putovanja { get => putovanja; set => putovanja = value; }
         public List<Agencija> Agencije { get => agencije; set => agencije = value; }
+        public List<Destinacija> Destinacije { get => destinacije; set => destinacije = value; }
+        public List<Hotel> Hoteli { get => hoteli; set => hoteli = value; }
+        public List<Prevoz> Prevozi { get => prevozi; set => prevozi = value; }
     }
 }

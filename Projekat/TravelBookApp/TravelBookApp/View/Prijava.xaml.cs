@@ -28,6 +28,7 @@ namespace TravelBookApp
         public Prijava()
         {
             this.InitializeComponent();
+           
         }
 
         private void bPrijava_Click(object sender, RoutedEventArgs e)

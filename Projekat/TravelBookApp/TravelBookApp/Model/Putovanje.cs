@@ -20,6 +20,7 @@ namespace TravelBookApp.Model
         private Destinacija infoDestinacije;
         private Hotel infoHotela;
         private Prevoz infoPrevoza;
+        private int trenutniBrojPutnika = 0;
 
         public Putovanje(DateTime datumPolaska, DateTime datumPovratka, int minimalniBrojPutnika, int maximalniBrojPutnika, string opisPutovanja, bool istaknutoPutovanje, int idAgencije, Destinacija infoDestinacije, Hotel infoHotela, Prevoz infoPrevoza)
         {
@@ -46,5 +47,6 @@ namespace TravelBookApp.Model
         public Destinacija InfoDestinacije { get => infoDestinacije; set => infoDestinacije = value; }
         public Hotel InfoHotela { get => infoHotela; set => infoHotela = value; }
         public Prevoz InfoPrevoza { get => infoPrevoza; set => infoPrevoza = value; }
+        public int TrenutniBrojPutnika { get => trenutniBrojPutnika; set => trenutniBrojPutnika = value; }
     }
 }

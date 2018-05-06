@@ -14,14 +14,16 @@ namespace TravelBookApp.Model
         private int maximalniKapacitet;
         private int kapacitet;
         private Double cijenaPoOsobi;
+        private String prevozDestinacija;
 
-        public Prevoz(string ime, VrstaPrevoza vrstaPrevoza, int maximalniKapacitet, int kapacitet, double cijenaPoOsobi)
+        public Prevoz(string ime, VrstaPrevoza vrstaPrevoza, int maximalniKapacitet, int kapacitet, double cijenaPoOsobi, String destinacija)
         {
             this.Ime = ime;
             this.VrstaPrevoza = vrstaPrevoza;
             this.MaximalniKapacitet = maximalniKapacitet;
             this.Kapacitet = kapacitet;
             this.CijenaPoOsobi = cijenaPoOsobi;
+            this.prevozDestinacija = destinacija;
         }
 
         public string Ime { get => ime; set => ime = value; }
@@ -29,5 +31,6 @@ namespace TravelBookApp.Model
         public int MaximalniKapacitet { get => maximalniKapacitet; set => maximalniKapacitet = value; }
         public int Kapacitet { get => kapacitet; set => kapacitet = value; }
         public double CijenaPoOsobi { get => cijenaPoOsobi; set => cijenaPoOsobi = value; }
+        public string PrevozDestinacija { get => prevozDestinacija; set => prevozDestinacija = value; }
     }
 }
