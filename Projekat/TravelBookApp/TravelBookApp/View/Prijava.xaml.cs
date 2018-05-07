@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using TravelBookApp.ViewModel;
+using Windows.ApplicationModel.Core;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -39,7 +40,7 @@ namespace TravelBookApp
             }
             else
             {
-                l.Poruka = new Windows.UI.Popups.MessageDialog("Agencija ne postoji ili su podaci netacni.");
+                l.Poruka = new Windows.UI.Popups.MessageDialog("Agencija ne postoji ili su podaci netačni.");
                 l.Poruka.ShowAsync();
             }
         }
@@ -47,6 +48,11 @@ namespace TravelBookApp
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(RegistracijaAgencije));
+        }
+
+        private void bOdustani_Click(object sender, RoutedEventArgs e)
+        {
+            CoreApplication.Exit();
         }
     }
 }

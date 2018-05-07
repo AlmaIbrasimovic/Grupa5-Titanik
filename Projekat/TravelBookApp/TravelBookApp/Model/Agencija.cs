@@ -8,7 +8,7 @@ namespace TravelBookApp.Model
 {
     public class Agencija : IPrint
     {
-        int id = 0;
+        private int id;
         private String nazivAgencije;
         private Kartica podaciOBankovnomRacunu;
         private String kontaktTelefon;
@@ -21,7 +21,7 @@ namespace TravelBookApp.Model
 
         public Agencija(String naziv, Kartica kartica, String telefon, String email,String grad, String adresa, String sifra)
         {
-            id++;
+            id = Globalna.idSvihAgencija++;
             NazivAgencije = naziv;
             PodaciOBankovnomRacunu = kartica;
             KontaktTelefon = telefon;

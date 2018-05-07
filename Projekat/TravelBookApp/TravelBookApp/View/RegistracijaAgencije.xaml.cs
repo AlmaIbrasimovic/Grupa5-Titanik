@@ -112,7 +112,7 @@ namespace TravelBookApp
             }
             if (tNaziv.Text.Length == 0 || tTelefon.Text.Length==0 || tGrad.Text.Length == 0 || tAdresa.Text.Length == 0 || tMail.Text.Length == 0 || tBrojKartice.Text.Length == 0)
             {
-                var dialog = new MessageDialog("Sva polja nisu popunjena!");
+                var dialog = new MessageDialog("Nisu popunjena sva polja!");
                 dialog.ShowAsync();
                 jelOK = false;
             }
@@ -129,32 +129,12 @@ namespace TravelBookApp
                 }
                 else
                 {
-                    r.Poruka = new MessageDialog("Pogresna sifra! Unesite ponovo.");
+                    r.Poruka = new MessageDialog("Pogrešna šifra! Pokušajte ponovno.");
                     r.Poruka.ShowAsync();
                 }
               
             }
                
-        }
-
-        private void tTipKartice_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void tDatumIsteka_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void tCSC_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

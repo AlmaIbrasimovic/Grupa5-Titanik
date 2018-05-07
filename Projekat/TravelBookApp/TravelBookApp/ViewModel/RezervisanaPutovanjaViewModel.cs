@@ -9,8 +9,11 @@ namespace TravelBookApp.ViewModel
 {
     public class RezervisanaPutovanjaViewModel
     {
-        public List<Putovanje> izlistajPutovanjaAgencije() {
+        public List<Putovanje> izlistajPutovanjaAgencije(int idAgencije) {
             List<Putovanje> putovanjaAgencije = new List<Putovanje>();
+
+            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
+                if (p.IdAgencije == idAgencije) putovanjaAgencije.Add(p);
 
             return putovanjaAgencije;
         }

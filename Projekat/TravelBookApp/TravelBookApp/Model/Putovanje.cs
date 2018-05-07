@@ -9,7 +9,7 @@ namespace TravelBookApp.Model
     public class Putovanje
     {
 
-        static int id = 0;
+        private int id;
         private DateTime datumPolaska;
         private DateTime datumPovratka;
         private int minimalniBrojPutnika;
@@ -25,7 +25,7 @@ namespace TravelBookApp.Model
 
         public Putovanje(DateTime datumPolaska, DateTime datumPovratka, int minimalniBrojPutnika, int maximalniBrojPutnika, string opisPutovanja, bool istaknutoPutovanje, int idAgencije, Destinacija infoDestinacije, Hotel infoHotela, Prevoz infoPrevoza, Double cijenaPut)
         {
-            id++;
+            id = Globalna.idSvihPutovanja++;
             DatumPolaska = datumPolaska;
             DatumPovratka = datumPovratka;
             MinimalniBrojPutnika = minimalniBrojPutnika;
@@ -39,6 +39,7 @@ namespace TravelBookApp.Model
             Cijena = cijenaPut;
         }
 
+        public int Id { get => id; }
         public DateTime DatumPolaska { get => datumPolaska; set => datumPolaska = value; }
         public DateTime DatumPovratka { get => datumPovratka; set => datumPovratka = value; }
         public int MinimalniBrojPutnika { get => minimalniBrojPutnika; set => minimalniBrojPutnika = value; }

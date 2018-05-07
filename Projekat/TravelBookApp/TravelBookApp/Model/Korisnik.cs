@@ -8,7 +8,7 @@ namespace TravelBookApp.Model
 {
    public abstract class Korisnik : IPrint
     {
-        static int id = 0;
+        private int id;
         private String imeKorisnika;
         private String prezimeKorisnika;
         private String jmbgKorisnika;
@@ -19,7 +19,7 @@ namespace TravelBookApp.Model
 
         public Korisnik(String ime, String prezime, String jmbg, DateTime datumRodjenja, String brojTelefona, String email)
         {
-            id++;
+            id = Globalna.idSvihKorisnika++;
             ImeKorisnika = ime;
             PrezimeKorisnika = prezime;
             JmbgKorisnika = jmbg;
@@ -28,6 +28,7 @@ namespace TravelBookApp.Model
             EmailAdresa = email;
         }
 
+        public int Id { get => id; }
         public string ImeKorisnika { get => imeKorisnika; set => imeKorisnika = value; }
         public string PrezimeKorisnika { get => prezimeKorisnika; set => prezimeKorisnika = value; }
         public string JmbgKorisnika { get => jmbgKorisnika; set => jmbgKorisnika = value; }

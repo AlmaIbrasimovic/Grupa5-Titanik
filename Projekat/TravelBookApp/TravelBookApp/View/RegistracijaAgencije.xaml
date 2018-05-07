@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,249,0,0" Text="Naziv : " TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="30"/>
+        <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,249,0,0" Text="Naziv: " TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="30"/>
         <Image Source ="/Assets/putovanje.jpg" Margin="0,0,65,467"/>
         <TextBox Name="tNaziv" HorizontalAlignment="Left" Margin="289,248,0,0" Text="" VerticalAlignment="Top" Width="305"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,312,0,0" Text="Kontakt telefon: " TextWrapping="Wrap" VerticalAlignment="Top"/>
@@ -24,16 +24,16 @@
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="58,635,0,0" Text="Ponovite password: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <PasswordBox Name="tSifraPonovo" HorizontalAlignment="Left" Margin="289,634,0,0" VerticalAlignment="Top" Width="305"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left"  Margin="746,248,0,0" Text="Unesite podatke o bankovnoj kartici" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,312,0,0" Text="Tip kartice:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ComboBox Name ="tTipKartice" HorizontalAlignment="Left" Margin="1007,312,0,0" VerticalAlignment="Top" Width="293"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,374,0,0" Text="Broj kartice: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox Name ="tBrojKartice" HorizontalAlignment="Left" Margin="1007,373,0,0" Text="" VerticalAlignment="Top" Width="293"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,443,0,0" Text="Datum isteka (MM/GG): " TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Name ="tDatumIsteka" HorizontalAlignment="Left" Margin="1007,443,0,0" Text="" VerticalAlignment="Top" Width="293" TextChanged="tDatumIsteka_TextChanged"/>
+        <TextBox Name ="tDatumIsteka" HorizontalAlignment="Left" Margin="1007,443,0,0" Text="" VerticalAlignment="Top" Width="293"/>
+        <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,509,0,0" Text="CSC (3 cifre):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.565"/>
+        <TextBox Name ="tCSC" HorizontalAlignment="Left" Margin="1007,509,0,0" Text="" VerticalAlignment="Top" Width="293"/>
         <Button FontSize =" 21" Content="Registruj se" HorizontalAlignment="Left" Margin="746,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click_1"/>
         <Button FontSize =" 21" Content="Odustani" Foreground ="Black"  HorizontalAlignment="Left" Margin="1086,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click"/>
-        <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,509,0,0" Text="CSC (3 cifre):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.565" SelectionChanged="TextBlock_SelectionChanged"/>
-        <TextBox Name ="tCSC" HorizontalAlignment="Left" Margin="1007,509,0,0" Text="" VerticalAlignment="Top" Width="293" TextChanged="tCSC_TextChanged"/>
-        <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,312,0,0" Text="Tip kartice:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ComboBox Name ="tTipKartice" HorizontalAlignment="Left" Margin="1007,312,0,0" VerticalAlignment="Top" Width="293" SelectionChanged="tTipKartice_SelectionChanged"/>
         <TextBlock x:Name ="greska"  Visibility="Collapsed" Foreground ="Red" FontSize="20" FontWeight ="SemiBold"  HorizontalAlignment="Left" Margin="1305,509,0,0" Text="Dužina mora biti 3!" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name ="greska1" Visibility="Collapsed" Foreground ="Red" FontSize="19" FontWeight ="SemiBold"  HorizontalAlignment="Left" Margin="1305,444,0,0" Text="Format nije uredu!" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name ="greska2" Visibility="Collapsed" Foreground ="Red" FontSize="18" FontWeight ="SemiBold"   HorizontalAlignment="Left" Margin="1300,317,0,0" Text="Odaberite tip!" TextWrapping="Wrap" VerticalAlignment="Top"/>

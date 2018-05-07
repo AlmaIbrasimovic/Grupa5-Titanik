@@ -10,17 +10,17 @@ namespace TravelBookApp.ViewModel
     public class TravelBookViewModel
     {
         public List<Putovanje> prikaziSvaPutovanja() {
-            List<Putovanje> svaPutovanja = new List<Putovanje>();
+            List<Putovanje> svaPutovanja = Globalna.nasaAgencija.Putovanja;
 
             return svaPutovanja;
         }
         public List<Korisnik> prikaziSveKorisnike() {
-            List<Korisnik> sviKorisnici = new List<Korisnik>();
+            List<Korisnik> sviKorisnici = Globalna.nasaAgencija.Korisnici;
 
             return sviKorisnici;
         }
         public List<Agencija> prikaziSveAgencije() {
-            List<Agencija> sveAgencije = new List<Agencija>();
+            List<Agencija> sveAgencije = Globalna.nasaAgencija.Agencije;
 
             return sveAgencije;
         }
