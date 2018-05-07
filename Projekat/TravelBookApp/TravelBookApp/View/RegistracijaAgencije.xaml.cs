@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using TravelBookApp.ViewModel;
 using TravelBookApp.Model;
+using Microsoft.WindowsAzure.MobileServices;
+using TravelBookApp.AzureKlase;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -26,6 +28,8 @@ namespace TravelBookApp
     public sealed partial class RegistracijaAgencije : Page
     {
         static RegistracijaViewModel r = new RegistracijaViewModel();
+        IMobileServiceTable<AgencijaAzure> agencijeBaza = App.MobileService.GetTable<AgencijaAzure>();
+        IMobileServiceTable<KarticaAzure> karticeBaza = App.MobileService.GetTable<KarticaAzure>();
         public RegistracijaAgencije()
         {
             this.InitializeComponent();
@@ -120,11 +124,38 @@ namespace TravelBookApp
             if (jelOK)
             {
                 Kartica nova = new Kartica((VrstaKartice)tTipKartice.SelectedItem, tDatumIsteka.Text, tBrojKartice.Text, Convert.ToInt32(tCSC.Text));
+                KarticaAzure kart = new KarticaAzure();   
+                kart.id = (Globalna.idSvihKartica - 1).ToString();
+                kart.vrstaKartice = tTipKartice.SelectedItem.ToString();
+                kart.datumIsteka = tDatumIsteka.Text;
+                kart.broj = tBrojKartice.Text;
+                kart.csc = Convert.ToInt32(tCSC.Text);
+                karticeBaza.InsertAsync(kart);
+
                 if (tSifra.Password.ToString().Equals(tSifraPonovo.Password.ToString()))
                 {
-                    r.registrujAgneciju(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());
-                    var dialog = new MessageDialog("Uspješno ste registrovani!");
-                    dialog.ShowAsync();
+                    r.registrujAgneciju(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());  
+                    try
+                    {
+                        AgencijaAzure agen = new AgencijaAzure();
+                        int id = Globalna.idSvihAgencija;
+                        agen.id = (id - 1).ToString();
+                        agen.naziv = tNaziv.Text;
+                        agen.idKartica = (Globalna.idSvihKartica - 1).ToString();
+                        agen.telefon = tTelefon.Text;
+                        agen.grad = tGrad.Text;
+                        agen.lokacija = tAdresa.Text;
+                        agen.sifra = tSifra.Password.ToString();
+                        agencijeBaza.InsertAsync(agen);
+                        var dialog = new MessageDialog("Uspješno ste registrovali agenciju!");
+                        dialog.ShowAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
+                        msgDialogError.ShowAsync();
+                    }
+                       
                     Frame.Navigate(typeof(Prijava));
                 }
                 else

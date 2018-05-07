@@ -11,6 +11,7 @@ namespace TravelBookApp.Model
 
     public class Destinacija
     {
+        private int id;
         private String naziv;
         private String drzava;
         private Kontinenti kontinent;
@@ -18,6 +19,7 @@ namespace TravelBookApp.Model
 
         public Destinacija(string naziv, String drzava, Kontinenti kontinent, Image slikeDestinacije = null)
         {
+            id = Globalna.idSvihDestinacija++;
             Naziv = naziv;
             Drzava = drzava;
             Kontinent = kontinent;
@@ -28,5 +30,6 @@ namespace TravelBookApp.Model
         public Image SlikeDestinacije { get => slikeDestinacije; set => slikeDestinacije = value; }
         public string Drzava { get => drzava; set => drzava = value; }
         public Kontinenti Kontinent { get => kontinent; set => kontinent = value; }
+        public int Id { get => id; }
     }
 }

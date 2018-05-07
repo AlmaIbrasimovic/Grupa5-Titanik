@@ -9,6 +9,7 @@ namespace TravelBookApp.Model
     public enum VrstaPrevoza { autobus, avion};
     public class Prevoz
     {
+        private int id;
         private String ime;
         private VrstaPrevoza vrstaPrevoza;
         private int maximalniKapacitet;
@@ -18,6 +19,7 @@ namespace TravelBookApp.Model
 
         public Prevoz(string ime, VrstaPrevoza vrstaPrevoza, int maximalniKapacitet, int kapacitet, double cijenaPoOsobi, String destinacija)
         {
+            id = Globalna.idSvihPrevoza++;
             Ime = ime;
             VrstaPrevoza = vrstaPrevoza;
             MaximalniKapacitet = maximalniKapacitet;
@@ -32,5 +34,6 @@ namespace TravelBookApp.Model
         public int Kapacitet { get => kapacitet; set => kapacitet = value; }
         public double CijenaPoOsobi { get => cijenaPoOsobi; set => cijenaPoOsobi = value; }
         public string PrevozDestinacija { get => prevozDestinacija; set => prevozDestinacija = value; }
+        public int Id { get => id;  }
     }
 }
