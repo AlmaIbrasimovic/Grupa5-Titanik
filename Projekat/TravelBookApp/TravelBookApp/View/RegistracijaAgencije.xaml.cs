@@ -59,5 +59,15 @@ namespace TravelBookApp
         {
 
         }
+
+        private void tDatumIsteka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tCSC_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

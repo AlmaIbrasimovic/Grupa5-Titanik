@@ -11,7 +11,7 @@ namespace TravelBookApp.ViewModel
     public class DestinacijaViewModel
     {
         public void dodajDestinaciju(string naziv, String drzava, Kontinenti kontinent, Image slikeDestinacije) {
-          Destinacija destinacija =  new Destinacija(naziv,drzava,kontinent, slikeDestinacije);
+          Destinacija destinacija =  new Destinacija(naziv,drzava,kontinent, slikeDestinacije );
             Globalna.nasaAgencija.Destinacije.Add(destinacija);
         }
 

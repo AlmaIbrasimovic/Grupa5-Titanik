@@ -16,7 +16,7 @@ namespace TravelBookApp.Model
         private Kontinenti kontinent;
         private Image slikeDestinacije;
 
-        public Destinacija(string naziv, String drzava, Kontinenti kontinent, Image slikeDestinacije)
+        public Destinacija(string naziv, String drzava, Kontinenti kontinent, Image slikeDestinacije = null)
         {
             Naziv = naziv;
             Drzava = drzava;

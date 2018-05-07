@@ -27,11 +27,11 @@
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,374,0,0" Text="Broj kartice: " TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox Name ="tBrojKartice" HorizontalAlignment="Left" Margin="1007,373,0,0" Text="" VerticalAlignment="Top" Width="293"/>
         <TextBlock Foreground="Black" FontSize =" 23" HorizontalAlignment="Left" Margin="746,443,0,0" Text="Datum isteka(MM/GG): " TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Name ="tDatumIsteka" HorizontalAlignment="Left" Margin="1007,443,0,0" Text="" VerticalAlignment="Top" Width="293"/>
+        <TextBox Name ="tDatumIsteka" HorizontalAlignment="Left" Margin="1007,443,0,0" Text="" VerticalAlignment="Top" Width="293" TextChanged="tDatumIsteka_TextChanged"/>
         <Button FontSize =" 21" Content="Registruj se" HorizontalAlignment="Left" Margin="746,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click_1"/>
         <Button FontSize =" 21" Content="Odustani" Foreground ="Black"  HorizontalAlignment="Left" Margin="1086,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click"/>
         <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,509,0,0" Text="CSC(3 cifre):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.565"/>
-        <TextBox Name ="tCSC" HorizontalAlignment="Left" Margin="1007,509,0,0" Text="" VerticalAlignment="Top" Width="293"/>
+        <TextBox Name ="tCSC" HorizontalAlignment="Left" Margin="1007,509,0,0" Text="" VerticalAlignment="Top" Width="293" TextChanged="tCSC_TextChanged"/>
         <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,312,0,0" Text="Tip kartice:" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <ComboBox Name ="tTipKartice" HorizontalAlignment="Left" Margin="1007,312,0,0" VerticalAlignment="Top" Width="293" SelectionChanged="tTipKartice_SelectionChanged"/>
 

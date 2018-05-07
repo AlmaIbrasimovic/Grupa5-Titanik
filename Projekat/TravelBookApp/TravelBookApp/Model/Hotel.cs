@@ -16,14 +16,14 @@ namespace TravelBookApp.Model
         private Destinacija lokacija;
         private Double cijenaPoOsobi;
 
-        public Hotel(string ime, Image slikeHotela, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi)
+        public Hotel(string ime, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi, Image slikeHotela = null)
         {
             Ime = ime;
-            SlikeHotela = slikeHotela;
             MaximalniKapacitet = maximalniKapacitet;
             Kapacitet = kapacitet;
             Lokacija = lokacija;
             CijenaPoOsobi = cijenaPoOsobi;
+            SlikeHotela = slikeHotela;
         }
 
         public string Ime { get => ime; set => ime = value; }

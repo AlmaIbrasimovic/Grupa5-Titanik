@@ -19,11 +19,9 @@ namespace TravelBookApp.ViewModel
             Globalna.nasaAgencija.Putovanja.Add(putovanje);
 
         }
-
-
-        public void dodajNoviHotel(string ime, Image slikeHotela, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi)
+        public void dodajNoviHotel(string ime, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi, Image slikeHotela = null)
         {
-            Hotel h = new Hotel(ime, slikeHotela, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi); //moze fixna da ne dodajemo sve
+            Hotel h = new Hotel(ime, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi, slikeHotela); //moze fixna da ne dodajemo sve
             Globalna.nasaAgencija.Hoteli.Add(h);
 
         }
@@ -39,7 +37,7 @@ namespace TravelBookApp.ViewModel
         // mozda ove dvije dodat u PrevozViewModel???
         public void dodajListuBusPrevoza()
         {
-            Globalna.nasaAgencija.Prevozi.Add(new Prevoz ("Globus", VrstaPrevoza.autobus, 80,30, 50, "Pariz" ));
+            Globalna.nasaAgencija.Prevozi.Add(new Prevoz ("Globus", VrstaPrevoza.autobus, 80,30, 50, "Tokio" ));
             Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Centro", VrstaPrevoza.autobus, 150, 80, 100, "Prag"));
             Globalna.nasaAgencija.Prevozi.Add(new Prevoz("VanBus", VrstaPrevoza.autobus, 50, 30, 70, "Berlin"));
             Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Globus", VrstaPrevoza.autobus, 220, 70, 90, "Moskva"));
@@ -52,7 +50,7 @@ namespace TravelBookApp.ViewModel
             List<String> lista = new List<string>();
             foreach(Prevoz p in Globalna.nasaAgencija.Prevozi)
             {
-                if (p.PrevozDestinacija.Equals(destinacija) && p.Kapacitet >= kapacitet) lista.Add(p.Ime);
+                if (p.PrevozDestinacija.Equals(destinacija) && p.Kapacitet >= kapacitet) lista.Add(p.Ime + ", " + p.CijenaPoOsobi + "KM");
             }
             return lista;
         }

@@ -10,8 +10,8 @@ namespace TravelBookApp.ViewModel
 {
     public class HotelViewModel
     {
-        public void dodajHotel(string ime, Image slikeHotela, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi) {
-          Hotel hotel =  new Hotel(ime, slikeHotela, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi);
+        public void dodajHotel(string ime, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi, Image slikeHotela = null) {
+          Hotel hotel =  new Hotel(ime, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi, slikeHotela);
             Globalna.nasaAgencija.Hoteli.Add(hotel);
         }
 
