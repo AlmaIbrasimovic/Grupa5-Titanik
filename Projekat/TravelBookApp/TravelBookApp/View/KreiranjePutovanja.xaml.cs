@@ -48,10 +48,19 @@ namespace TravelBookApp
             gLet.Visibility = Visibility.Collapsed;
             putovanjeVM.dodajListuBusPrevoza();
 
-            //HOTELI
-           
+            cKontinent.Items.Add("Afrika");
+            cKontinent.Items.Add("Antartika");
+            cKontinent.Items.Add("Australija");
+            cKontinent.Items.Add("Azija");
+            cKontinent.Items.Add("Evropa");
+            cKontinent.Items.Add("Južna Amerika");
+            cKontinent.Items.Add("Sjeverna Amerika");
 
-          
+
+            //HOTELI
+
+
+
             //DESTINACIJE
             Destinacija prva = new Destinacija("Sarajevo", "Bosna i Hercegovina", Kontinenti.Evropa);
             Globalna.nasaAgencija.Destinacije.Add(prva);
@@ -74,7 +83,9 @@ namespace TravelBookApp
             Globalna.nasaAgencija.Destinacije.Add(prva);
             prva = new Destinacija("Rio de Janeiro", "Brazil", Kontinenti.JuznaAmerika);
             Globalna.nasaAgencija.Destinacije.Add(prva);
-
+            cDestinacije.Items.Clear();
+            cHoteli.Items.Clear();
+            cPrevoz.Items.Clear();
             gDestinacija.Visibility = Visibility.Collapsed;
             foreach (var dest in Globalna.nasaAgencija.Destinacije)
             {
@@ -112,8 +123,8 @@ namespace TravelBookApp
         {
             if (rAvion.IsChecked == true)
             {
-                foreach(String autobus in autobusi)
-                cPrevoz.Items.Add(autobus);
+              /*  foreach(String autobus in autobusi)
+                cPrevoz.Items.Add(autobus);*/
                 gLet.Visibility = Visibility.Visible;
             }
             else
@@ -126,21 +137,15 @@ namespace TravelBookApp
         private void cDestinacije_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string odabrano = cDestinacije.SelectedItem.ToString();
-            if (odabrano.Equals("Ništa od ponuđenog"))
-            {
-                gDestinacija.Visibility = Visibility.Visible;
-            }
-
-            cHoteli.Items.Clear();
+            if (odabrano.Equals("Ništa od ponuđenog")) gDestinacija.Visibility = Visibility.Visible;
+           
             List<string> hoteli = putovanjeVM.dajListuHotelaPoDestinaciji(odabrano);
             foreach (var temp in hoteli) cHoteli.Items.Add(temp);
-            cHoteli.Items.Add("Ništa od ponuđenog");
             if (odabrano != "Ništa od ponuđenog")
             {
+                cHoteli.Items.Add("Ništa od ponuđenog");
                 gDestinacija.Visibility = Visibility.Collapsed;
             }
-
-            
 
             /*else
             {
@@ -151,7 +156,6 @@ namespace TravelBookApp
             }*/
             /*  if(cDestinacije.SelectedIndex > -1)
               odabranaDestinacija = naziviDestinacija[cDestinacije.SelectedIndex];*/
-
         }
 
         private void cHoteli_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -169,7 +173,8 @@ namespace TravelBookApp
         private void Button_Click_1(object sender, RoutedEventArgs e)
         { //dodat polje za upis opisa putovanja
             Prevoz prevoz;
-            Boolean istaknuto2 = false;
+            string odabranaDestinacija = cDestinacije.SelectedItem.ToString(); 
+            string odabraniHotel = cHoteli.SelectedItem.ToString();
             Boolean jelOK = true;
             if (rAutobus.IsChecked == true)
                 prevoz = Globalna.nasaAgencija.Prevozi[cPrevoz.SelectedIndex];
@@ -289,16 +294,42 @@ namespace TravelBookApp
                 var dialog = new MessageDialog("Postoje greške. Popravite pa ponovo kreirajte!");
                 dialog.ShowAsync();
             }
+
+            Destinacija novaDestinacija = new Destinacija("random", "random", Kontinenti.Evropa);
+            if (odabranaDestinacija != ("Ništa od ponuđenog")) novaDestinacija = Globalna.nasaAgencija.Destinacije[cDestinacije.SelectedIndex];
+            if (odabranaDestinacija.Equals("Ništa od ponuđenog"))
+            {
+                Kontinenti kon = new Kontinenti();
+                if (cKontinent.SelectedItem.ToString().Equals("Evropa")) kon = Kontinenti.Evropa;
+                if (cKontinent.SelectedItem.ToString().Equals("Azija")) kon = Kontinenti.Azija;
+                if (cKontinent.SelectedItem.ToString().Equals("Afrika")) kon = Kontinenti.Afrika;
+                if (cKontinent.SelectedItem.ToString().Equals("Sjeverna Amerika")) kon = Kontinenti.SjevernaAmerika;
+                if (cKontinent.SelectedItem.ToString().Equals("Južna Amerika")) kon = Kontinenti.JuznaAmerika;
+                if (cKontinent.SelectedItem.ToString().Equals("Antartika")) kon = Kontinenti.Antartika;
+                if (cKontinent.SelectedItem.ToString().Equals("Australija")) kon = Kontinenti.Australija;
+                novaDestinacija = new Destinacija(tDestinacija.Text, tDrzava.Text, kon, iSlikaDestinacije);
+                putovanjeVM.dodajNovuDestinaciju(tDestinacija.Text, tDrzava.Text, kon, iSlikaDestinacije);
+            }
+
+            Hotel noviHotel = Globalna.nasaAgencija.Hoteli[cHoteli.SelectedIndex];
+            if (odabraniHotel.Equals("Ništa od ponuđenog"))
+            {
+                putovanjeVM.dodajNoviHotel(tHotel.Text, 300, Convert.ToInt32(300 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
+                Hotel hot = new Hotel(tHotel.Text, 500, Convert.ToInt32(500 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
+            }
             if (jelOK)
             {
-                putovanjeVM.kreirajPutovanje(dPolaska.Date.Value.Date, dPovratka.Date.Value.Date, Convert.ToInt32(sMin.Value), Convert.ToInt32(sMax.Value), "opis putovanja", istaknuto, Globalna.prijavljenaAgencijaId, Globalna.nasaAgencija.Destinacije[cDestinacije.SelectedIndex], Globalna.nasaAgencija.Hoteli[cHoteli.SelectedIndex], prevoz, Convert.ToDouble(tCijena.Text));
+                putovanjeVM.kreirajPutovanje(dPolaska.Date.Value.Date, dPovratka.Date.Value.Date, Convert.ToInt32(sMin.Value), Convert.ToInt32(sMax.Value), "opis putovanja", istaknuto, Globalna.prijavljenaAgencijaId, novaDestinacija, noviHotel, prevoz, Convert.ToDouble(tCijena.Text));
                 var dialog = new MessageDialog("Putovanje uspješno kreirano!");
                 dialog.ShowAsync();
-            }
-           
+               /* cHoteli.Items.Clear();
+                cPrevoz.Items.Clear();
+                tCijena.Text = string.Empty;
+                tDrzava.Text = string.Empty;
+                tDestinacija.Text = string.Empty;*/
+
+            } 
         }
-
-
 
         private void bDodajHotel_Click(object sender, RoutedEventArgs e)
         {
@@ -313,9 +344,13 @@ namespace TravelBookApp
         
         private void rAutobus_Checked(object sender, RoutedEventArgs e)
         {
-            List<string> prevozi = putovanjeVM.dajListuBusevaPoDestinacijiIKapacitetu(cDestinacije.SelectedItem.ToString(), Convert.ToInt32(sMax.Value));
+            string destinacija = string.Empty;
+            string odabrano = cDestinacije.SelectedItem.ToString();
+            if (odabrano.Equals("Ništa od ponuđenog")) destinacija = tDestinacija.Text;
+            if (odabrano != "Ništa od ponuđenog") destinacija = cDestinacije.SelectedItem.ToString();
+            List<string> prevozi = putovanjeVM.dajListuBusevaPoDestinacijiIKapacitetu(destinacija, Convert.ToInt32(sMax.Value));
             foreach (var temp in prevozi) cPrevoz.Items.Add(temp);
-            cPrevoz.Items.Add(avioKompanije);
+            //cPrevoz.Items.Add(avioKompanije);
             gLet.Visibility = Visibility.Collapsed;
         }
 
@@ -404,6 +439,18 @@ namespace TravelBookApp
             }
         }
 
-       
+        private void tDestinacija_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void cKontinent_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string destinacija = tDestinacija.Text;
+            List<string> hoteli = putovanjeVM.dajListuHotelaPoDestinaciji(destinacija);
+            foreach (var temp in hoteli) cHoteli.Items.Add(temp);
+            cHoteli.Items.Add("Ništa od ponuđenog");
+
+        }
     }
 }
