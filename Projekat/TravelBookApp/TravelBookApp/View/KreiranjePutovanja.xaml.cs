@@ -16,6 +16,9 @@ using TravelBookApp.Model;
 using TravelBookApp.ViewModel;
 using Windows.UI.Popups;
 using Windows.UI;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -87,7 +90,10 @@ namespace TravelBookApp
 
             foreach (var pr in Globalna.nasaAgencija.Prevozi)
             {
-                if (pr.VrstaPrevoza.Equals(VrstaPrevoza.autobus)) autobusi.Add(pr.Ime);
+                if (pr.VrstaPrevoza.Equals(VrstaPrevoza.autobus))
+                {
+                    autobusi.Add(pr.Ime);                    
+                }
             }
         }
 
@@ -106,12 +112,13 @@ namespace TravelBookApp
         {
             if (rAvion.IsChecked == true)
             {
-                cPrevoz.Items.Add(autobusi);
+                foreach(String autobus in autobusi)
+                cPrevoz.Items.Add(autobus);
                 gLet.Visibility = Visibility.Visible;
             }
             else
             {
-                cPrevoz.Items.Add(avioKompanije);
+               // cPrevoz.Items.Add(avioKompanije);
                 gLet.Visibility = Visibility.Collapsed;
             }
         }
@@ -157,6 +164,8 @@ namespace TravelBookApp
                 odabraniHotel = naziviHotela[cHoteli.SelectedIndex];
         }
 
+        //ALMAAAA trebas dodat kad se vidi onaj grid za dodavanje destinacije da se destinacija doda u listu utravelbook isto i za hotel
+        //pooooiiiii 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         { //dodat polje za upis opisa putovanja
             Prevoz prevoz;
@@ -321,24 +330,34 @@ namespace TravelBookApp
 
         }
 
-        //NEMAM POJMA, NE RADI 
-        private void bUcitajHotel_Click(object sender, RoutedEventArgs e)
+        
+        private async void bUcitajHotel_Click(object sender, RoutedEventArgs e)
         {
-           /* string lokacijaSlike = String.Empty;
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "jpg files (*.jpg)|*.jpg";
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+           
+                var fileOpenPicker = new FileOpenPicker();
+                fileOpenPicker.ViewMode = PickerViewMode.Thumbnail;
+                fileOpenPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+                fileOpenPicker.FileTypeFilter.Add(".png");
+                fileOpenPicker.FileTypeFilter.Add(".jpg");
+                fileOpenPicker.FileTypeFilter.Add(".jpeg");
+                fileOpenPicker.FileTypeFilter.Add(".bmp");
+
+                var storageFile = await fileOpenPicker.PickSingleFileAsync();
+
+                if (storageFile != null)
                 {
-                    lokacijaSlike = dialog.FileName;
-                    pictureBox1.ImageLocation = lokacijaSlike;
+                   
+                    using (IRandomAccessStream fileStream = await storageFile.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                    {
+                       
+                        BitmapImage bitmapImage = new BitmapImage();
+
+                        await bitmapImage.SetSourceAsync(fileStream);
+                        iSlikaHotela.Visibility = Visibility.Visible;
+                        iSlikaHotela.Source = bitmapImage;
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Greška!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            
         }
 
         private void cPrevoz_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -356,5 +375,35 @@ namespace TravelBookApp
         {
 
         }
+
+        private async void bUcitajSliku_Click(object sender, RoutedEventArgs e)
+        {
+            var fileOpenPicker = new FileOpenPicker();
+            fileOpenPicker.ViewMode = PickerViewMode.Thumbnail;
+            fileOpenPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            fileOpenPicker.FileTypeFilter.Add(".png");
+            fileOpenPicker.FileTypeFilter.Add(".jpg");
+            fileOpenPicker.FileTypeFilter.Add(".jpeg");
+            fileOpenPicker.FileTypeFilter.Add(".bmp");
+
+            var storageFile = await fileOpenPicker.PickSingleFileAsync();
+
+            if (storageFile != null)
+            {
+                
+                using (IRandomAccessStream fileStream = await storageFile.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                {
+                    
+                    BitmapImage bitmapImage = new BitmapImage();
+
+                    await bitmapImage.SetSourceAsync(fileStream);
+                    iSlikaDestinacije.Visibility = Visibility.Visible;
+                    iSlikaDestinacije.Source = bitmapImage;
+
+                }
+            }
+        }
+
+       
     }
 }

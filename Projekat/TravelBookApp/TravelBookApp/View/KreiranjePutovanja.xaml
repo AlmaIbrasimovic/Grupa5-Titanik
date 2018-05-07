@@ -16,7 +16,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="64,173,0,0" FontSize ="17" Text="Odaberite datum povratka:" VerticalAlignment="Top" Height="30" Width="290"/>
         <CalendarDatePicker Name="dPolaska" HorizontalAlignment="Left" Margin="435,108,0,0" VerticalAlignment="Top" Height="30" Width="270"/>
         <TextBlock x:Name="tip" HorizontalAlignment="Left" Margin="64,498,0,0" FontSize ="17" Text="Odaberite tip prevoza:" VerticalAlignment="Top" Width="284"/>
-       
+
         <Grid x:Name="gLet"  Margin="905,553,54,293">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" />
@@ -66,11 +66,10 @@
             <Border BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="100" Margin="278,67,-503,-167" VerticalAlignment="Top" Width="225" RenderTransformOrigin="0.511,0.5" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <Image Visibility ="Collapsed" x:Name="iSlikaDestinacije" HorizontalAlignment="Left" Height="95" Margin="-2,-2,-3,0" VerticalAlignment="Top" Width="226" />
             </Border>
-            <Button x:Name="bUcitajSliku" FontSize ="17"  Content="Učitaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="316,172,-455,-208" Grid.RowSpan="2" VerticalAlignment="Top" Height="36" Width="139"/>
-            <Button x:Name="bDodajDestinaciju" FontSize ="17"  Content="DodajDestinaciju" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="524,173,-671,-208" Grid.RowSpan="2" VerticalAlignment="Top" Click="bDodajDestinaciju_Click_1"/>
+            <Button x:Name="bUcitajSliku" FontSize="17" Content="Učitaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="318,192,-434,-227" Grid.RowSpan="2" VerticalAlignment="Top" Click="bUcitajSliku_Click" Height="35" Width="116"/>
         </Grid>
 
-        <Grid x:Name="gHotel"  Margin="879,315,100,469">
+        <Grid x:Name="gHotel"  Margin="879,295,98,469">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="150" />
@@ -80,12 +79,12 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock x:Name="textBlock5" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="54,43,-116,-63" Grid.RowSpan="2" Text="Unesite naziv hotela:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <TextBox x:Name="tHotel" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="260,43,-444,-75" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="184"/>
+            <TextBox x:Name="tHotel" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="271,43,-496,-75" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="225"/>
             <TextBlock x:Name="textBlock6" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="54,113,-144,-136" Grid.RowSpan="2" Text="Slika hotela: " TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <Button x:Name="bUcitajHotel" FontSize ="17" Content="Učitaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="54,173,-192,-208" Grid.RowSpan="2" VerticalAlignment="Top" Height="35" Width="138" Click="bUcitajHotel_Click"/>
-            <Button x:Name="bDodajHotel" FontSize ="17" Content="Dodaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="471,173,-609,-208" Grid.RowSpan="2" VerticalAlignment="Top" Height="35" Width="138" Click="bUcitajHotel_Click"/>
-            <Image   Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="260,87,-444,-155" Grid.RowSpan="2" VerticalAlignment="Top" Width="184"/>
-
+            <Border BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="100" Margin="271,112,-496,-212" VerticalAlignment="Top" Width="225" RenderTransformOrigin="0.511,0.5" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                <Image Visibility ="Collapsed" Name="iSlikaHotela"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="68" Margin="260,87,-444,-155" Grid.RowSpan="2" VerticalAlignment="Top" Width="184"/>
+            </Border>
+            <Button x:Name="bUcitajHotel" FontSize="17" Content="Učitaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="88,168,-154,-201" Grid.RowSpan="2" VerticalAlignment="Top" Click="bUcitajHotel_Click"/>
         </Grid>
         <TextBlock x:Name="textBlock7" FontSize ="17" HorizontalAlignment="Left" Margin="64,772,0,0" Text="Unesite cijenu putovanja:" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock8" FontSize ="17" HorizontalAlignment="Left" Margin="69,609,0,0" Text="Odaberite hotel:" TextWrapping="Wrap" VerticalAlignment="Top"/>
