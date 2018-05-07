@@ -49,7 +49,7 @@ namespace TravelBookApp
             {
                 if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
                 {
-                    if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
+                    if ( comboPutovanja.SelectedItem != null && comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
                     {
                         dDatumPolaska.SetDisplayDate(p.DatumPolaska);
                         dDatumPovratka.SetDisplayDate(p.DatumPovratka);

@@ -51,7 +51,7 @@
         <TextBlock x:Name="textBlock2" FontSize ="17"  HorizontalAlignment="Left" Margin="66,44,0,0" Text="Odaberite destinaciju:" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
         <ComboBox x:Name="cDestinacije" HorizontalAlignment="Left"   Margin="434,38,0,0" VerticalAlignment="Top" Width="271" SelectionChanged="cDestinacije_SelectionChanged"/>
 
-        <Grid x:Name="gDestinacija"  Margin="879,18,99,733">
+        <Grid x:Name="gDestinacija"  Margin="817,18,99,710">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250" />
                 <ColumnDefinition Width="150" />
@@ -61,16 +61,16 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock x:Name="textBlock3" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,10,-96,-30" Grid.RowSpan="2" Text="Grad:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <TextBox x:Name="tDestinacija"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="221,10,-447,-42" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="226" TextChanged="tDestinacija_TextChanged"/>
-            <TextBlock x:Name="textBlock4" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="34,101,-149,-121" Grid.RowSpan="2" Text="Slika destinacije:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <Border BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="100" Margin="222,67,-447,-167" VerticalAlignment="Top" Width="225" RenderTransformOrigin="0.511,0.5" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <TextBox x:Name="tDestinacija"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="221,10,-491,-42" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="270" TextChanged="tDestinacija_TextChanged"/>
+            <TextBlock x:Name="textBlock4" FontSize ="17" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="40,162,-162,-185" Grid.RowSpan="2" Text="Slika destinacije:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Border BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="100" Margin="220,162,-491,-262" VerticalAlignment="Top" Width="271" RenderTransformOrigin="0.511,0.5" Grid.ColumnSpan="2" Grid.RowSpan="2">
                 <Image Visibility ="Collapsed" x:Name="iSlikaDestinacije" HorizontalAlignment="Left" Height="95" Margin="-2,-2,-3,0" VerticalAlignment="Top" Width="226" />
             </Border>
-            <Button x:Name="bUcitajSliku" FontSize="17" Content="Učitaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="271,195,-387,-230" Grid.RowSpan="2" VerticalAlignment="Top" Click="bUcitajSliku_Click" Height="35" Width="116"/>
-            <TextBlock HorizontalAlignment="Left" Margin="514,107,-581,-127" Text="Kontinent:" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-            <TextBox x:Name ="tDrzava" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="591,10,-861,-42" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="270"/>
-            <ComboBox x:Name ="cKontinent" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="591,101,-861,-133" Grid.RowSpan="2" VerticalAlignment="Top" Width="270" SelectionChanged="cKontinent_SelectionChanged"/>
-            <TextBlock HorizontalAlignment="Left" Margin="514,13,-562,-33" Text="Država:" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <Button x:Name="bUcitajSliku" FontSize="17" Content="Učitaj" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="40,214,-156,-249" Grid.RowSpan="2" VerticalAlignment="Top" Click="bUcitajSliku_Click" Height="35" Width="116"/>
+            <TextBlock HorizontalAlignment="Left" Margin="34,113,-101,-133" Text="Kontinent:" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <TextBox x:Name ="tDrzava" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="221,64,-491,-96" Grid.RowSpan="2" Text="" VerticalAlignment="Top" Width="270"/>
+            <ComboBox x:Name ="cKontinent" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="221,108,-491,-140" Grid.RowSpan="2" VerticalAlignment="Top" Width="270" SelectionChanged="cKontinent_SelectionChanged"/>
+            <TextBlock HorizontalAlignment="Left" Margin="34,64,-82,-84" Text="Država:" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         </Grid>
 
         <Grid x:Name="gHotel"  Margin="879,295,98,469">

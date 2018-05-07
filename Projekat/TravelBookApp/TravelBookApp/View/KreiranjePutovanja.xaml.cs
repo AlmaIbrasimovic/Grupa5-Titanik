@@ -30,8 +30,8 @@ namespace TravelBookApp
     public sealed partial class KreiranjePutovanja : Page
     {
         static KreiranjePutovanjaViewModel putovanjeVM = new KreiranjePutovanjaViewModel();
-        static List<String> naziviDestinacija = new List<string>();
-        static List<String> naziviHotela = new List<string>();
+        List<String> naziviDestinacija = new List<string>();
+        List<String> naziviHotela = new List<string>();
         List<String> autobusi = new List<string>();
         List<String> avioKompanije = new List<string>();
         List<String> listaPolaznihLetova = new List<string>();
@@ -40,7 +40,7 @@ namespace TravelBookApp
         String odabraniHotel;
         Boolean istaknuto;
       
-        //STAVITI DA SU CRNI border-i NEVIDLJIVI PA DA SE AKTIVIRAJU KAD SKONTAM GDJE TREBA IĆI TO
+      
 
         public KreiranjePutovanja()
         {
@@ -91,16 +91,16 @@ namespace TravelBookApp
             if(naziviDestinacija.Count == 0)
             {
                 naziviDestinacija.Add("Nijedna od ponuđenih");
-                naziviHotela.Add("Nijedan od ponuđenih");
+              //  naziviHotela.Add("Nijedan od ponuđenih");
             }    
 
-            foreach (var pr in Globalna.nasaAgencija.Prevozi)
+            /*foreach (var pr in Globalna.nasaAgencija.Prevozi)
             {
                 if (pr.VrstaPrevoza.Equals(VrstaPrevoza.autobus))
                 {
                     autobusi.Add(pr.Ime);                    
                 }
-            }
+            }*/
         }
 
         public void popuniKomboBoxove()
@@ -118,7 +118,7 @@ namespace TravelBookApp
         {
             if (rAvion.IsChecked == true)
             {
-              /*  foreach(String autobus in autobusi)
+               /* foreach(String autobus in autobusi)
                 cPrevoz.Items.Add(autobus);*/
                 gLet.Visibility = Visibility.Visible;
             }
@@ -133,9 +133,11 @@ namespace TravelBookApp
         {
             string odabrano = cDestinacije.SelectedItem.ToString();
             if (odabrano.Equals("Ništa od ponuđenog")) gDestinacija.Visibility = Visibility.Visible;
-           
-            List<string> hoteli = putovanjeVM.dajListuHotelaPoDestinaciji(odabrano);
-            foreach (var temp in hoteli) cHoteli.Items.Add(temp);
+
+            naziviHotela.Clear();
+            naziviHotela = putovanjeVM.dajListuHotelaPoDestinaciji(odabrano);
+            cHoteli.Items.Clear();
+            foreach (var temp in naziviHotela) cHoteli.Items.Add(temp);
             if (odabrano != "Ništa od ponuđenog")
             {
                 cHoteli.Items.Add("Ništa od ponuđenog");
@@ -155,11 +157,12 @@ namespace TravelBookApp
 
         private void cHoteli_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string odabrano = cHoteli.SelectedItem.ToString();
+            string odabrano = "";
+                if(cHoteli.SelectedIndex > -1) odabrano = cHoteli.SelectedItem.ToString();
             if (odabrano.Equals("Ništa od ponuđenog")) gHotel.Visibility = Visibility.Visible;
             else gHotel.Visibility = Visibility.Collapsed;
 
-            if (cHoteli.SelectedIndex > -1)
+            if (cHoteli.SelectedItem.ToString() != "Ništa od ponuđenog")
                 odabraniHotel = naziviHotela[cHoteli.SelectedIndex];
         }
 
