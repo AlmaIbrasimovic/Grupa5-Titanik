@@ -56,11 +56,6 @@ namespace TravelBookApp
             cKontinent.Items.Add("Južna Amerika");
             cKontinent.Items.Add("Sjeverna Amerika");
 
-
-            //HOTELI
-
-
-
             //DESTINACIJE
             Destinacija prva = new Destinacija("Sarajevo", "Bosna i Hercegovina", Kontinenti.Evropa);
             Globalna.nasaAgencija.Destinacije.Add(prva);
@@ -169,7 +164,7 @@ namespace TravelBookApp
         }
 
         //ALMAAAA trebas dodat kad se vidi onaj grid za dodavanje destinacije da se destinacija doda u listu utravelbook isto i za hotel
-        //pooooiiiii 
+        //pooooiiiii  -- GOTOVO POZZZZ 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         { //dodat polje za upis opisa putovanja
             Prevoz prevoz;
@@ -322,7 +317,7 @@ namespace TravelBookApp
                 putovanjeVM.kreirajPutovanje(dPolaska.Date.Value.Date, dPovratka.Date.Value.Date, Convert.ToInt32(sMin.Value), Convert.ToInt32(sMax.Value), "opis putovanja", istaknuto, Globalna.prijavljenaAgencijaId, novaDestinacija, noviHotel, prevoz, Convert.ToDouble(tCijena.Text));
                 var dialog = new MessageDialog("Putovanje uspješno kreirano!");
                 dialog.ShowAsync();
-               /* cHoteli.Items.Clear();
+               /* cHoteli.Items.Clear(); KRAHIRA SE RADI OVOG, PREBAČENO GORE, VAJDA OK
                 cPrevoz.Items.Clear();
                 tCijena.Text = string.Empty;
                 tDrzava.Text = string.Empty;
