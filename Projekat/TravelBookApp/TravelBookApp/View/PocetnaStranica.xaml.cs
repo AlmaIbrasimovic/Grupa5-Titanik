@@ -31,8 +31,8 @@ namespace TravelBookApp
             this.InitializeComponent();
             tNazivT.Text= "Naziv agencije:  " + a.NazivAgencije;
             tKontaktTel.Text = "Kontakt telefon:  " + a.KontaktTelefon;
-            tLokacija.Text = "Adresa:  " + a.Lokacija + " " + a.Grad;
-            tEmail.Text = "E-mail adresa:" + a.EmailAdresa;
+            tLokacija.Text = "Adresa:  " + a.Lokacija + "\nGrad: " + a.Grad;
+            tEmail.Text = "E-mail adresa: " + a.EmailAdresa;
             
         }
 
