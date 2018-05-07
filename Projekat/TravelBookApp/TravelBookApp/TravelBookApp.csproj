@@ -92,7 +92,10 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AzureKlase\AgencijaAzure.cs" />
+    <Compile Include="AzureKlase\DestinacijaAzure.cs" />
     <Compile Include="AzureKlase\HotelAzure.cs" />
+    <Compile Include="AzureKlase\KarticaAzure.cs" />
     <Compile Include="AzureKlase\PrevozAzure.cs" />
     <Compile Include="AzureKlase\PutovanjeAzure.cs" />
     <Compile Include="Globalna.cs" />
