@@ -19,6 +19,8 @@ using Windows.UI;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
+using Microsoft.WindowsAzure.MobileServices;
+using TravelBookApp.AzureKlase;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,6 +32,13 @@ namespace TravelBookApp
     public sealed partial class KreiranjePutovanja : Page
     {
         static KreiranjePutovanjaViewModel putovanjeVM = new KreiranjePutovanjaViewModel();
+        IMobileServiceTable<DestinacijaAzure> destinacijeBaza = App.MobileService.GetTable<DestinacijaAzure>();
+        IMobileServiceTable<HotelAzure> hoteliBaza = App.MobileService.GetTable<HotelAzure>();
+        IMobileServiceTable<PutovanjeAzure> putovanjaBaza = App.MobileService.GetTable<PutovanjeAzure>();
+
+
+
+
         List<String> naziviDestinacija = new List<string>();
         List<String> naziviHotela = new List<string>();
         List<String> autobusi = new List<string>();
@@ -307,6 +316,15 @@ namespace TravelBookApp
                 if (cKontinent.SelectedItem.ToString().Equals("Australija")) kon = Kontinenti.Australija;
                 novaDestinacija = new Destinacija(tDestinacija.Text, tDrzava.Text, kon, iSlikaDestinacije);
                 putovanjeVM.dodajNovuDestinaciju(tDestinacija.Text, tDrzava.Text, kon, iSlikaDestinacije);
+
+                // dodavanje destinacije u bazu
+                DestinacijaAzure destinacijaA = new DestinacijaAzure();
+                destinacijaA.id = novaDestinacija.Id.ToString();
+                destinacijaA.naziv = novaDestinacija.Naziv;
+                destinacijaA.drzava = novaDestinacija.Drzava;
+                destinacijaA.kontinent = novaDestinacija.Kontinent.ToString();
+                destinacijaA.slika = novaDestinacija.SlikeDestinacije.ToString(); // valjda vala
+                destinacijeBaza.InsertAsync(destinacijaA);
             }
 
             Hotel noviHotel = Globalna.nasaAgencija.Hoteli[cHoteli.SelectedIndex];
@@ -314,10 +332,39 @@ namespace TravelBookApp
             {
                 putovanjeVM.dodajNoviHotel(tHotel.Text, 300, Convert.ToInt32(300 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
                 Hotel hot = new Hotel(tHotel.Text, 500, Convert.ToInt32(500 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
+
+                //dodavanje hotela u bazu
+                HotelAzure hotelA = new HotelAzure();
+                hotelA.id = hot.Id.ToString();
+                hotelA.ime = hot.Ime;
+                hotelA.slika = hot.SlikeHotela.ToString();
+                hotelA.maxKapacitet = hot.MaximalniKapacitet;
+                hotelA.kapacitet = hot.Kapacitet;
+                hotelA.idDestinacije = novaDestinacija.Id.ToString(); // valjda je to ok
+                hotelA.cijena = hot.CijenaPoOsobi;
+                hoteliBaza.InsertAsync(hotelA);
+
             }
             if (jelOK)
             {
                 putovanjeVM.kreirajPutovanje(dPolaska.Date.Value.Date, dPovratka.Date.Value.Date, Convert.ToInt32(sMin.Value), Convert.ToInt32(sMax.Value), "opis putovanja", istaknuto, Globalna.prijavljenaAgencijaId, novaDestinacija, noviHotel, prevoz, Convert.ToDouble(tCijena.Text));
+
+
+                //dodavanje putovanja u bazu
+                PutovanjeAzure putovanje = new PutovanjeAzure();
+                putovanje.id = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].Id.ToString();
+                putovanje.datumPolaska = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].DatumPolaska;
+                putovanje.datumPovratka = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].DatumPovratka;
+                putovanje.minBrojPutnika = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].MinimalniBrojPutnika;
+                putovanje.maxBrojPutnika = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].MaximalniBrojPutnika;
+                putovanje.opisPutovanja = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].OpisPutovanja;
+                putovanje.istaknuto = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].IstaknutoPutovanje;
+                putovanje.idAgencije = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].IdAgencije.ToString();
+                putovanje.idHotela = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].InfoHotela.ToString();
+                putovanje.idPrevoz = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].InfoPrevoza.ToString();
+                putovanje.cijena = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].Cijena;
+                putovanjaBaza.InsertAsync(putovanje);
+
                 var dialog = new MessageDialog("Putovanje uspješno kreirano!");
                 dialog.ShowAsync();
                /* cHoteli.Items.Clear(); KRAHIRA SE RADI OVOG, PREBAČENO GORE, VAJDA OK

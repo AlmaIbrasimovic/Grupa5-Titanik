@@ -18,10 +18,12 @@ namespace TravelBookApp.AzureKlase
         public string idAgencije { get; set; }
         public string idHotela { get; set; }
         public string idPrevoz { get; set; }
+
+        public Double cijena { get; set; }
         
         public PutovanjeAzure() { }
 
-        public PutovanjeAzure(string id, DateTime datumPolaska, DateTime datumPovratka, int minBrojPutnika, int maxBrojPutnika, string opisPutovanja, bool istaknuto, string idAgencije, string idHotela, string idPrevoz)
+        public PutovanjeAzure(string id, DateTime datumPolaska, DateTime datumPovratka, int minBrojPutnika, int maxBrojPutnika, string opisPutovanja, bool istaknuto, string idAgencije, string idHotela, string idPrevoz, Double cijena)
         {
             this.id = id;
             this.datumPolaska = datumPolaska;
@@ -33,6 +35,7 @@ namespace TravelBookApp.AzureKlase
             this.idAgencije = idAgencije;
             this.idHotela = idHotela;
             this.idPrevoz = idPrevoz;
+            this.cijena = cijena;
         }
     }
 }
