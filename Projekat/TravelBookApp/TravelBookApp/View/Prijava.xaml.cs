@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using Windows.ApplicationModel.Core;
 using TravelBookApp.Model;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,42 +23,46 @@ namespace TravelBookApp
         public Prijava()
         {
             this.InitializeComponent();
-            if (Globalna.nasaAgencija.Agencije.Capacity == 0)
-            {
-                 Ucitaj();
-            }
+            /*  if (Globalna.nasaAgencija.Agencije.Capacity == 0)
+              {
+                   Ucitaj();
+              }*/
+            Ucitaj();
             
         }
         public void Ucitaj()
         {
-            const string GetProductsQuery = "select u.username,u.password,u.id,o.naziv,o.jmbg,o.datum_rodjenja,o.email,o.id from uposlenici u, osobe o where u.osoba=o.id ";
+            const string GetProductsQuery = "SELECT id,naziv,idKartica,telefon,grad,lokacija,sifra,email FROM AgencijaAzure";
             var agencije = new ObservableCollection<Agencija>();
             try
             {
                 // Debug.WriteLine("Spajam sam na bazu");
                 using (SqlConnection conn = new SqlConnection(App.konekcija))
                 {
-                    // Debug.WriteLine("Spojen sam na bazu");
+                 //   Debug.WriteLine("Spojen sam na bazu");
                     conn.Open();
                     if (conn.State == System.Data.ConnectionState.Open)
                     {
                         using (SqlCommand cmd = conn.CreateCommand())
                         {
                             cmd.CommandText = GetProductsQuery;
+                           Debug.WriteLine("Spojen sam na bazu");
                             using (SqlDataReader reader = cmd.ExecuteReader())
                             {
                                 while (reader.Read())
                                 {
-                                    string Username = reader.GetString(0);
-                                    string Password = reader.GetString(1);
-                                    int id = reader.GetInt32(2);
-                                    string naziv = reader.GetString(3);
-                                    string jmbg = reader.GetString(4);
-                                    DateTime datumRodjenja = reader.GetDateTime(5);
-                                    string email = reader.GetString(6);
-                                    int idOsobe = reader.GetInt32(7);
-
-                                   // Globalna.nasaAgencija.Agencije.Add(Username, Password);
+                                    
+                                    string id = reader.GetString(0);
+                                    string naziv = reader.GetString(1);
+                                    string idKartica = reader.GetString(2);
+                                    string telefon = reader.GetString(3);
+                                    string grad = reader.GetString(4);
+                                    string lokacija = reader.GetString(5);
+                                    string sifra = reader.GetString(6);
+                                    string email = reader.GetString(7);
+                                    Kartica kartica = new Kartica(VrstaKartice.AmericanExpress, "55/88", "5", 123);
+                                    Globalna.nasaAgencija.Agencije.Add(new Agencija(naziv, kartica, telefon, email, grad, lokacija, sifra));
+                                    Debug.WriteLine("vel = ", Globalna.nasaAgencija.Agencije.Capacity.ToString());
                                 }
                             }
                         }

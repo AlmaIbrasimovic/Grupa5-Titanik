@@ -30,7 +30,7 @@ namespace TravelBookApp
         /// 
        
      public static MobileServiceClient MobileService = new MobileServiceClient("https://travelbookapp.azurewebsites.net");
-     public static String konekcija = "Server=tcp:travelbookapp.database.windows.net,1433;Initial Catalog=TravelBookApp;Persist Security Info=False;User ID=mujo;Password=Fata123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+     public static String konekcija = @"Data Source=travelbookserver.database.windows.net,1433;Initial Catalog=TRAVELBOOKAPP;Persist Security Info=False;User ID=mujo;Password=Fata123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public App()
         {
