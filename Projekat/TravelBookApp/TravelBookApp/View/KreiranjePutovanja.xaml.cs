@@ -55,7 +55,6 @@ namespace TravelBookApp
         {
             this.InitializeComponent();
             gLet.Visibility = Visibility.Collapsed;
-            putovanjeVM.dodajListuBusPrevoza();
 
             cKontinent.Items.Add("Afrika");
             cKontinent.Items.Add("Antartika");
@@ -87,6 +86,12 @@ namespace TravelBookApp
             Globalna.nasaAgencija.Destinacije.Add(prva);
             prva = new Destinacija("Rio de Janeiro", "Brazil", Kontinenti.JuznaAmerika);
             Globalna.nasaAgencija.Destinacije.Add(prva);
+
+            //DODAVANJE U BAZU
+            dodajDestinacijeUBazu(Globalna.nasaAgencija.Destinacije);
+            dodajHoteleUBazu(Globalna.nasaAgencija.Hoteli);
+            putovanjeVM.dodajListuBusPrevoza();
+
             cDestinacije.Items.Clear();
             cHoteli.Items.Clear();
             cPrevoz.Items.Clear();
@@ -110,11 +115,6 @@ namespace TravelBookApp
                     autobusi.Add(pr.Ime);                    
                 }
             }*/
-        }
-
-        public void popuniKomboBoxove()
-        {
-           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -374,6 +374,36 @@ namespace TravelBookApp
                 tDestinacija.Text = string.Empty;*/
 
             } 
+        }
+
+        private void dodajDestinacijeUBazu (List<Destinacija> destinacije)
+        {
+            foreach (var temp in destinacije)
+            {
+                DestinacijaAzure destinacijaA = new DestinacijaAzure();
+                destinacijaA.id = (temp.Id).ToString();
+                destinacijaA.naziv = temp.Naziv;
+                destinacijaA.drzava = temp.Drzava;
+                destinacijaA.kontinent = temp.Kontinent.ToString();
+               
+                destinacijeBaza.InsertAsync(destinacijaA);
+            }
+        }
+
+        private void dodajHoteleUBazu(List<Hotel> hoteli)
+        {
+            foreach (var temp in hoteli)
+            {
+                HotelAzure hotelA = new HotelAzure();
+                hotelA.id = temp.Id.ToString();
+                hotelA.ime = temp.Ime;
+               
+                hotelA.maxKapacitet = temp.MaximalniKapacitet;
+                hotelA.kapacitet = temp.Kapacitet;
+                hotelA.idDestinacije = temp.Id.ToString(); 
+                hotelA.cijena = temp.CijenaPoOsobi;
+                hoteliBaza.InsertAsync(hotelA);
+            }
         }
 
         private void bDodajHotel_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@ namespace TravelBookApp.AzureKlase
 
         public HotelAzure() { }
 
-        public HotelAzure(string _id, string _ime, string _slika, int _maxKapacitet, int _kapacitet, string _idDestinacije, double _cijena)
+        public HotelAzure(string _id, string _ime, int _maxKapacitet, int _kapacitet, string _idDestinacije, double _cijena, string _slika = "")
         {
             id = _id;
             ime = _ime;

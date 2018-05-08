@@ -15,7 +15,7 @@ namespace TravelBookApp.AzureKlase
         public String slika { get; set; }
 
         public DestinacijaAzure() { }
-        public DestinacijaAzure(String _id, String _naziv, String _drzava, String _kontinent, String _slika)
+        public DestinacijaAzure(String _id, String _naziv, String _drzava, String _kontinent, String _slika = "")
         {
             id = _id;
             naziv = _naziv;
