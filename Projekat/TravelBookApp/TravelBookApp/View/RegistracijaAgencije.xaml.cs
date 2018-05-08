@@ -146,7 +146,9 @@ namespace TravelBookApp
                         agen.grad = tGrad.Text;
                         agen.lokacija = tAdresa.Text;
                         agen.sifra = tSifra.Password.ToString();
+                        agen.email = tMail.Text;
                         agencijeBaza.InsertAsync(agen);
+                        
                         var dialog = new MessageDialog("Uspješno ste registrovali agenciju!");
                         dialog.ShowAsync();
                     }

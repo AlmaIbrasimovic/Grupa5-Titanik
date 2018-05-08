@@ -29,8 +29,10 @@ namespace TravelBookApp
         /// </summary>
         /// 
        
-   public static MobileServiceClient MobileService = new MobileServiceClient("https://travelbookapp.azurewebsites.net");
-    public App()
+     public static MobileServiceClient MobileService = new MobileServiceClient("https://travelbookapp.azurewebsites.net");
+     public static String konekcija = "Server=tcp:travelbookapp.database.windows.net,1433;Initial Catalog=TravelBookApp;Persist Security Info=False;User ID=mujo;Password=Fata123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+        public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;

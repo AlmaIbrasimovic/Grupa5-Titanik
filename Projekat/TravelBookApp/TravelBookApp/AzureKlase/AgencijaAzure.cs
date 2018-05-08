@@ -15,9 +15,10 @@ namespace TravelBookApp.AzureKlase
         public String grad { get; set; }
         public String lokacija { get; set; }
         public String sifra { get; set; }
+        public String email { get; set; }
 
         public AgencijaAzure() { }
-        public AgencijaAzure(String _id, String _naziv, String _idKartica, String _telefon, String _grad, String _lokacija, String _sifra)
+        public AgencijaAzure(String _id, String _naziv, String _idKartica, String _telefon, String _grad, String _lokacija, String _sifra,String _email)
         {
             id = _id;
             naziv = _naziv;
@@ -26,6 +27,7 @@ namespace TravelBookApp.AzureKlase
             grad = _grad;
             lokacija = _lokacija;
             sifra = _sifra;
+            email = _email;
         }
     }
 }
