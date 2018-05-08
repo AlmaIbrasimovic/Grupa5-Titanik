@@ -30,13 +30,15 @@ namespace TravelBookApp
         /// 
        
      public static MobileServiceClient MobileService = new MobileServiceClient("https://travelbookapp.azurewebsites.net");
-     public static String konekcija = @"Data Source=travelbookserver.database.windows.net,1433;Initial Catalog=TRAVELBOOKAPP;Persist Security Info=False;User ID=mujo;Password=Fata123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
+       public static String konekcija = "Data Source=tcp:travelbookserver.database.windows.net,1433;Initial Catalog=TravelBookDB;User ID=mujo;Password=Fata123.";
+       // Data Source = tcp:travelbookserver.database.windows.net,1433;Initial Catalog = TravelBookDB; User ID = mujo; Password=Fata123.
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+
+        public string Konekcija { get => konekcija;  }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
