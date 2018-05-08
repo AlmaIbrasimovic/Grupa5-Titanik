@@ -52,6 +52,7 @@ namespace TravelBookApp.ViewModel
                 {
                     if (te.Naziv.Equals(temp.PrevozDestinacija)) idDest = (te.Id).ToString();
                 }
+                agen.idDestinacije = idDest;
                 prevoziBaza.InsertAsync(agen);
             }
         }
