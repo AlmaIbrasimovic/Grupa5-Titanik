@@ -19,13 +19,14 @@ namespace TravelBookApp.AzureKlase
         public string opisPutovanja { get; set; }
         public Boolean istaknuto { get; set; }
         public string idAgencije { get; set; }
+        public string idDestinacije { get; set; }
         public string idHotela { get; set; }
         public string idPrevoz { get; set; }
         public Double cijena { get; set; }
         
         public PutovanjeAzure() { }
 
-        public PutovanjeAzure(string id, DateTime datumPolaska, DateTime datumPovratka, int minBrojPutnika, int maxBrojPutnika, string opisPutovanja, bool istaknuto, string idAgencije, string idHotela, string idPrevoz, Double cijena)
+        public PutovanjeAzure(string id, DateTime datumPolaska, DateTime datumPovratka, int minBrojPutnika, int maxBrojPutnika, string opisPutovanja, bool istaknuto, string idAgencije, string idDestinacije, string idHotela, string idPrevoz, Double cijena)
         {
             this.id = id;
             this.datumPolaska = datumPolaska;
@@ -35,6 +36,7 @@ namespace TravelBookApp.AzureKlase
             this.opisPutovanja = opisPutovanja;
             this.istaknuto = istaknuto;
             this.idAgencije = idAgencije;
+            this.idDestinacije = idDestinacije;
             this.idHotela = idHotela;
             this.idPrevoz = idPrevoz;
             this.cijena = cijena;
@@ -101,7 +103,7 @@ namespace TravelBookApp.AzureKlase
         {
             try
             {
-                String query = "insert into PutovanjeAzure values (@id,@datumPolaska,@datumPovratka,@minBrojPutnika,@maxBrojPutnika,@opisPutovanja,@istaknuto,@idAgencije,@idHotel,@idPrevoz,@cijena)";
+                String query = "insert into PutovanjeAzure values (@id,@datumPolaska,@datumPovratka,@minBrojPutnika,@maxBrojPutnika,@opisPutovanja,@istaknuto,@idAgencije,@idDestinacije,@idHotel,@idPrevoz,@cijena)";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection con = new SqlConnection(s.konekcija))
                 {
@@ -147,6 +149,11 @@ namespace TravelBookApp.AzureKlase
                     idAgencije.Value = put.IdAgencije;
                     idAgencije.ParameterName = "idAgencije";
                     cmd.Parameters.Add(idAgencije);
+
+                    SqlParameter idDestinacije = new SqlParameter();
+                    idDestinacije.Value = put.InfoDestinacije.Id;
+                    idDestinacije.ParameterName = "idDestinacije";
+                    cmd.Parameters.Add(idDestinacije);
 
                     SqlParameter idHotel = new SqlParameter();
                     idHotel.Value = put.InfoHotela.Id;
