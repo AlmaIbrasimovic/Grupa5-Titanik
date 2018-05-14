@@ -71,30 +71,30 @@ namespace TravelBookApp.AzureKlase
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = query;
 
-                    SqlParameter idS = new SqlParameter();
-                    idS.Value = k.Id;
-                    idS.ParameterName = "id";
-                    cmd.Parameters.Add(idS);
+                    SqlParameter id = new SqlParameter();
+                    id.Value = k.Id;
+                    id.ParameterName = "id";
+                    cmd.Parameters.Add(id);
 
-                    SqlParameter vrstaKarticeS = new SqlParameter();
-                    vrstaKarticeS.Value = k.Vrsta.ToString();
-                    vrstaKarticeS.ParameterName = "vrstaKartice";
-                    cmd.Parameters.Add(vrstaKarticeS);
+                    SqlParameter vrstaKartice = new SqlParameter();
+                    vrstaKartice.Value = k.Vrsta.ToString();
+                    vrstaKartice.ParameterName = "vrstaKartice";
+                    cmd.Parameters.Add(vrstaKartice);
 
-                    SqlParameter datumIstekaS = new SqlParameter();
-                    datumIstekaS.Value = k.DatumIsteka;
-                    datumIstekaS.ParameterName = "datumIsteka";
-                    cmd.Parameters.Add(datumIstekaS);
+                    SqlParameter datumIsteka = new SqlParameter();
+                    datumIsteka.Value = k.DatumIsteka;
+                    datumIsteka.ParameterName = "datumIsteka";
+                    cmd.Parameters.Add(datumIsteka);
 
-                    SqlParameter brojS = new SqlParameter();
-                    brojS.Value = k.Broj;
-                    brojS.ParameterName = "broj";
-                    cmd.Parameters.Add(brojS);
+                    SqlParameter broj = new SqlParameter();
+                    broj.Value = k.Broj;
+                    broj.ParameterName = "broj";
+                    cmd.Parameters.Add(broj);
 
-                    SqlParameter cscS = new SqlParameter();
-                    cscS.Value = k.Csc;
-                    cscS.ParameterName = "csc";
-                    cmd.Parameters.Add(cscS);                    
+                    SqlParameter csc = new SqlParameter();
+                    csc.Value = k.Csc;
+                    csc.ParameterName = "csc";
+                    cmd.Parameters.Add(csc);                    
 
                     con.Open();
                     int r = cmd.ExecuteNonQuery();

@@ -85,45 +85,45 @@ namespace TravelBookApp.AzureKlase
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = query;
 
-                    SqlParameter idS = new SqlParameter();
-                    idS.Value = a.Id;
-                    idS.ParameterName = "id";
-                    cmd.Parameters.Add(idS);
+                    SqlParameter id = new SqlParameter();
+                    id.Value = a.Id;
+                    id.ParameterName = "id";
+                    cmd.Parameters.Add(id);
 
-                    SqlParameter nazivS = new SqlParameter();
-                    nazivS.Value = a.NazivAgencije;
-                    nazivS.ParameterName = "naziv";
-                    cmd.Parameters.Add(nazivS);
+                    SqlParameter naziv = new SqlParameter();
+                    naziv.Value = a.NazivAgencije;
+                    naziv.ParameterName = "naziv";
+                    cmd.Parameters.Add(naziv);
 
-                    SqlParameter idKarticeS = new SqlParameter();
-                    idKarticeS.Value = a.PodaciOBankovnomRacunu.Id;
-                    idKarticeS.ParameterName = "idKartica";
-                    cmd.Parameters.Add(idKarticeS);
+                    SqlParameter idKartica = new SqlParameter();
+                    idKartica.Value = a.PodaciOBankovnomRacunu.Id;
+                    idKartica.ParameterName = "idKartica";
+                    cmd.Parameters.Add(idKartica);
 
-                    SqlParameter brojS = new SqlParameter();
-                    brojS.Value = a.KontaktTelefon;
-                    brojS.ParameterName = "telefon";
-                    cmd.Parameters.Add(brojS);
+                    SqlParameter broj = new SqlParameter();
+                    broj.Value = a.KontaktTelefon;
+                    broj.ParameterName = "telefon";
+                    cmd.Parameters.Add(broj);
 
-                    SqlParameter gradS = new SqlParameter();
-                    gradS.Value = a.Grad;
-                    gradS.ParameterName = "grad";
-                    cmd.Parameters.Add(gradS);
+                    SqlParameter grad = new SqlParameter();
+                    grad.Value = a.Grad;
+                    grad.ParameterName = "grad";
+                    cmd.Parameters.Add(grad);
 
-                    SqlParameter lokacijaS = new SqlParameter();
-                    lokacijaS.Value = a.Lokacija;
-                    lokacijaS.ParameterName = "lokacija";
-                    cmd.Parameters.Add(lokacijaS);
+                    SqlParameter lokacija = new SqlParameter();
+                    lokacija.Value = a.Lokacija;
+                    lokacija.ParameterName = "lokacija";
+                    cmd.Parameters.Add(lokacija);
 
-                    SqlParameter sifraS = new SqlParameter();
-                    sifraS.Value = a.Sifra;
-                    sifraS.ParameterName = "sifra";
-                    cmd.Parameters.Add(sifraS);
+                    SqlParameter sifra = new SqlParameter();
+                    sifra.Value = a.Sifra;
+                    sifra.ParameterName = "sifra";
+                    cmd.Parameters.Add(sifra);
 
-                    SqlParameter emailS = new SqlParameter();
-                    emailS.Value = a.EmailAdresa;
-                    emailS.ParameterName = "email";
-                    cmd.Parameters.Add(emailS);
+                    SqlParameter email = new SqlParameter();
+                    email.Value = a.EmailAdresa;
+                    email.ParameterName = "email";
+                    cmd.Parameters.Add(email);
 
                     con.Open();
                     int r = cmd.ExecuteNonQuery();
