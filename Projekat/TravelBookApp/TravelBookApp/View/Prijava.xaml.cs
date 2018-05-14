@@ -20,7 +20,8 @@ namespace TravelBookApp
     public sealed partial class Prijava : Page
     {
         static LoginViewModel l = new LoginViewModel();
-       public String konekcija = "Data Source=tcp:travelbookserver.database.windows.net,1433;Initial Catalog=TravelBookDB;User ID=mujo;Password=Fata123.";
+        public String konekcija = "Server=tcp:travelbookserver.database.windows.net,1433;Initial Catalog=TravelBookDB;Persist Security Info=False;User ID=mujo;Password=Fata123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
         public Prijava()
         {
            //  public String konekcija = "Data Source=tcp:travelbookserver.database.windows.net,1433;Initial Catalog=TravelBookDB;User ID=mujo;Password=Fata123.";
@@ -38,7 +39,7 @@ namespace TravelBookApp
         //dodana nova verzija čitanja ali ne radi 
         public ObservableCollection<Agencija> vrati(string connectionString)
         {
-            const string GetProductsQuery = "SELECT id,naziv,idKartica,telefon,grad,lokacija,sifra,email FROM AgencijaAzure";
+            const string GetProductsQuery = "SELECT * FROM AgencijaAzure";
             
             var products = new ObservableCollection<Agencija>();
             try

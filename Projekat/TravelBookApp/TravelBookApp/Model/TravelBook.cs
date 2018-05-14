@@ -21,6 +21,7 @@ namespace TravelBookApp.Model
         private List<Destinacija> destinacije;
         private List<Hotel> hoteli;
         private List<Prevoz> prevozi;
+        private List<Kartica> kartice;
 
         public TravelBook() {
             Naziv = "TravelBook";
@@ -52,5 +53,6 @@ namespace TravelBookApp.Model
         public List<Destinacija> Destinacije { get => destinacije; set => destinacije = value; }
         public List<Hotel> Hoteli { get => hoteli; set => hoteli = value; }
         public List<Prevoz> Prevozi { get => prevozi; set => prevozi = value; }
+        public List<Kartica> Kartice { get => kartice; set => kartice = value; }
     }
 }

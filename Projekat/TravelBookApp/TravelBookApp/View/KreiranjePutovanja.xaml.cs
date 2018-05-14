@@ -108,13 +108,7 @@ namespace TravelBookApp
               //  naziviHotela.Add("Nijedan od ponuđenih");
             }    
 
-            /*foreach (var pr in Globalna.nasaAgencija.Prevozi)
-            {
-                if (pr.VrstaPrevoza.Equals(VrstaPrevoza.autobus))
-                {
-                    autobusi.Add(pr.Ime);                    
-                }
-            }*/
+        
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -174,9 +168,7 @@ namespace TravelBookApp
             if (cHoteli.SelectedItem.ToString() != "Ništa od ponuđenog")
                 odabraniHotel = naziviHotela[cHoteli.SelectedIndex];
         }
-
-        //ALMAAAA trebas dodat kad se vidi onaj grid za dodavanje destinacije da se destinacija doda u listu utravelbook isto i za hotel
-        //pooooiiiii  -- GOTOVO POZZZZ 
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         { //dodat polje za upis opisa putovanja
             Prevoz prevoz;
@@ -188,8 +180,7 @@ namespace TravelBookApp
             else
                 prevoz = null;
 
-            /*VALIDACIJE PRIJE KREIRANJA PUTOVANJA 
-             AKO JE UREDU, VRATI jelOK NA TRUE RADI FINALNE PROVJERE*/
+          
 
             if (sMin.Value <= sMax.Value)
             {
@@ -323,7 +314,7 @@ namespace TravelBookApp
                 destinacijaA.naziv = novaDestinacija.Naziv;
                 destinacijaA.drzava = novaDestinacija.Drzava;
                 destinacijaA.kontinent = novaDestinacija.Kontinent.ToString();
-                destinacijaA.slika = novaDestinacija.SlikeDestinacije.ToString(); // valjda vala
+                destinacijaA.slika = novaDestinacija.SlikeDestinacije.ToString(); 
                 destinacijeBaza.InsertAsync(destinacijaA);
             }
 
@@ -340,7 +331,7 @@ namespace TravelBookApp
                 hotelA.slika = hot.SlikeHotela.ToString();
                 hotelA.maxKapacitet = hot.MaximalniKapacitet;
                 hotelA.kapacitet = hot.Kapacitet;
-                hotelA.idDestinacije = novaDestinacija.Id.ToString(); // valjda je to ok
+                hotelA.idDestinacije = novaDestinacija.Id.ToString(); 
                 hotelA.cijena = hot.CijenaPoOsobi;
                 hoteliBaza.InsertAsync(hotelA);
 
@@ -367,11 +358,7 @@ namespace TravelBookApp
 
                 var dialog = new MessageDialog("Putovanje uspješno kreirano!");
                 dialog.ShowAsync();
-               /* cHoteli.Items.Clear(); KRAHIRA SE RADI OVOG, PREBAČENO GORE, VAJDA OK
-                cPrevoz.Items.Clear();
-                tCijena.Text = string.Empty;
-                tDrzava.Text = string.Empty;
-                tDestinacija.Text = string.Empty;*/
+            
 
             } 
         }

@@ -27,7 +27,7 @@ namespace TravelBookApp.Model
             Csc = cscBroj;
         }
 
-        private VrstaKartice Vrsta { get => vrsta; set => vrsta = value; }
+        public VrstaKartice Vrsta { get => vrsta; set => vrsta = value; }
         public String DatumIsteka { get => datumIsteka; set => datumIsteka = value; }
         public string Broj { get => broj; set => broj = value; }
         public int Csc { get => csc; set => csc = value; }
