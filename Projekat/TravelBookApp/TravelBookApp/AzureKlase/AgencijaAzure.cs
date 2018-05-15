@@ -49,17 +49,19 @@ namespace TravelBookApp.AzureKlase
                         sc.CommandText = query;
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
-                        { int index = -1;
+                        {
+                            int index = -1;
                             for(int i = 0; i < Globalna.nasaAgencija.Kartice.Count; i++)
                             {
-                                if (Globalna.nasaAgencija.Kartice[i].ToString() == reader.GetString(2))
+                                Debug.WriteLine("tutu\n");
+                                if (Globalna.nasaAgencija.Kartice[i].Id.ToString() == reader.GetString(2))
                                 {
                                     index = i;
                                     break;
                                 }
                             }
                             //id ne cita
-                            Agencija a = new Agencija( reader.GetString(1), Globalna.nasaAgencija.Kartice[index], reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
+                            Agencija a = new Agencija(reader.GetString(1), Globalna.nasaAgencija.Kartice[index], reader.GetString(3), reader.GetString(7), reader.GetString(4), reader.GetString(5), reader.GetString(6));
                             Globalna.nasaAgencija.Agencije.Add(a);
                         }
                     }
@@ -78,7 +80,7 @@ namespace TravelBookApp.AzureKlase
         {
             try
             {
-                String query = "insert into AgencijaAzure values (@id,@naziv,@idKartica,@telefon,@grad,@lokacija,@sifra,@email)";
+                String query = "insert into AgencijaAzure(id,naziv,idKartica,telefon,grad,lokacija,sifra,email) " + "values (@id,@naziv,@idKartica,@telefon,@grad,@lokacija,@sifra,@email)";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection con = new SqlConnection(s.konekcija))
                 {
@@ -86,51 +88,50 @@ namespace TravelBookApp.AzureKlase
                     cmd.CommandText = query;
 
                     SqlParameter id = new SqlParameter();
-                    id.Value = a.Id;
+                    id.Value = a.Id.ToString();
                     id.ParameterName = "id";
                     cmd.Parameters.Add(id);
-
+                   
                     SqlParameter naziv = new SqlParameter();
                     naziv.Value = a.NazivAgencije;
                     naziv.ParameterName = "naziv";
                     cmd.Parameters.Add(naziv);
-
+                   
                     SqlParameter idKartica = new SqlParameter();
-                    idKartica.Value = a.PodaciOBankovnomRacunu.Id;
+                    idKartica.Value = a.PodaciOBankovnomRacunu.Id.ToString();
                     idKartica.ParameterName = "idKartica";
                     cmd.Parameters.Add(idKartica);
-
+                   
                     SqlParameter broj = new SqlParameter();
                     broj.Value = a.KontaktTelefon;
                     broj.ParameterName = "telefon";
                     cmd.Parameters.Add(broj);
-
+                   
                     SqlParameter grad = new SqlParameter();
                     grad.Value = a.Grad;
                     grad.ParameterName = "grad";
                     cmd.Parameters.Add(grad);
-
+                    
                     SqlParameter lokacija = new SqlParameter();
-                    lokacija.Value = a.Lokacija;
+                    lokacija.Value = a.Lokacija.ToString();
                     lokacija.ParameterName = "lokacija";
                     cmd.Parameters.Add(lokacija);
-
+                 
                     SqlParameter sifra = new SqlParameter();
                     sifra.Value = a.Sifra;
                     sifra.ParameterName = "sifra";
                     cmd.Parameters.Add(sifra);
-
+                 
                     SqlParameter email = new SqlParameter();
                     email.Value = a.EmailAdresa;
                     email.ParameterName = "email";
                     cmd.Parameters.Add(email);
-
+                 
                     con.Open();
                     int r = cmd.ExecuteNonQuery();
                     cmd.Dispose();
                     con.Close();
                     return r;
-
                 }
             }
             catch (Exception e)

@@ -40,10 +40,11 @@ namespace TravelBookApp
             KarticaAzure k = new KarticaAzure();
             PrevozAzure l = new PrevozAzure();
             PutovanjeAzure p = new PutovanjeAzure();
+            k.UcitajKartice();
             a.UcitajAgencije();
             d.UcitajDestinacije();
             h.UcitajHotele();
-            k.UcitajKartice();
+           
             l.UcitajPrevoze();
             p.UcitajPutovanja();
         }

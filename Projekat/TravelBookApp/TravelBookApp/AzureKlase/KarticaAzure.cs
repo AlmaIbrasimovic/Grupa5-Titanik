@@ -32,11 +32,12 @@ namespace TravelBookApp.AzureKlase
             try
             {
                 
-                string query = "SELECT * FROM KarticaAzure;";
+                string query = "SELECT * FROM KarticaAzure";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection c = new SqlConnection(s.konekcija))
                 {
                     c.Open();
+                    Debug.WriteLine("otvorena");
                     if (c.State == System.Data.ConnectionState.Open)
                     {
                         SqlCommand sc = c.CreateCommand();
@@ -44,9 +45,11 @@ namespace TravelBookApp.AzureKlase
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
                         {
+
                             VrstaKartice vrsta = (VrstaKartice)Enum.Parse(typeof(VrstaKartice), reader.GetString(1));
                             Kartica k = new Kartica(vrsta, reader.GetString(2), reader.GetString(3), reader.GetInt32(4));
                             Globalna.nasaAgencija.Kartice.Add(k);
+                           
                         }
                     }
                     c.Close();
@@ -64,7 +67,7 @@ namespace TravelBookApp.AzureKlase
         {
             try
             {
-                String query = "insert into KarticaAzure values (@id,@vrstaKartice,@datumIsteka,@broj,@csc)";
+                String query = "INSERT INTO KarticaAzure(id,vrstaKartice,datumIsteka,broj,csc) " + "VALUES (@id,@vrstaKartice,@datumIsteka,@broj,@csc)";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection con = new SqlConnection(s.konekcija))
                 {
@@ -72,7 +75,7 @@ namespace TravelBookApp.AzureKlase
                     cmd.CommandText = query;
 
                     SqlParameter id = new SqlParameter();
-                    id.Value = k.Id;
+                    id.Value = k.Id.ToString();
                     id.ParameterName = "id";
                     cmd.Parameters.Add(id);
 
@@ -94,14 +97,15 @@ namespace TravelBookApp.AzureKlase
                     SqlParameter csc = new SqlParameter();
                     csc.Value = k.Csc;
                     csc.ParameterName = "csc";
-                    cmd.Parameters.Add(csc);                    
+                    cmd.Parameters.Add(csc);
 
                     con.Open();
+                    Debug.WriteLine("kartica se otvorila");
+                    
                     int r = cmd.ExecuteNonQuery();
                     cmd.Dispose();
                     con.Close();
                     return r;
-
                 }
             }
             catch (Exception e)
