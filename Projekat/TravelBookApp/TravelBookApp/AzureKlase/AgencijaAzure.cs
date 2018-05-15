@@ -59,7 +59,7 @@ namespace TravelBookApp.AzureKlase
                                 }
                             }
                             //id ne cita
-                            Agencija a = new Agencija( reader.GetString(1), Globalna.nasaAgencija.Kartice[index], reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(5), reader.GetString(7));
+                            Agencija a = new Agencija( reader.GetString(1), Globalna.nasaAgencija.Kartice[index], reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7));
                             Globalna.nasaAgencija.Agencije.Add(a);
                         }
                     }

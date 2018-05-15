@@ -82,7 +82,7 @@ namespace TravelBookApp
                         dDatumPolaska.SetDisplayDate(p.DatumPolaska);
                         dDatumPovratka.SetDisplayDate(p.DatumPovratka);
                         txtBrojPutnika.Text = Convert.ToString(p.TrenutniBrojPutnika);
-                        txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
+                        txtTipPrevoza.Text = Convert.ToString((int)p.InfoPrevoza.VrstaPrevoza); //sto se krahira??
                         txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
                     }
                 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TravelBookApp.Model
 {
-    public enum VrstaPrevoza { autobus, avion};
+    public enum VrstaPrevoza { autobus = 0, avion};
     public class Prevoz
     {
         private int id;

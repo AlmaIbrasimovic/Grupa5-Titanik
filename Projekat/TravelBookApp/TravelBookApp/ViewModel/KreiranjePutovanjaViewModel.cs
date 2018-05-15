@@ -14,7 +14,7 @@ namespace TravelBookApp.ViewModel
     {
         public static DestinacijaViewModel destinacijaVM = new DestinacijaViewModel();
         public static HotelViewModel hotelVM = new HotelViewModel();
-        IMobileServiceTable<PrevozAzure> prevoziBaza = App.MobileService.GetTable<PrevozAzure>();
+      
         public void kreirajPutovanje(DateTime datumPolaska, DateTime datumPovratka, int minimalniBrojPutnika, int maximalniBrojPutnika, string opisPutovanja, bool istaknutoPutovanje, int idAgencije, Destinacija infoDestinacije, Hotel infoHotela, Prevoz infoPrevoza, Double cijenaPutovanja)
         {
             Putovanje putovanje =  new Putovanje(datumPolaska, datumPovratka, minimalniBrojPutnika, maximalniBrojPutnika, opisPutovanja, istaknutoPutovanje, idAgencije, infoDestinacije, infoHotela, infoPrevoza, cijenaPutovanja);
@@ -41,7 +41,7 @@ namespace TravelBookApp.ViewModel
             foreach (var temp in prevozi)
             {
                 PrevozAzure agen = new PrevozAzure();
-                agen.id = (Globalna.idSvihPrevoza--).ToString();
+                /*agen.id = (Globalna.idSvihPrevoza--).ToString();
                 agen.ime = temp.Ime;
                 agen.vrstaPrevoza = temp.VrstaPrevoza.ToString();
                 agen.maxKapacitet = temp.MaximalniKapacitet;
@@ -53,7 +53,8 @@ namespace TravelBookApp.ViewModel
                     if (te.Naziv.Equals(temp.PrevozDestinacija)) idDest = (te.Id).ToString();
                 }
                 agen.idDestinacije = idDest;
-                prevoziBaza.InsertAsync(agen);
+                prevoziBaza.InsertAsync(agen);*/
+                agen.dodajPrevoz(temp);
             }
         }
 

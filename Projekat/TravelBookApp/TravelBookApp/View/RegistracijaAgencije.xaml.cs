@@ -28,8 +28,7 @@ namespace TravelBookApp
     public sealed partial class RegistracijaAgencije : Page
     {
         static RegistracijaViewModel r = new RegistracijaViewModel();
-        IMobileServiceTable<AgencijaAzure> agencijeBaza = App.MobileService.GetTable<AgencijaAzure>();
-        IMobileServiceTable<KarticaAzure> karticeBaza = App.MobileService.GetTable<KarticaAzure>();
+       
         public RegistracijaAgencije()
         {
             this.InitializeComponent();
@@ -124,31 +123,34 @@ namespace TravelBookApp
             if (jelOK)
             {
                 Kartica nova = new Kartica((VrstaKartice)tTipKartice.SelectedItem, tDatumIsteka.Text, tBrojKartice.Text, Convert.ToInt32(tCSC.Text));
-                KarticaAzure kart = new KarticaAzure();   
-                kart.id = (Globalna.idSvihKartica - 1).ToString();
-                kart.vrstaKartice = tTipKartice.SelectedItem.ToString();
-                kart.datumIsteka = tDatumIsteka.Text;
-                kart.broj = tBrojKartice.Text;
-                kart.csc = Convert.ToInt32(tCSC.Text);
-                karticeBaza.InsertAsync(kart);
+                KarticaAzure kart = new KarticaAzure();
+                /* kart.id = (Globalna.idSvihKartica - 1).ToString();
+                 kart.vrstaKartice = tTipKartice.SelectedItem.ToString();
+                 kart.datumIsteka = tDatumIsteka.Text;
+                 kart.broj = tBrojKartice.Text;
+                 kart.csc = Convert.ToInt32(tCSC.Text);
+                 karticeBaza.InsertAsync(kart);*/
+                kart.dodajKarticu(nova);
 
                 if (tSifra.Password.ToString().Equals(tSifraPonovo.Password.ToString()))
                 {
                     r.registrujAgneciju(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());  
                     try
                     {
+                        Agencija a = new Agencija(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());
+
                         AgencijaAzure agen = new AgencijaAzure();
-                        int id = Globalna.idSvihAgencija;
-                        agen.id = (id - 1).ToString();
-                        agen.naziv = tNaziv.Text;
-                        agen.idKartica = (Globalna.idSvihKartica - 1).ToString();
-                        agen.telefon = tTelefon.Text;
-                        agen.grad = tGrad.Text;
-                        agen.lokacija = tAdresa.Text;
-                        agen.sifra = tSifra.Password.ToString();
-                        agen.email = tMail.Text;
-                        agencijeBaza.InsertAsync(agen);
-                        
+                        /* int id = Globalna.idSvihAgencija;
+                         agen.id = (id - 1).ToString();
+                         agen.naziv = tNaziv.Text;
+                         agen.idKartica = (Globalna.idSvihKartica - 1).ToString();
+                         agen.telefon = tTelefon.Text;
+                         agen.grad = tGrad.Text;
+                         agen.lokacija = tAdresa.Text;
+                         agen.sifra = tSifra.Password.ToString();
+                         agen.email = tMail.Text;
+                         agencijeBaza.InsertAsync(agen);*/
+                        agen.dodajAgenciju(a);
                         var dialog = new MessageDialog("Uspješno ste registrovali agenciju!");
                         dialog.ShowAsync();
                     }

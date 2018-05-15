@@ -32,9 +32,7 @@ namespace TravelBookApp
     public sealed partial class KreiranjePutovanja : Page
     {
         static KreiranjePutovanjaViewModel putovanjeVM = new KreiranjePutovanjaViewModel();
-        IMobileServiceTable<DestinacijaAzure> destinacijeBaza = App.MobileService.GetTable<DestinacijaAzure>();
-        IMobileServiceTable<HotelAzure> hoteliBaza = App.MobileService.GetTable<HotelAzure>();
-        IMobileServiceTable<PutovanjeAzure> putovanjaBaza = App.MobileService.GetTable<PutovanjeAzure>();
+     
 
 
 
@@ -171,14 +169,22 @@ namespace TravelBookApp
         
         private void Button_Click_1(object sender, RoutedEventArgs e)
         { //dodat polje za upis opisa putovanja
-            Prevoz prevoz;
-            string odabranaDestinacija = cDestinacije.SelectedItem.ToString(); 
+            Prevoz prevoz = null;
+            string odabranaDestinacija = cDestinacije.SelectedItem.ToString();
             string odabraniHotel = cHoteli.SelectedItem.ToString();
-            Boolean jelOK = true;
             if (rAutobus.IsChecked == true)
-                prevoz = Globalna.nasaAgencija.Prevozi[cPrevoz.SelectedIndex];
+                foreach (Prevoz p in Globalna.nasaAgencija.Prevozi)
+                {
+                    if (p.Ime.Equals(autobusi[cPrevoz.SelectedIndex].Substring(0,autobusi[cPrevoz.SelectedIndex].IndexOf(","))) && p.PrevozDestinacija.Equals(odabranaDestinacija)) prevoz = p;
+                }
             else
                 prevoz = null;
+            
+           
+            
+            
+            Boolean jelOK = true;
+           
 
           
 
@@ -309,13 +315,15 @@ namespace TravelBookApp
                 putovanjeVM.dodajNovuDestinaciju(tDestinacija.Text, tDrzava.Text, kon, iSlikaDestinacije);
 
                 // dodavanje destinacije u bazu
-                DestinacijaAzure destinacijaA = new DestinacijaAzure();
-                destinacijaA.id = novaDestinacija.Id.ToString();
-                destinacijaA.naziv = novaDestinacija.Naziv;
-                destinacijaA.drzava = novaDestinacija.Drzava;
-                destinacijaA.kontinent = novaDestinacija.Kontinent.ToString();
-                destinacijaA.slika = novaDestinacija.SlikeDestinacije.ToString(); 
-                destinacijeBaza.InsertAsync(destinacijaA);
+                /*  DestinacijaAzure destinacijaA = new DestinacijaAzure();
+                  destinacijaA.id = novaDestinacija.Id.ToString();
+                  destinacijaA.naziv = novaDestinacija.Naziv;
+                  destinacijaA.drzava = novaDestinacija.Drzava;
+                  destinacijaA.kontinent = novaDestinacija.Kontinent.ToString();
+                  destinacijaA.slika = novaDestinacija.SlikeDestinacije.ToString(); 
+                  destinacijeBaza.InsertAsync(destinacijaA);*/
+                DestinacijaAzure d = new DestinacijaAzure();
+                d.dodajDestinaciju(novaDestinacija);
             }
 
             Hotel noviHotel = Globalna.nasaAgencija.Hoteli[cHoteli.SelectedIndex];
@@ -325,15 +333,17 @@ namespace TravelBookApp
                 Hotel hot = new Hotel(tHotel.Text, 500, Convert.ToInt32(500 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
 
                 //dodavanje hotela u bazu
-                HotelAzure hotelA = new HotelAzure();
-                hotelA.id = hot.Id.ToString();
-                hotelA.ime = hot.Ime;
-                hotelA.slika = hot.SlikeHotela.ToString();
-                hotelA.maxKapacitet = hot.MaximalniKapacitet;
-                hotelA.kapacitet = hot.Kapacitet;
-                hotelA.idDestinacije = novaDestinacija.Id.ToString(); 
-                hotelA.cijena = hot.CijenaPoOsobi;
-                hoteliBaza.InsertAsync(hotelA);
+                /* HotelAzure hotelA = new HotelAzure();
+                 hotelA.id = hot.Id.ToString();
+                 hotelA.ime = hot.Ime;
+                 hotelA.slika = hot.SlikeHotela.ToString();
+                 hotelA.maxKapacitet = hot.MaximalniKapacitet;
+                 hotelA.kapacitet = hot.Kapacitet;
+                 hotelA.idDestinacije = novaDestinacija.Id.ToString(); 
+                 hotelA.cijena = hot.CijenaPoOsobi;
+                 hoteliBaza.InsertAsync(hotelA);*/
+                HotelAzure h = new HotelAzure();
+                h.dodajHotel(hot);
 
             }
             if (jelOK)
@@ -342,19 +352,21 @@ namespace TravelBookApp
 
 
                 //dodavanje putovanja u bazu
-                PutovanjeAzure putovanje = new PutovanjeAzure();
-                putovanje.id = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].Id.ToString();
-                putovanje.datumPolaska = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].DatumPolaska;
-                putovanje.datumPovratka = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].DatumPovratka;
-                putovanje.minBrojPutnika = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].MinimalniBrojPutnika;
-                putovanje.maxBrojPutnika = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].MaximalniBrojPutnika;
-                putovanje.opisPutovanja = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].OpisPutovanja;
-                putovanje.istaknuto = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].IstaknutoPutovanje;
-                putovanje.idAgencije = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].IdAgencije.ToString();
-                putovanje.idHotela = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].InfoHotela.ToString();
-                putovanje.idPrevoz = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].InfoPrevoza.ToString();
-                putovanje.cijena = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].Cijena;
-                putovanjaBaza.InsertAsync(putovanje);
+                /* PutovanjeAzure putovanje = new PutovanjeAzure();
+                 putovanje.id = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].Id.ToString();
+                 putovanje.datumPolaska = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].DatumPolaska;
+                 putovanje.datumPovratka = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].DatumPovratka;
+                 putovanje.minBrojPutnika = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].MinimalniBrojPutnika;
+                 putovanje.maxBrojPutnika = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].MaximalniBrojPutnika;
+                 putovanje.opisPutovanja = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].OpisPutovanja;
+                 putovanje.istaknuto = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].IstaknutoPutovanje;
+                 putovanje.idAgencije = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].IdAgencije.ToString();
+                 putovanje.idHotela = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].InfoHotela.ToString();
+                 putovanje.idPrevoz = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].InfoPrevoza.ToString();
+                 putovanje.cijena = Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1].Cijena;
+                 putovanjaBaza.InsertAsync(putovanje);*/
+                PutovanjeAzure p = new PutovanjeAzure();
+                p.dodajPutovanje(Globalna.nasaAgencija.Putovanja[Globalna.nasaAgencija.Putovanja.Count - 1]);
 
                 var dialog = new MessageDialog("Putovanje uspješno kreirano!");
                 dialog.ShowAsync();
@@ -368,12 +380,13 @@ namespace TravelBookApp
             foreach (var temp in destinacije)
             {
                 DestinacijaAzure destinacijaA = new DestinacijaAzure();
-                destinacijaA.id = (temp.Id).ToString();
-                destinacijaA.naziv = temp.Naziv;
-                destinacijaA.drzava = temp.Drzava;
-                destinacijaA.kontinent = temp.Kontinent.ToString();
-               
-                destinacijeBaza.InsertAsync(destinacijaA);
+                /*   destinacijaA.id = (temp.Id).ToString();
+                   destinacijaA.naziv = temp.Naziv;
+                   destinacijaA.drzava = temp.Drzava;
+                   destinacijaA.kontinent = temp.Kontinent.ToString();
+
+                   destinacijeBaza.InsertAsync(destinacijaA);*/
+                destinacijaA.dodajDestinaciju(temp);
             }
         }
 
@@ -382,14 +395,15 @@ namespace TravelBookApp
             foreach (var temp in hoteli)
             {
                 HotelAzure hotelA = new HotelAzure();
-                hotelA.id = temp.Id.ToString();
+                /*hotelA.id = temp.Id.ToString();
                 hotelA.ime = temp.Ime;
                
                 hotelA.maxKapacitet = temp.MaximalniKapacitet;
                 hotelA.kapacitet = temp.Kapacitet;
                 hotelA.idDestinacije = temp.Id.ToString(); 
                 hotelA.cijena = temp.CijenaPoOsobi;
-                hoteliBaza.InsertAsync(hotelA);
+                hoteliBaza.InsertAsync(hotelA);*/
+                hotelA.dodajHotel(temp);
             }
         }
 
@@ -410,8 +424,8 @@ namespace TravelBookApp
             string odabrano = cDestinacije.SelectedItem.ToString();
             if (odabrano.Equals("Ništa od ponuđenog")) destinacija = tDestinacija.Text;
             if (odabrano != "Ništa od ponuđenog") destinacija = cDestinacije.SelectedItem.ToString();
-            List<string> prevozi = putovanjeVM.dajListuBusevaPoDestinacijiIKapacitetu(destinacija, Convert.ToInt32(sMax.Value));
-            foreach (var temp in prevozi) cPrevoz.Items.Add(temp);
+            autobusi = putovanjeVM.dajListuBusevaPoDestinacijiIKapacitetu(destinacija, Convert.ToInt32(sMax.Value));
+            foreach (var temp in autobusi) cPrevoz.Items.Add(temp);
             //cPrevoz.Items.Add(avioKompanije);
             gLet.Visibility = Visibility.Collapsed;
         }
