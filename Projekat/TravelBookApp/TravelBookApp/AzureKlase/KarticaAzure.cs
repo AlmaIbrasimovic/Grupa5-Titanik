@@ -15,7 +15,7 @@ namespace TravelBookApp.AzureKlase
         public String vrstaKartice { get; set; }
         public String datumIsteka { get; set; }
         public String broj { get; set; }
-        public int csc { get; set; }
+        public double csc { get; set; }
 
         public KarticaAzure() { }
         public KarticaAzure(String _id, String _vrstaKartice, String _datumIsteka, String _broj, int _csc)
@@ -33,23 +33,22 @@ namespace TravelBookApp.AzureKlase
             {
                 
                 string query = "SELECT * FROM KarticaAzure";
-                ConnectionStringAzure s = new ConnectionStringAzure();
+                 ConnectionStringAzure s = new ConnectionStringAzure();
+               
                 using (SqlConnection c = new SqlConnection(s.konekcija))
                 {
                     c.Open();
-                    Debug.WriteLine("otvorena");
+                    
                     if (c.State == System.Data.ConnectionState.Open)
                     {
                         SqlCommand sc = c.CreateCommand();
                         sc.CommandText = query;
-                        SqlDataReader reader = sc.ExecuteReader();
+                        SqlDataReader reader = sc.ExecuteReader(); 
                         while (reader.Read())
                         {
-
-                            VrstaKartice vrsta = (VrstaKartice)Enum.Parse(typeof(VrstaKartice), reader.GetString(1));
-                            Kartica k = new Kartica(vrsta, reader.GetString(2), reader.GetString(3), reader.GetInt32(4));
-                            Globalna.nasaAgencija.Kartice.Add(k);
-                           
+                            VrstaKartice vrsta = (VrstaKartice)Enum.Parse(typeof(VrstaKartice), reader.GetString(5));                           
+                            Kartica k = new Kartica(vrsta, reader.GetString(6), reader.GetString(7), reader.GetDouble(8));                         
+                            Globalna.nasaAgencija.Kartice.Add(k);                   
                         }
                     }
                     c.Close();
@@ -100,7 +99,6 @@ namespace TravelBookApp.AzureKlase
                     cmd.Parameters.Add(csc);
 
                     con.Open();
-                    Debug.WriteLine("kartica se otvorila");
                     
                     int r = cmd.ExecuteNonQuery();
                     cmd.Dispose();

@@ -15,13 +15,13 @@ namespace TravelBookApp.Model
         private String bankovniRacun;
         private Double cijenaUsluge;
         private Double cijenaIstaknutogPutovanja;
-        private List<Korisnik> korisnici;
-        private List<Agencija> agencije;
-        private List<Putovanje> putovanja;
-        private List<Destinacija> destinacije;
-        private List<Hotel> hoteli;
-        private List<Prevoz> prevozi;
-        private List<Kartica> kartice;
+        private List<Korisnik> korisnici = new List<Korisnik>();
+        private List<Agencija> agencije = new List<Agencija>();
+        private List<Putovanje> putovanja = new List<Putovanje>();
+        private List<Destinacija> destinacije = new List<Destinacija>();
+        private List<Hotel> hoteli = new List<Hotel>();
+        private List<Prevoz> prevozi = new List<Prevoz>();
+        private List<Kartica> kartice = new List<Kartica>();
 
         public TravelBook() {
             Naziv = "TravelBook";

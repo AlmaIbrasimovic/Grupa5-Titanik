@@ -67,7 +67,7 @@ namespace TravelBookApp.AzureKlase
         {
             try
             {
-                String query = "insert into PrevozAzure values (@id,@ime,@vrstaPrevoza,@maxKapacitet,@kapacitet,@cijena,@idDestinacije)";
+                String query = "insert into PrevozAzure(id,ime,vrstaPrevoza,maxKapacitet,kapacitet,cijena,idDestinacije) "+  "values (@id,@ime,@vrstaPrevoza,@maxKapacitet,@kapacitet,@cijena,@idDestinacije)";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection con = new SqlConnection(s.konekcija))
                 {

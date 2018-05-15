@@ -53,15 +53,15 @@ namespace TravelBookApp.AzureKlase
                             int index = -1;
                             for(int i = 0; i < Globalna.nasaAgencija.Kartice.Count; i++)
                             {
-                                Debug.WriteLine("tutu\n");
-                                if (Globalna.nasaAgencija.Kartice[i].Id.ToString() == reader.GetString(2))
+                                
+                                if (Globalna.nasaAgencija.Kartice[i].Id.ToString() == reader.GetString(6))
                                 {
                                     index = i;
                                     break;
                                 }
                             }
                             //id ne cita
-                            Agencija a = new Agencija(reader.GetString(1), Globalna.nasaAgencija.Kartice[index], reader.GetString(3), reader.GetString(7), reader.GetString(4), reader.GetString(5), reader.GetString(6));
+                            Agencija a = new Agencija(reader.GetString(5), Globalna.nasaAgencija.Kartice[index], reader.GetString(7), reader.GetString(11), reader.GetString(8), reader.GetString(9), reader.GetString(10));
                             Globalna.nasaAgencija.Agencije.Add(a);
                         }
                     }

@@ -13,12 +13,12 @@ namespace TravelBookApp.Model
         private VrstaKartice vrsta;
         private String datumIsteka;
         private String broj;
-        private int csc;
+        private double csc;
         private int id;
 
         public Kartica() { }
 
-        public Kartica(VrstaKartice vrstaKatice, String datumIstekaKartice, String brojK, int cscBroj)
+        public Kartica(VrstaKartice vrstaKatice, String datumIstekaKartice, String brojK, double cscBroj)
         {
             id = Globalna.idSvihKartica++;
             Vrsta = vrstaKatice;
@@ -30,7 +30,7 @@ namespace TravelBookApp.Model
         public VrstaKartice Vrsta { get => vrsta; set => vrsta = value; }
         public String DatumIsteka { get => datumIsteka; set => datumIsteka = value; }
         public string Broj { get => broj; set => broj = value; }
-        public int Csc { get => csc; set => csc = value; }
+        public double Csc { get => csc; set => csc = value; }
         public int Id { get => id; }
     }
 }

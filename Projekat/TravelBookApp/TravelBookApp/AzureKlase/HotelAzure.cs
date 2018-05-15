@@ -75,7 +75,7 @@ namespace TravelBookApp.AzureKlase
         {
             try
             {
-                String query = "insert into HotelAzure values (@id,@ime,@maxKapacitet,@kapacitet,@idDestinacije,@cijena,@slika)";
+                String query = "insert into HotelAzure(id,ime,slika,maxKapacitet,kapacitet,idDestinacije,cijena) " + "values (@id,@ime,@slika,@maxKapacitet,@kapacitet,@idDestinacije,@cijena)";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection con = new SqlConnection(s.konekcija))
                 {
@@ -91,6 +91,11 @@ namespace TravelBookApp.AzureKlase
                     ime.Value = h.Ime;
                     ime.ParameterName = "ime";
                     cmd.Parameters.Add(ime);
+
+                    SqlParameter slika = new SqlParameter();
+                    slika.Value = h.SlikeHotela;
+                    slika.ParameterName = "slika";
+                    cmd.Parameters.Add(slika);
 
                     SqlParameter maxKapacitet = new SqlParameter();
                     maxKapacitet.Value = h.MaximalniKapacitet;
@@ -112,17 +117,11 @@ namespace TravelBookApp.AzureKlase
                     cijena.ParameterName = "cijena";
                     cmd.Parameters.Add(cijena);
 
-                    SqlParameter slika = new SqlParameter();
-                    slika.Value = h.SlikeHotela;
-                    slika.ParameterName = "slika";
-                    cmd.Parameters.Add(slika);
-
                     con.Open();
                     int r = cmd.ExecuteNonQuery();
                     cmd.Dispose();
                     con.Close();
                     return r;
-
                 }
             }
             catch (Exception e)

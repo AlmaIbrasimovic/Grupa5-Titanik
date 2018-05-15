@@ -103,7 +103,7 @@ namespace TravelBookApp.AzureKlase
         {
             try
             {
-                String query = "insert into PutovanjeAzure values (@id,@datumPolaska,@datumPovratka,@minBrojPutnika,@maxBrojPutnika,@opisPutovanja,@istaknuto,@idAgencije,@idDestinacije,@idHotel,@idPrevoz,@cijena)";
+                String query = "insert into PutovanjeAzure(id,datumPolaska,datumPovratka,minBrojPutnika,maxBrojPutnika,opisPutovanja,istaknuto,idAgencije,idDestinacije,idHotela,idPrevoz,cijena) " + "values (@id,@datumPolaska,@datumPovratka,@minBrojPutnika,@maxBrojPutnika,@opisPutovanja,@istaknuto,@idAgencije,@idDestinacije,@idHotela,@idPrevoz,@cijena)";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection con = new SqlConnection(s.konekcija))
                 {
@@ -157,7 +157,7 @@ namespace TravelBookApp.AzureKlase
 
                     SqlParameter idHotel = new SqlParameter();
                     idHotel.Value = put.InfoHotela.Id;
-                    idHotel.ParameterName = "idHotel";
+                    idHotel.ParameterName = "idHotela";
                     cmd.Parameters.Add(idHotel);
 
                     SqlParameter idPrevoz = new SqlParameter();
