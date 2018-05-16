@@ -64,7 +64,8 @@ namespace TravelBookApp.AzureKlase
                             Agencija a = new Agencija(reader.GetString(5), Globalna.nasaAgencija.Kartice[index], reader.GetString(7), reader.GetString(11), reader.GetString(8), reader.GetString(9), reader.GetString(10));
                             Globalna.nasaAgencija.Agencije.Add(a);
                         }
-                        Globalna.idSvihAgencija = Globalna.nasaAgencija.Agencije.Count - 1;
+                        if (Globalna.nasaAgencija.Agencije.Count == 0) Globalna.idSvihAgencija = 0;
+                        else if (Globalna.nasaAgencija.Agencije.Count != 0) Globalna.idSvihAgencija = Globalna.nasaAgencija.Agencije.Count - 1;
                     }
                     c.Close();
                 }

@@ -54,7 +54,8 @@ namespace TravelBookApp.AzureKlase
                             Prevoz p = new Prevoz(reader.GetString(5), vrsta, Convert.ToInt32(reader.GetDouble(7)), Convert.ToInt32(reader.GetDouble(8)), reader.GetDouble(9),reader.GetString(10));
                             Globalna.nasaAgencija.Prevozi.Add(p);
                         }
-                        Globalna.idSvihPrevoza = Globalna.nasaAgencija.Prevozi.Count - 1;
+                        if (Globalna.nasaAgencija.Prevozi.Count == 0) Globalna.idSvihPrevoza = 0;
+                        else if (Globalna.nasaAgencija.Prevozi.Count != 0) Globalna.idSvihPrevoza = Globalna.nasaAgencija.Prevozi.Count - 1;
                     }
                     c.Close();
                 }
