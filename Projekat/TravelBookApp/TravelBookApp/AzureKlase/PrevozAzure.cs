@@ -48,17 +48,20 @@ namespace TravelBookApp.AzureKlase
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
                         {
-                            VrstaPrevoza vrsta = (VrstaPrevoza)Enum.Parse(typeof(VrstaPrevoza), reader.GetString(2));
-                            Prevoz p = new Prevoz(reader.GetString(1), vrsta, reader.GetInt32(3), reader.GetInt32(4), reader.GetDouble(5), reader.GetString(6));
+                            VrstaPrevoza vrsta = (VrstaPrevoza)Enum.Parse(typeof(VrstaPrevoza), reader.GetString(6));
+                            
+                           
+                            Prevoz p = new Prevoz(reader.GetString(5), vrsta, Convert.ToInt32(reader.GetDouble(7)), Convert.ToInt32(reader.GetDouble(8)), reader.GetDouble(9),reader.GetString(10));
                             Globalna.nasaAgencija.Prevozi.Add(p);
                         }
+                        Globalna.idSvihPrevoza = Globalna.nasaAgencija.Prevozi.Count - 1;
                     }
                     c.Close();
                 }
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Exception: " + e.Message);
+                Debug.WriteLine("Exception PrevozAzure1: " + e.Message);
 
             }
         }
@@ -119,7 +122,7 @@ namespace TravelBookApp.AzureKlase
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Exception: " + e.Message);
+                Debug.WriteLine("Exception PrevozAzure2: " + e.Message);
                 return 0;
             }
         }

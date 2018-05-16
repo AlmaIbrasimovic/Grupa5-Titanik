@@ -18,9 +18,9 @@
         <TextBox Name="txtBrojPutnika" HorizontalAlignment="Left" Margin="218,224,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
         <TextBox Name="txtTipPrevoza" HorizontalAlignment="Left" Margin="218,289,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
         <TextBox Name="txtCijenaPutovanja" HorizontalAlignment="Left" Margin="218,353,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
-        <CalendarDatePicker Name="dDatumPolaska" HorizontalAlignment="Left" Margin="218,164,0,0" VerticalAlignment="Top" Width="200"/>
-        <CalendarDatePicker Name="dDatumPovratka" HorizontalAlignment="Left" Margin="660,164,0,0" VerticalAlignment="Top" Width="200"/>
         <Button Content="Nazad" FontSize="17" HorizontalAlignment="Left" Margin="490,482,0,0" VerticalAlignment="Top" Height="40" Width="150" Click="Button_Click"/>
         <Button Content="Izlaz" FontSize="17" HorizontalAlignment="Left" Margin="710,482,0,0" VerticalAlignment="Top" Height="40" Width="150" Click="Button_Click_1"/>
+        <TextBox x:Name="tDatumPolaska" HorizontalAlignment="Left" Margin="218,167,0,0"  VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="tDatumPovratka" HorizontalAlignment="Left" Margin="641,167,0,0"  VerticalAlignment="Top" Width="220"/>
     </Grid>
 </Page>

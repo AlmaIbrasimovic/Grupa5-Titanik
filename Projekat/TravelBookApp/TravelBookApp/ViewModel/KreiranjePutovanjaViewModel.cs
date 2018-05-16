@@ -35,40 +35,7 @@ namespace TravelBookApp.ViewModel
 
         }
 
-
-        private void upisiUBazu(List<Prevoz> prevozi)
-        {
-            foreach (var temp in prevozi)
-            {
-                PrevozAzure agen = new PrevozAzure();
-                /*agen.id = (Globalna.idSvihPrevoza--).ToString();
-                agen.ime = temp.Ime;
-                agen.vrstaPrevoza = temp.VrstaPrevoza.ToString();
-                agen.maxKapacitet = temp.MaximalniKapacitet;
-                agen.kapacitet = temp.Kapacitet;
-                agen.cijena = temp.CijenaPoOsobi;
-                string idDest = string.Empty;
-                foreach (var te in Globalna.nasaAgencija.Destinacije)
-                {
-                    if (te.Naziv.Equals(temp.PrevozDestinacija)) idDest = (te.Id).ToString();
-                }
-                agen.idDestinacije = idDest;
-                prevoziBaza.InsertAsync(agen);*/
-                agen.dodajPrevoz(temp);
-            }
-        }
-
-        // mozda ove dvije dodat u PrevozViewModel???
-        public void dodajListuBusPrevoza()
-        {
-            Globalna.nasaAgencija.Prevozi.Add(new Prevoz ("Globus", VrstaPrevoza.autobus, 80,30, 50, "Tokio" ));
-            Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Centro", VrstaPrevoza.autobus, 150, 80, 100, "Prag"));
-            Globalna.nasaAgencija.Prevozi.Add(new Prevoz("VanBus", VrstaPrevoza.autobus, 50, 30, 70, "Berlin"));
-            Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Globus", VrstaPrevoza.autobus, 220, 70, 90, "Moskva"));
-            Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Globus", VrstaPrevoza.autobus, 130, 45, 75, "Rim"));
-            Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Globus", VrstaPrevoza.autobus, 100, 90, 60, "Barselona"));
-            upisiUBazu(Globalna.nasaAgencija.Prevozi);
-        }
+        
 
         public List<String> dajListuBusevaPoDestinacijiIKapacitetu(String destinacija, int kapacitet) // dodat
         {

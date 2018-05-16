@@ -51,8 +51,8 @@ namespace TravelBookApp
                 {
                     if ( comboPutovanja.SelectedItem != null && comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
                     {
-                        dDatumPolaska.SetDisplayDate(p.DatumPolaska);
-                        dDatumPovratka.SetDisplayDate(p.DatumPovratka);
+                        tDatumPolaska.Text = p.DatumPolaska.ToString();
+                        tDatumPovratka.Text = p.DatumPovratka.ToString();
                         txtBrojPutnika.Text = Convert.ToString(p.TrenutniBrojPutnika);
                         txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
                         txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
@@ -79,8 +79,8 @@ namespace TravelBookApp
                 {
                     if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
                     {
-                        dDatumPolaska.SetDisplayDate(p.DatumPolaska);
-                        dDatumPovratka.SetDisplayDate(p.DatumPovratka);
+                        tDatumPolaska.Text = p.DatumPolaska.ToString();
+                        tDatumPovratka.Text = p.DatumPovratka.ToString();
                         txtBrojPutnika.Text = Convert.ToString(p.TrenutniBrojPutnika);
                         txtTipPrevoza.Text = Convert.ToString((int)p.InfoPrevoza.VrstaPrevoza); //sto se krahira??
                         txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);

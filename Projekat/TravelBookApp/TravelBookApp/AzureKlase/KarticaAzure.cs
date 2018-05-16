@@ -50,13 +50,14 @@ namespace TravelBookApp.AzureKlase
                             Kartica k = new Kartica(vrsta, reader.GetString(6), reader.GetString(7), reader.GetDouble(8));                         
                             Globalna.nasaAgencija.Kartice.Add(k);                   
                         }
+                        Globalna.idSvihKartica = Globalna.nasaAgencija.Kartice.Count - 1;
                     }
                     c.Close();
                 }
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Exception: " + e.Message);
+                Debug.WriteLine("Exception KarticaAzure1: " + e.Message);
 
             }
 
@@ -108,7 +109,7 @@ namespace TravelBookApp.AzureKlase
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Exception: " + e.Message);
+                Debug.WriteLine("Exception KarticaAzure2: " + e.Message);
                 return 0;
             }
            

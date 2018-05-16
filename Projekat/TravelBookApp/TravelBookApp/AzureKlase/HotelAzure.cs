@@ -51,22 +51,24 @@ namespace TravelBookApp.AzureKlase
                             int index = -1;
                             for (int i = 0; i < Globalna.nasaAgencija.Destinacije.Count; i++)
                             {
-                                if (Globalna.nasaAgencija.Destinacije[i].ToString() == reader.GetString(4))
+                                if (Globalna.nasaAgencija.Destinacije[i].Id.ToString() == reader.GetString(9))
                                 {
                                     index = i;
                                     break;
                                 }
                             }
-                            Hotel h = new Hotel(reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3), Globalna.nasaAgencija.Destinacije[index], reader.GetDouble(5));
+                            Hotel h = new Hotel(reader.GetString(5), Convert.ToInt32(reader.GetDouble(7)), Convert.ToInt32(reader.GetDouble(8)), Globalna.nasaAgencija.Destinacije[index], reader.GetDouble(10));
+                            //slika getString(6)
                             Globalna.nasaAgencija.Hoteli.Add(h);
                         }
+                        Globalna.idSvihHotela = Globalna.nasaAgencija.Hoteli.Count - 1;
                     }
                     c.Close();
                 }
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Exception: " + e.Message);
+                Debug.WriteLine("Exception HotelAzure1: " + e.Message);
 
             }
         }
@@ -93,7 +95,7 @@ namespace TravelBookApp.AzureKlase
                     cmd.Parameters.Add(ime);
 
                     SqlParameter slika = new SqlParameter();
-                    slika.Value = h.SlikeHotela;
+                    slika.Value = "not null slika";  //h.SlikeHotela;
                     slika.ParameterName = "slika";
                     cmd.Parameters.Add(slika);
 
@@ -108,7 +110,7 @@ namespace TravelBookApp.AzureKlase
                     cmd.Parameters.Add(kapacitet);
 
                     SqlParameter idDestinacije = new SqlParameter();
-                    idDestinacije.Value = h.Lokacija;
+                    idDestinacije.Value = h.Lokacija.Id;
                     idDestinacije.ParameterName = "idDestinacije";
                     cmd.Parameters.Add(idDestinacije);
 
@@ -126,7 +128,7 @@ namespace TravelBookApp.AzureKlase
             }
             catch (Exception e)
             {
-                Debug.WriteLine("Exception: " + e.Message);
+                Debug.WriteLine("Exception HotelAzure2: " + e.Message);
                 return 0;
             }
         }
