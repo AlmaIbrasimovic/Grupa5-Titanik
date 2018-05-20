@@ -49,7 +49,8 @@ namespace TravelBookApp.AzureKlase
 
                             Globalna.nasaAgencija.Destinacije.Add(d);
                         }
-                        Globalna.idSvihDestinacija = Globalna.nasaAgencija.Destinacije.Count - 1;
+                        if (Globalna.nasaAgencija.Destinacije.Count == 0) Globalna.idSvihDestinacija = 0;
+                        else if (Globalna.nasaAgencija.Destinacije.Count != 0) Globalna.idSvihDestinacija = Globalna.nasaAgencija.Destinacije.Count - 1;
                     }
                     c.Close();
                 }

@@ -50,7 +50,8 @@ namespace TravelBookApp.AzureKlase
                             Kartica k = new Kartica(vrsta, reader.GetString(6), reader.GetString(7), reader.GetDouble(8));                         
                             Globalna.nasaAgencija.Kartice.Add(k);                   
                         }
-                        Globalna.idSvihKartica = Globalna.nasaAgencija.Kartice.Count - 1;
+                        if (Globalna.nasaAgencija.Kartice.Count == 0) Globalna.idSvihKartica = 0;
+                        else if (Globalna.nasaAgencija.Kartice.Count != 0) Globalna.idSvihKartica = Globalna.nasaAgencija.Kartice.Count - 1;
                     }
                     c.Close();
                 }
