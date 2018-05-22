@@ -21,23 +21,61 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Početna", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Informacije", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Pretraga", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Početna", "Index", "Home", new { @style = "color:white;" })</li>
+                    <li>@Html.ActionLink("Informacije", "Contact", "Home", new { @style = "color:white;" })</li>
+                    <li>@Html.ActionLink("Pretraga", "Contact", "Home", new { @style = "color:white;" })</li>
 
 
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+            
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    input[type=text] {
+                        width: 200px;
+                        box-sizing: padding-box;
+                        border: 1px solid #ccc;
+                        margin: 0 auto;
+                        position: absolute;
+                        top: 3px;
+                        right: 35px;
+                        left: 25px;
+                        border-radius: 2px;
+                        font-size: 15px;
+                        background-color: white;
+                        background-image: url('searchicon.png');
+                        background-position: 10px 10px;
+                        background-repeat: no-repeat;
+                        padding: 12px 20px 12px 40px;
+                        -webkit-transition: width 0.4s ease-in-out;
+                        transition: width 0.4s ease-in-out;
+                    }
+                        input[type=text]:focus {
+                            width: 100%;
+                        }
+                </style>
+            </head>
+            <body>
+                <form>
+                    <input type="text" name="Pretraga" placeholder="Pretraga destinacija...">
+                </form>
+            </body>
+        </html>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+   
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Travel Book App</p>
+            </footer>
+        </div>
+    
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

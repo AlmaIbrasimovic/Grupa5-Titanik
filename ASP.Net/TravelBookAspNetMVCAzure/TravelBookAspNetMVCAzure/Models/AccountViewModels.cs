@@ -79,6 +79,48 @@ namespace TravelBookAspNetMVCAzure.Models
         [Display(Name = "Potvrdi lozinku")]
         [Compare("Password", ErrorMessage = "Lozinke se ne slažu.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Ime")]
+        public string Ime { get; set; }
+
+        [Required]
+        [Display(Name = "Prezime")]
+        public string Prezime { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Datum rođenja (DD.MM.GGGG.)")]
+        public string DatumRod { get; set; }
+
+        [Required]
+        [Display(Name = "JMBG")]
+        public string JMBG { get; set; }
+
+        [Required]
+        [Display(Name = "Adresa stanovanja")]
+        public string Adresa { get; set; }
+
+        [Required]
+        [Display(Name = "Telefon")]
+        public string Telefon { get; set; }
+
+        [Required]
+        [Display(Name = "Broj kartice")]
+        public string BrojKartice { get; set; }
+
+        [Required]
+        [Display(Name = "Datum isteka (MM/GG)")]
+        public string Istek { get; set; }
+
+        [Required]
+        [Display(Name = "CSC (3 cifre)")]
+        public string CSC { get; set; }
+
+        [Required]
+        [Display(Name = "Tip kartice")]
+        public string Tip { get; set; }
+
     }
 
     public class ResetPasswordViewModel
