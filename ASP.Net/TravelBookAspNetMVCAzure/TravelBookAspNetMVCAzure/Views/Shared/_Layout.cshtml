@@ -23,9 +23,6 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Početna", "Index", "Home", new { @style = "color:white;" })</li>
                     <li>@Html.ActionLink("Informacije", "Contact", "Home", new { @style = "color:white;" })</li>
-                    <li>@Html.ActionLink("Pretraga", "Contact", "Home", new { @style = "color:white;" })</li>
-
-
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -36,7 +33,7 @@
                 <style>
                     input[type=text] {
                         width: 200px;
-                        height:15px;
+                        height: 15px;
                         box-sizing: padding-box;
                         border: 1px solid #ccc;
                         margin: 0 auto;
@@ -47,7 +44,8 @@
                         border-radius: 2px;
                         font-size: 15px;
                         background-color: white;
-                        background-image: url('searchicon.png');
+                       
+                       
                         background-position: 10px 10px;
                         background-repeat: no-repeat;
                         padding: 12px 20px 12px 40px;
