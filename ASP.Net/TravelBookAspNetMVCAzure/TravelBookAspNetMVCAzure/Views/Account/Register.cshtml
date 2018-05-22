@@ -8,9 +8,8 @@
 <head>
     <style>
         body {
-           /* background: url(https://images.vexels.com/media/users/3/126406/preview2/8bcd3ffc110b3c16a16237ac7867998c-travel-elements-frame-background.jpg) no-repeat center center fixed; */
-            background-size: cover;
-            
+            background: url(https://cdn-images-1.medium.com/max/1200/1*N_l3sQECv4Yhght8HtwMGg.jpeg) no-repeat bottom fixed;
+            background-size: initial;
         }
 
     
@@ -21,7 +20,7 @@
 </body>
 </html>
 
-@using (Html.BeginForm("Registruj se", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Registruj se", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form"}))
 {
     @Html.AntiForgeryToken()
     <h4>Kreirajte novi račun</h4>
