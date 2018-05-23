@@ -385,6 +385,18 @@ namespace TravelBookAspNetMVCAzure.Controllers
             return View(model);
         }
 
+        //Popravljena greška krahiranja pri tranziciji između Account i Home
+        [AllowAnonymous]
+        public ActionResult Contact()
+        {
+            return RedirectToAction("Contact", "Home");
+        }
+        [AllowAnonymous]
+        public ActionResult Index()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
         //
         // POST: /Account/LogOff
         [HttpPost]
