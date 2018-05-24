@@ -2,6 +2,198 @@
     ViewBag.Title = "Travel Book";
 }
 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background: url(https://cdn-images-1.medium.com/max/1200/1*N_l3sQECv4Yhght8HtwMGg.jpeg) no-repeat center;
+            background-size: initial;
+           
+          
+        }
+
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 10;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+    width: 80%;
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: green;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon nece slika */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+        .bg {
+           
+            width: 100%;
+            height: 100%; /*same height as jumbotron */
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .jumbotron {           
+            margin-bottom: 0px;
+            height: 350px;
+            color: white;
+            text-shadow: green 0.3em 0.3em 0.3em;
+            background: transparent;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="sidenav">
+        <button class="dropdown-btn">
+            Evropa
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Pariz</a>
+            <a href="#">Berlin</a>
+            <a href="#">Amsterdam</a>
+        </div>
+        <button class="dropdown-btn">
+            Azija
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Peking</a>
+            <a href="#">Bankok</a>
+            <a href="#">Japan</a>
+        </div>
+        <button class="dropdown-btn">
+            Afrika
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Fes</a>
+            <a href="#">Kairo</a>
+        </div>
+        <button class="dropdown-btn">
+            Australija
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Sidnej</a>
+            <a href="#">Melburn</a>
+        </div>
+        <button class="dropdown-btn">
+            Amerika
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Čikago</a>
+            <a href="#">LA</a>
+            <a href="#">Boston</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="jumbotron" resource="">
+            <h1>Travel the world!</h1>
+           
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Putovanje1</h2>
+                <p>
+                    Pariz
+                </p>
+                <p><a class="btn btn-default" href="https://en.wikipedia.org/wiki/Pariz">Pogledaj &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Putovanje2</h2>
+                <p>-</p>
+                <p><a class="btn btn-default">Learn more</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Putovanje3</h2>
+                <p>--</p>
+                <p><a class="btn btn-default">Learn more</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
+
+<!--
 <html>
 <head>
     <style>
@@ -16,6 +208,10 @@
 </body>
 </html>
 
+
+
+
+
 <div class="jumbotron">
     <h1>Travel the world!</h1>
     <p class="lead">Slike ovdje</p>
@@ -26,18 +222,19 @@
     <div class="col-md-4">
         <h2>Putovanje1</h2>
         <p>
-           Pariz
+            Pariz
         </p>
         <p><a class="btn btn-default" href="https://en.wikipedia.org/wiki/Pariz">Pogledaj &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Putovanje2</h2>
         <p>-</p>
-        <p><a class="btn btn-default" >Learn more</a></p>
+        <p><a class="btn btn-default">Learn more</a></p>
     </div>
     <div class="col-md-4">
         <h2>Putovanje3</h2>
         <p>--</p>
-        <p><a class="btn btn-default" >Learn more</a></p>
+        <p><a class="btn btn-default">Learn more</a></p>
     </div>
 </div>
+    -->
