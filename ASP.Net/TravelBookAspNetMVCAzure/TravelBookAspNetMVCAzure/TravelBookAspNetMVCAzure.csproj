@@ -202,21 +202,26 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DestinacijaAzureController.cs" />
+    <Compile Include="Controllers\AgencijaAzuresController.cs" />
+    <Compile Include="Controllers\DestinacijaAzuresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HotelAzureController.cs" />
-    <Compile Include="Controllers\KarticaAzureController.cs" />
-    <Compile Include="Controllers\KorisnikAzureController.cs" />
+    <Compile Include="Controllers\HotelAzuresController.cs" />
+    <Compile Include="Controllers\KarticaAzuresController.cs" />
+    <Compile Include="Controllers\KorisnikAzuresController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PrevozAzureController.cs" />
-    <Compile Include="Controllers\PutovanjeAzureController.cs" />
-    <Compile Include="Controllers\RezervisanaPutovanjaAzureController.cs" />
+    <Compile Include="Controllers\PrevozAzuresController.cs" />
+    <Compile Include="Controllers\PutovanjeAzuresController.cs" />
+    <Compile Include="Controllers\RezervisanaPutovanjaAzuresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805240105163_InitialCreate.cs" />
+    <Compile Include="Migrations\201805240105163_InitialCreate.Designer.cs">
+      <DependentUpon>201805240105163_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AgencijaAzure.cs" />
-    <Compile Include="Controllers\AgencijaAzureController.cs" />
     <Compile Include="Models\DestinacijaAzure.cs" />
     <Compile Include="Models\HotelAzure.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -288,6 +293,46 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\AgencijaAzures\Create.cshtml" />
+    <Content Include="Views\AgencijaAzures\Delete.cshtml" />
+    <Content Include="Views\AgencijaAzures\Details.cshtml" />
+    <Content Include="Views\AgencijaAzures\Edit.cshtml" />
+    <Content Include="Views\AgencijaAzures\Index.cshtml" />
+    <Content Include="Views\DestinacijaAzures\Create.cshtml" />
+    <Content Include="Views\DestinacijaAzures\Delete.cshtml" />
+    <Content Include="Views\DestinacijaAzures\Details.cshtml" />
+    <Content Include="Views\DestinacijaAzures\Edit.cshtml" />
+    <Content Include="Views\DestinacijaAzures\Index.cshtml" />
+    <Content Include="Views\HotelAzures\Create.cshtml" />
+    <Content Include="Views\HotelAzures\Delete.cshtml" />
+    <Content Include="Views\HotelAzures\Details.cshtml" />
+    <Content Include="Views\HotelAzures\Edit.cshtml" />
+    <Content Include="Views\HotelAzures\Index.cshtml" />
+    <Content Include="Views\KorisnikAzures\Create.cshtml" />
+    <Content Include="Views\KorisnikAzures\Delete.cshtml" />
+    <Content Include="Views\KorisnikAzures\Details.cshtml" />
+    <Content Include="Views\KorisnikAzures\Edit.cshtml" />
+    <Content Include="Views\KorisnikAzures\Index.cshtml" />
+    <Content Include="Views\PrevozAzures\Create.cshtml" />
+    <Content Include="Views\PrevozAzures\Delete.cshtml" />
+    <Content Include="Views\PrevozAzures\Details.cshtml" />
+    <Content Include="Views\PrevozAzures\Edit.cshtml" />
+    <Content Include="Views\PrevozAzures\Index.cshtml" />
+    <Content Include="Views\PutovanjeAzures\Create.cshtml" />
+    <Content Include="Views\PutovanjeAzures\Delete.cshtml" />
+    <Content Include="Views\PutovanjeAzures\Details.cshtml" />
+    <Content Include="Views\PutovanjeAzures\Edit.cshtml" />
+    <Content Include="Views\PutovanjeAzures\Index.cshtml" />
+    <Content Include="Views\RezervisanaPutovanjaAzures\Create.cshtml" />
+    <Content Include="Views\RezervisanaPutovanjaAzures\Delete.cshtml" />
+    <Content Include="Views\RezervisanaPutovanjaAzures\Details.cshtml" />
+    <Content Include="Views\RezervisanaPutovanjaAzures\Edit.cshtml" />
+    <Content Include="Views\RezervisanaPutovanjaAzures\Index.cshtml" />
+    <Content Include="Views\KarticaAzures\Create.cshtml" />
+    <Content Include="Views\KarticaAzures\Delete.cshtml" />
+    <Content Include="Views\KarticaAzures\Details.cshtml" />
+    <Content Include="Views\KarticaAzures\Edit.cshtml" />
+    <Content Include="Views\KarticaAzures\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,6 +349,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805240105163_InitialCreate.resx">
+      <DependentUpon>201805240105163_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
