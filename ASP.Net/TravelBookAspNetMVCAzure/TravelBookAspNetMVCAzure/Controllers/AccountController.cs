@@ -152,9 +152,9 @@ namespace TravelBookAspNetMVCAzure.Controllers
         {
             if (ModelState.IsValid)
             {
-                /*var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);*/
-              /*  if (result.Succeeded)
+                var user = new ApplicationUser { UserName = model.ime, Email = model.email };
+                var result = await UserManager.CreateAsync(user, model.sifra);
+               if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
@@ -166,7 +166,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                AddErrors(result);*/
+                AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form

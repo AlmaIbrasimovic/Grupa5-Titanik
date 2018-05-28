@@ -46,8 +46,8 @@ namespace TravelBookAspNetMVCAzure.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,createdAt,updatedAt,version,deleted,ime,prezime,jmbg,datumRodjenja,telefon,email,sifra,idKartice")] KorisnikAzure korisnikAzure)
-        {
+        public ActionResult Create([Bind(Include = "ime,prezime,jmbg,datumRodjenja,telefon,email,sifra,idKartice")] KorisnikAzure korisnikAzure)
+        {//id,createdAt,updatedAt,version,deleted,
             if (ModelState.IsValid)
             {
                 db.KorisnikAzures.Add(korisnikAzure);
