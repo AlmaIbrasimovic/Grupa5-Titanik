@@ -223,6 +223,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AgencijaAzure.cs" />
     <Compile Include="Models\DestinacijaAzure.cs" />
+    <Compile Include="Models\Globalna.cs" />
     <Compile Include="Models\HotelAzure.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\KarticaAzure.cs" />

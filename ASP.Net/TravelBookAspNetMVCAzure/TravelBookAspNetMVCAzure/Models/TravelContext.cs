@@ -14,6 +14,7 @@ namespace TravelBookAspNetMVCAzure.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+           
         }
         public System.Data.Entity.DbSet<TravelBookAspNetMVCAzure.Models.KorisnikAzure> KorisnikAzures { get; set; }
         public System.Data.Entity.DbSet<TravelBookAspNetMVCAzure.Models.HotelAzure> HotelAzures { get; set; }
