@@ -7,9 +7,36 @@
     <strong>Adresa:</strong><br />
     Branilaca Sarajeva 21<br />
     Sarajevo, BIH 71000<br />
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.91679856828!2d18.418573715057082!3d43.85755314721099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c8c5403eac07%3A0x1b03f5ec88eaf09f!2sBranilaca+Sarajeva+21%2C+Sarajevo+71000!5e0!3m2!1shr!2sba!4v1527102586209" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> <br /> <br/>
-    <strong>Telefon:</strong>  033-550-540
 </address>
+
+<style>
+    #map {
+        height:400px;
+        width: 1000px;
+    }
+</style>
+<div class="row">
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 43.857549, lng: 18.420762 },
+                zoom: 20
+            });
+            var marker = new google.maps.Marker({
+                position: { lat: 43.857549, lng: 18.420762 },
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNjwJzfpRs69kcmBh_ef61tIU8cNvKBNs&callback=initMap"
+            async defer></script>
+</div>
+<br /> <br />
+
 <address>
+    <strong>Telefon:</strong>  033-550-540 <br/>
     <strong>E-mail:</strong> <a href="mailto:travelbook_info@gmail.com">travelbook_info@gmail.com</a>
 </address>
+
