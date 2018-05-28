@@ -139,7 +139,8 @@ namespace TravelBookAspNetMVCAzure.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            return View("~/Views/KorisnikAzures/Create.cshtml");
+           // return View();
         }
 
         //
@@ -169,7 +170,9 @@ namespace TravelBookAspNetMVCAzure.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            // return View(model);
+            //wtf heheheh
+            return View("~/Views/KorisnikAzures/Create.cshtml");
         }
 
         //

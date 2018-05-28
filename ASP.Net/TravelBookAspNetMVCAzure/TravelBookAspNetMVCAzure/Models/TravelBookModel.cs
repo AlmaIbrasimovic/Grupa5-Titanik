@@ -71,7 +71,7 @@ namespace TravelBookAspNetMVCAzure.Models
                 .Property(e => e.version)
                 .IsFixedLength();
 
-            modelBuilder.Entity<KorisnikAzure>()
+         /*   modelBuilder.Entity<KorisnikAzure>()
                 .Property(e => e.createdAt)
                 .HasPrecision(3);
 
@@ -81,7 +81,7 @@ namespace TravelBookAspNetMVCAzure.Models
 
             modelBuilder.Entity<KorisnikAzure>()
                 .Property(e => e.version)
-                .IsFixedLength();
+                .IsFixedLength();*/
 
             modelBuilder.Entity<KorisnikAzure>()
                 .Property(e => e.datumRodjenja)

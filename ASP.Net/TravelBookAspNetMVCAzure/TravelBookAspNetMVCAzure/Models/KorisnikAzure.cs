@@ -9,7 +9,7 @@ namespace TravelBookAspNetMVCAzure.Models
     [Table("KorisnikAzure")]
     public partial class KorisnikAzure
     {
-        [StringLength(255)]
+      /*  [StringLength(255)]
         public string id { get; set; }
 
         public DateTimeOffset createdAt { get; set; }
@@ -21,7 +21,7 @@ namespace TravelBookAspNetMVCAzure.Models
         [Timestamp]
         public byte[] version { get; set; }
 
-        public bool? deleted { get; set; }
+        public bool? deleted { get; set; }*/
 
         public string ime { get; set; }
 
