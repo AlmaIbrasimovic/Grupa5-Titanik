@@ -1,3 +1,5 @@
-Observer patern imamo kod prikaza izvještaja agencije, gdje se može odabrati putovanje da prikaže sve informacije o tom putovanju, jedna od informacija je broj putnika koji su trenutno registrovani za to putovanje
+Observer patern imamo kod prikaza izvještaja agencije, gdje se može odabrati putovanje da prikaže sve informacije o tom putovanju,
+ jedna od informacija je broj putnika koji su trenutno registrovani za putovanje
 Interpreter patern- kod Logina za šifru treba imati brojeve, velika i mala slova i neki znak.
-Abstract factory patern- To imamo kod klase Korisnik pa imamo dvije vrste korisnika: obicni i online.
+Abstract factory patern- Možemo implementirati kod klase Korisnik jer imamo dvije vrste korisnika: obicni i online.
+Facade patern - TravelBook klasa koja sluzi za cuvanje svih listi u sistemu, tako da je povezana sa skoro svim klasama
