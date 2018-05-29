@@ -75,9 +75,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
             if (!ModelState.IsValid)
             {
                 return View(model);
-            }
-           
-         
+            }        
             String email = model.Email;
             String sifra = model.Password;
             List<KorisnikAzure> korisnikAzure = db.KorisnikAzures.ToList();
@@ -173,32 +171,33 @@ namespace TravelBookAspNetMVCAzure.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(KorisnikAzure model)
-        {
-            if (ModelState.IsValid)
-            {
-                var user = new ApplicationUser { UserName = model.ime, Email = model.email };
-                var result = await UserManager.CreateAsync(user, model.sifra);
-               if (result.Succeeded)
-                {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+         public async Task<ActionResult> Register(KorisnikAzure model)
+         {
+             if (ModelState.IsValid)
+             {
+                 var user = new ApplicationUser { UserName = model.ime, Email = model.email };
+                 var result = await UserManager.CreateAsync(user, model.sifra);
+                if (result.Succeeded)
+                 {
+                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
-                    return RedirectToAction("Index", "Home");
-                }
-                AddErrors(result);
-            }
+                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                     // Send an email with this link
+                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-            // If we got this far, something failed, redisplay form
-            // return View(model);
-            //wtf heheheh
-            return View("~/Views/KorisnikAzures/Create.cshtml");
-        }
+                     return RedirectToAction("Index", "Home");
+                 }
+                 AddErrors(result);
+             }
+
+
+             // If we got this far, something failed, redisplay form
+             // return View(model);
+             //wtf heheheh
+             return View("~/Views/KorisnikAzures/Create.cshtml");
+         }
 
         //
         // GET: /Account/ConfirmEmail

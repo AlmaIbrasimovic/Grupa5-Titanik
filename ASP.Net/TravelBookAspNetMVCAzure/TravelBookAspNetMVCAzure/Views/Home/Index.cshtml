@@ -183,7 +183,13 @@
                                         </style>
                                     </head>
                                     <body>
-                                        <button class="block" onclick="myFunction()">Rezerviši</button>
+                                        @using Microsoft.AspNet.Identity
+                                        @if (Request.IsAuthenticated) {
+                                            <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                                         }
+                                        else {
+                                            <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                                        }
                                     </body>
                                 </p>
                             </div>
@@ -224,7 +230,13 @@
                                     </style>
                                 </head>
                                 <body>
-                                    <button class ="block"onclick="myFunction()">Rezerviši</button>
+                                    @using Microsoft.AspNet.Identity
+                                    @if (Request.IsAuthenticated) {
+                                        <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                                     }
+                                    else {
+                                        <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                                    }
                                 </body>
                             </p>
                         </div>
@@ -265,7 +277,13 @@
                                 </style>
                             </head>
                             <body>
-                                <button class="block" onclick="myFunction()">Rezerviši</button>
+                                @using Microsoft.AspNet.Identity
+                                @if (Request.IsAuthenticated) {
+                                     <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                                 }
+                                else {
+                                    <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                                }
                             </body>
                         </p>
                     </div>
@@ -313,7 +331,13 @@
                             </style>
                         </head>
                         <body>
-                            <button class="block" onclick="myFunction()">Rezerviši</button>
+                            @using Microsoft.AspNet.Identity
+                            @if (Request.IsAuthenticated) {
+                                <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                             }
+                            else {
+                                <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                            }
                         </body>
                     </p>
                 </div>
@@ -354,7 +378,13 @@
                         </style>
                     </head>
                     <body>
-                        <button class="block" onclick="myFunction()">Rezerviši</button>
+                        @using Microsoft.AspNet.Identity
+                        @if (Request.IsAuthenticated) {
+                            <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                         }
+                        else {
+                           <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                        }
                     </body>
                 </p>
             </div>
@@ -395,7 +425,13 @@
                     </style>
                 </head>
                 <body>
-                    <button class="block" onclick="myFunction()">Rezerviši</button>
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated) {
+                        <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                     }
+                    else {
+                        <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                    }
                 </body>
             </p>
         </div>
