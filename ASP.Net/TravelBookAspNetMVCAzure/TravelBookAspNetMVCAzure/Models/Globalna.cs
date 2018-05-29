@@ -5,8 +5,9 @@ using System.Web;
 
 namespace TravelBookAspNetMVCAzure.Models
 {
-    public class Globalna
+    public static class Globalna
     {
         public static string idKorisnika = 0.ToString();
+        public static Boolean jelOk = false;
     }
 }

@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using TravelBookAspNetMVCAzure.Models;
@@ -15,10 +18,10 @@ namespace TravelBookAspNetMVCAzure.Controllers
         private TravelContext db = new TravelContext();
 
         // GET: KorisnikAzures
-        public ActionResult Index()
+      /*  public ActionResult Index()
         {
             return View(db.KorisnikAzures.ToList());
-        }
+        }*/
 
         // GET: KorisnikAzures/Details/5
         public ActionResult Details(string id)
@@ -34,6 +37,18 @@ namespace TravelBookAspNetMVCAzure.Controllers
             }
             return View(korisnikAzure);
         }
+
+        [AllowAnonymous]
+        public ActionResult Contact()
+        {
+            return RedirectToAction("Contact", "Home");
+        }
+        [AllowAnonymous]
+        public ActionResult Index()
+        {
+            return RedirectToAction("Index", "Home");
+        }
+
 
         // GET: KorisnikAzures/Create
         public ActionResult Create()
@@ -52,11 +67,18 @@ namespace TravelBookAspNetMVCAzure.Controllers
             {
                 db.KorisnikAzures.Add(korisnikAzure);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                
+               // return RedirectToAction("Index");
             }
+
 
             return View(korisnikAzure);
         }
+
+      
+
+
+
 
         // GET: KorisnikAzures/Edit/5
         public ActionResult Edit(string id)
