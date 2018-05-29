@@ -1,0 +1,3 @@
+Observer patern imamo kod prikaza izvještaja agencije, gdje se može odabrati putovanje da prikaže sve informacije o tom putovanju, jedna od informacija je broj putnika koji su trenutno registrovani za to putovanje
+Interpreter patern- kod Logina za šifru treba imati brojeve, velika i mala slova i neki znak.
+Abstract factory patern- To imamo kod klase Korisnik pa imamo dvije vrste korisnika: obicni i online.
