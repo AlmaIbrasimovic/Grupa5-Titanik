@@ -87,29 +87,10 @@
         }
 
         .block {
-            display: none;
+            onclick ="alert('Hello world!')"
         }
     </style>
 </head>
-<script>
-    function myFunction() {
-        alert("Uspješno ste rezervisali putovanje!");
-    }
-</script>
-
-<script>
-    function prikazDugmica() {
-        <body>
-            @using Microsoft.AspNet.Identity
-            @if (Request.IsAuthenticated){
-                <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-            }
-            else {
-                 <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-             }
-        </body>
-    }
-</script>
 <body>
 
     <div class="sidenav">
@@ -202,13 +183,7 @@
                                         </style>
                                     </head>
                                     <body>
-                                        @using Microsoft.AspNet.Identity
-                                        @if (Request.IsAuthenticated) {
-                                            <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                                         }
-                                        else {
-                                            <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                                        }
+                                        <button class="block" onclick="myFunction()">Rezerviši</button>
                                     </body>
                                 </p>
                             </div>
@@ -249,12 +224,7 @@
                                     </style>
                                 </head>
                                 <body>
-                                    @if (Request.IsAuthenticated) {
-                                        <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                                    }
-                                    else {
-                                        <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                                    }
+                                    <button class ="block"onclick="myFunction()">Rezerviši</button>
                                 </body>
                             </p>
                         </div>
@@ -295,12 +265,7 @@
                                 </style>
                             </head>
                             <body>
-                                @if (Request.IsAuthenticated) {
-                                    <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                                 }
-                                 else {
-                                    <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                                 }
+                                <button class="block" onclick="myFunction()">Rezerviši</button>
                             </body>
                         </p>
                     </div>
@@ -348,12 +313,7 @@
                             </style>
                         </head>
                         <body>
-                            @if (Request.IsAuthenticated) {
-                                <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                             }
-                            else {
-                                <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                            }
+                            <button class="block" onclick="myFunction()">Rezerviši</button>
                         </body>
                     </p>
                 </div>
@@ -394,12 +354,7 @@
                         </style>
                     </head>
                     <body>
-                        @if (Request.IsAuthenticated) {
-                            <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                         }
-                        else {
-                            <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                        }
+                        <button class="block" onclick="myFunction()">Rezerviši</button>
                     </body>
                 </p>
             </div>
@@ -440,12 +395,7 @@
                     </style>
                 </head>
                 <body>
-                    @if (Request.IsAuthenticated) {
-                        <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                     }
-                     else {
-                        <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                     }
+                    <button class="block" onclick="myFunction()">Rezerviši</button>
                 </body>
             </p>
         </div>
@@ -474,9 +424,16 @@
         });
     }
 </script>
+
 </body>
 </html>
-        
+
+
+<script>
+    function myFunction() {
+        alert("Uspješno ste rezervisali putovanje!");
+    }
+</script>
 <!--
 <html>
 <head>
