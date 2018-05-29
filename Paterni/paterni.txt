@@ -15,4 +15,3 @@ gdje je CompoundExpression neki dio pravila koji poziva drugo pravilo za obradu 
 dok je TerminalExpression bazni slucaj za neko pravilo.
 
 Abstract factory patern- Možemo implementirati kod klase Korisnik jer imamo dvije vrste korisnika: obicni i online.
-Facade patern - TravelBook klasa koja sluzi za cuvanje svih listi u sistemu, tako da je povezana sa skoro svim klasama
