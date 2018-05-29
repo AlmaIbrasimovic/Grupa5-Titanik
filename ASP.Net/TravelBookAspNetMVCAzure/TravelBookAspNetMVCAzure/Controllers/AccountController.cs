@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -12,11 +14,13 @@ using TravelBookAspNetMVCAzure.Models;
 
 namespace TravelBookAspNetMVCAzure.Controllers
 {
+   
     [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private TravelContext db = new TravelContext();
 
         public AccountController()
         {
@@ -72,23 +76,43 @@ namespace TravelBookAspNetMVCAzure.Controllers
             {
                 return View(model);
             }
-
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
-            {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+           
+         
+            String email = model.Email;
+            String sifra = model.Password;
+            List<KorisnikAzure> korisnikAzure = db.KorisnikAzures.ToList();
+            Boolean jelDobro = false;
+            foreach(KorisnikAzure k in korisnikAzure) {
+                if (k.email.Equals(email) && k.sifra.Equals(sifra))
+                {
+                    Debug.Print("tu");
+                    jelDobro = true; 
+                    break;
+                }
             }
+            if (jelDobro)
+            {
+              /*  Debug.Print("ev m1e");
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+               
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);*/
+
+                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                   // return RedirectToAction("Index", "Home");
+                
+                jelDobro = true;
+                return RedirectToLocal(returnUrl);
+
+            }
+
+            // return View(korisnikAzure);
+            ModelState.AddModelError("", "Nije dobar email ili šifra.");
+            return View(model);
         }
 
         //
@@ -139,6 +163,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+           // return View()
             return View("~/Views/KorisnikAzures/Create.cshtml");
            // return View();
         }

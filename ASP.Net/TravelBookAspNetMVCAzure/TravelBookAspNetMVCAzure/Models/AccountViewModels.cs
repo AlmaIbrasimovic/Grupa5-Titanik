@@ -44,6 +44,11 @@ namespace TravelBookAspNetMVCAzure.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        //dodano
+       /* [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }*/
     }
 
     public class LoginViewModel
@@ -150,5 +155,10 @@ namespace TravelBookAspNetMVCAzure.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        //dodano
+       /* [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }*/
     }
 }
