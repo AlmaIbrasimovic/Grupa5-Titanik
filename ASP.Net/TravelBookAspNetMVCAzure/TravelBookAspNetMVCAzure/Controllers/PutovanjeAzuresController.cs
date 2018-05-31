@@ -17,7 +17,15 @@ namespace TravelBookAspNetMVCAzure.Controllers
         // GET: PutovanjeAzures
         public ActionResult Index()
         {
-            return View(db.PutovanjeAzures.ToList());
+            var model = db.PutovanjeAzures.ToList();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(PutovanjeAzure model)
+        {
+            var data = db.PutovanjeAzures.ToList();
+            return View(data);
         }
 
         // GET: PutovanjeAzures/Details/5

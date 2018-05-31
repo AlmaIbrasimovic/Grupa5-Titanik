@@ -44,5 +44,7 @@ namespace TravelBookAspNetMVCAzure.Models
         public string idPrevoz { get; set; }
 
         public double? cijena { get; set; }
+
+
     }
 }

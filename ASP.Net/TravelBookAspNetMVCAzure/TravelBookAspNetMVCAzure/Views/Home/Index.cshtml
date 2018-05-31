@@ -1,11 +1,19 @@
-﻿@{
+﻿@model IEnumerable<TravelBookAspNetMVCAzure.Models.PutovanjeAzure>
+@{
     ViewBag.Title = "Travel Book";
-}
 
+
+}
+<p>
+    @Html.ActionLink("Index","PutovanjeAzure")
+</p>
 
 <!DOCTYPE html>
 <html>
 <head>
+
+        
+  
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -143,304 +151,78 @@
         <div class="jumbotron" resource="">
             <h1>Travel the world!</h1>
         </div>
-
+       
         <div class="group">
             <div>
-                <div class="pad">
-                    <div class="row grid">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="https://higherlogicdownload.s3.amazonaws.com/IMANET/0be307fc-98fd-412d-b879-ae9a90f110de/UploadedImages/Moscow.jpg" width="272" height="180" alt="Moskva" class="responsive">
-                                <div class="caption">
-                                    <h3 class="pull-right cijena">900 KM</h3>
-                                    <h3>Moskva</h3>
-                                    <h4></h4>
-                                    <html>
-                                    <body>
-                                        <p style="text-align:center">31.08.-10.09.2018.</p>
-                                    </body>
-                                </html>
-                                <p>
-                                    <head>
-                                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                                        <style>
-                                            .block {
-                                                display: block;
-                                                width: 100%;
-                                                border: none;
-                                                background-color: #4CAF50;
-                                                color: white;
-                                                padding: 14px 28px;
-                                                font-size: 16px;
-                                                cursor: pointer;
-                                                text-align: center;
-                                            }
+         
+                @foreach (var item in Model)
+                {
 
-                                                .block:hover {
-                                                    background-color: #ddd;
-                                                    color: black;
+                    <div class="pad">
+                        <div class="row grid">
+
+                            <div class="col-md-4">
+                                <div class="thumbnail">
+                                    <img src="https://higherlogicdownload.s3.amazonaws.com/IMANET/0be307fc-98fd-412d-b879-ae9a90f110de/UploadedImages/Moscow.jpg" width="272" height="180" alt="Moskva" class="responsive">
+                                    <div class="caption">
+                                        <h3 class="pull-right cijena">900 KM</h3>
+                                        <h3>@Html.DisplayFor(modelItem => item.cijena)</h3>
+                                        <h4></h4>
+                                        <html>
+                                        <body>
+                                            <p style="text-align:center">31.08.-10.09.2018.</p>
+                                        </body>
+                                    </html>
+                                    <p>
+                                        <head>
+                                            <meta name="viewport" content="width=device-width, initial-scale=1">
+                                            <style>
+                                                .block {
+                                                    display: block;
+                                                    width: 100%;
+                                                    border: none;
+                                                    background-color: #4CAF50;
+                                                    color: white;
+                                                    padding: 14px 28px;
+                                                    font-size: 16px;
+                                                    cursor: pointer;
+                                                    text-align: center;
                                                 }
-                                        </style>
-                                    </head>
-                                    <body>
-                                        @using Microsoft.AspNet.Identity
-                                        @if (Request.IsAuthenticated) {
-                                            <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                                         }
-                                        else {
-                                            <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                                        }
-                                    </body>
-                                </p>
+
+                                                    .block:hover {
+                                                        background-color: #ddd;
+                                                        color: black;
+                                                    }
+                                            </style>
+                                        </head>
+                                        <body>
+                                            @using Microsoft.AspNet.Identity
+                                            @if (Request.IsAuthenticated)
+                                            {
+                                                <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                                            }
+                                            else
+                                            {
+                                                // <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                                            }
+                                        </body>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail">
-                            <img src="https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.travelandleisure.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F1600x1000%2Fpublic%2F1488557674%2Fold-town-square-prague-czech-republic-PRAGUE0317.jpg%3Fitok%3DxfLvhxtk&w=800&q=85" width="272" height="180" alt="Prag" class="responsive">
-                            <div class="caption">
-                                <h3 class="pull-right cijena">250 KM</h3>
-                                <h3>Prag</h3>
-                                <h4></h4>
-                                <html>
-                                <body>
-                                    <p style="text-align:center">15.06.-22.06.2018.</p>
-                                </body>
-                            </html>
-                            <p>
-                                <head>
-                                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                                    <style>
-                                        .block {
-                                            display: block;
-                                            width: 100%;
-                                            border: none;
-                                            background-color: #4CAF50;
-                                            color: white;
-                                            padding: 14px 28px;
-                                            font-size: 16px;
-                                            cursor: pointer;
-                                            text-align: center;
-                                        }
 
-                                            .block:hover {
-                                                background-color: #ddd;
-                                                color: black;
-                                            }
-                                    </style>
-                                </head>
-                                <body>
-                                    @using Microsoft.AspNet.Identity
-                                    @if (Request.IsAuthenticated) {
-                                        <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                                     }
-                                    else {
-                                        <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                                    }
-                                </body>
-                            </p>
-                        </div>
+
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/paris-vintage-car.jpg?imwidth=1400" width="272" height="180" alt="Pariz" class="responsive">
-                        <div class="caption">
-                            <h3 class="pull-right cijena">550 KM</h3>
-                            <h3>Pariz</h3>
-                            <h4></h4>
-                            <html>
-                            <body>
-                                <p style="text-align:center">20.06.- 01.07.2018.</p>
-                            </body>
-                        </html>
-                        <p>
-                            <head>
-                                <meta name="viewport" content="width=device-width, initial-scale=1">
-                                <style>
-                                    .block {
-                                        display: block;
-                                        width: 100%;
-                                        border: none;
-                                        background-color: #4CAF50;
-                                        color: white;
-                                        padding: 14px 28px;
-                                        font-size: 16px;
-                                        cursor: pointer;
-                                        text-align: center;
-                                    }
-
-                                        .block:hover {
-                                            background-color: #ddd;
-                                            color: black;
-                                        }
-                                </style>
-                            </head>
-                            <body>
-                                @using Microsoft.AspNet.Identity
-                                @if (Request.IsAuthenticated) {
-                                     <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                                 }
-                                else {
-                                    <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                                }
-                            </body>
-                        </p>
-                    </div>
-                </div>
+            }
             </div>
-        </div>
-    </div>
-</div>
-<br />
-<div>
-    <div class="pad">
-        <div class="row grid">
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="https://static.independent.co.uk/s3fs-public/styles/story_large/public/thumbnails/image/2018/01/31/09/new-york-main-image.jpg" width="272" height="180" alt="NY" class="responsive">
-                    <div class="caption">
-                        <h3 class="pull-right cijena">1700 KM</h3>
-                        <h3>New York</h3>
-                        <h4></h4>
-                        <html>
-                        <body>
-                            <p style="text-align:center">15.07.-27.07.2018</p>
-                        </body>
-                    </html>
-                    <p>
-                        <head>
-                            <meta name="viewport" content="width=device-width, initial-scale=1">
-                            <style>
-                                .block {
-                                    display: block;
-                                    width: 100%;
-                                    border: none;
-                                    background-color: #4CAF50;
-                                    color: white;
-                                    padding: 14px 28px;
-                                    font-size: 16px;
-                                    cursor: pointer;
-                                    text-align: center;
-                                }
 
-                                    .block:hover {
-                                        background-color: #ddd;
-                                        color: black;
-                                    }
-                            </style>
-                        </head>
-                        <body>
-                            @using Microsoft.AspNet.Identity
-                            @if (Request.IsAuthenticated) {
-                                <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                             }
-                            else {
-                                <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                            }
-                        </body>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <img src="https://media.virtuoso.com/m/cms/VCom/Destination/regions/africa/Egypt/h490/Egypt-Sphinx.jpg" width="272" height="180" alt="Egipat" class="responsive">
-                <div class="caption">
-                    <h3 class="pull-right cijena">1900 KM</h3>
-                    <h3>Egipat</h3>
-                    <h4></h4>
-                    <html>
-                    <body>
-                        <p style="text-align:center">10.06.- 22.06.2018.</p>
-                    </body>
-                </html>
-                <p>
-                    <head>
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                        <style>
-                            .block {
-                                display: block;
-                                width: 100%;
-                                border: none;
-                                background-color: #4CAF50;
-                                color: white;
-                                padding: 14px 28px;
-                                font-size: 16px;
-                                cursor: pointer;
-                                text-align: center;
-                            }
 
-                                .block:hover {
-                                    background-color: #ddd;
-                                    color: black;
-                                }
-                        </style>
-                    </head>
-                    <body>
-                        @using Microsoft.AspNet.Identity
-                        @if (Request.IsAuthenticated) {
-                            <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                         }
-                        else {
-                           <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                        }
-                    </body>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="thumbnail">
-            <img src="http://lukavicaonline.com/wp-content/uploads/2017/03/7_10.jpg" width="272" height="180" alt="Tokio" class="responsive">
-            <div class="caption">
-                <h3 class="pull-right cijena">2200 KM</h3>
-                <h3>Tokio</h3>
-                <h4></h4>
-                <html>
-                <body>
-                    <p style="text-align:center">18.07.-28.07.2018.</p>
-                </body>
-            </html>
-            <p>
-                <head>
-                    <meta name="viewport" content="width=device-width, initial-scale=1">
-                    <style>
-                        .block {
-                            display: block;
-                            width: 100%;
-                            border: none;
-                            background-color: #4CAF50;
-                            color: white;
-                            padding: 14px 28px;
-                            font-size: 16px;
-                            cursor: pointer;
-                            text-align: center;
-                        }
 
-                            .block:hover {
-                                background-color: #ddd;
-                                color: black;
-                            }
-                    </style>
-                </head>
-                <body>
-                    @using Microsoft.AspNet.Identity
-                    @if (Request.IsAuthenticated) {
-                        <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                     }
-                    else {
-                        <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                    }
-                </body>
-            </p>
+
         </div>
+
     </div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 
 <script>
@@ -470,48 +252,4 @@
         alert("Uspješno ste rezervisali putovanje!");
     }
 </script>
-<!--
-<html>
-<head>
-    <style>
-        body {
-            background: url(https://cdn-images-1.medium.com/max/1200/1*N_l3sQECv4Yhght8HtwMGg.jpeg) no-repeat center;
-            background-size: initial;
-        }
-    </style>
-</head>
-<body>
 
-</body>
-</html>
-
-
-
-
-
-<div class="jumbotron">
-    <h1>Travel the world!</h1>
-    <p class="lead">Slike ovdje</p>
-
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Putovanje1</h2>
-        <p>
-            Pariz
-        </p>
-        <p><a class="btn btn-default" href="https://en.wikipedia.org/wiki/Pariz">Pogledaj &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Putovanje2</h2>
-        <p>-</p>
-        <p><a class="btn btn-default">Learn more</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Putovanje3</h2>
-        <p>--</p>
-        <p><a class="btn btn-default">Learn more</a></p>
-    </div>
-</div>
-    -->

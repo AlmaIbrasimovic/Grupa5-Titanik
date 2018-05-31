@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -63,12 +64,15 @@ namespace TravelBookAspNetMVCAzure.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ime,prezime,jmbg,datumRodjenja,telefon,email,sifra,idKartice")] KorisnikAzure korisnikAzure)
         {//id,createdAt,updatedAt,version,deleted,
+            Debug.Print("dobro doslo");
             if (ModelState.IsValid)
             {
+                
+                Debug.Print("dobro doslo32131");
                 db.KorisnikAzures.Add(korisnikAzure);
                 db.SaveChanges();
-                
-               // return RedirectToAction("Index");
+                Debug.Print("dobro dosl4214o");
+                return RedirectToAction("Index","Home");
             }
 
 
