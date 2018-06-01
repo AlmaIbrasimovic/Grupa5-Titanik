@@ -85,7 +85,7 @@ namespace TravelBookApp.AzureKlase
                                     break;
                                 }
                             }
-                            Putovanje put = new Putovanje(reader.GetDateTime(5), reader.GetDateTime(6), Convert.ToInt32(reader.GetDouble(7)), Convert.ToInt32(reader.GetDouble(8)), reader.GetString(9), reader.GetBoolean(10), Convert.ToInt32(reader.GetDouble(11)), Globalna.nasaAgencija.Destinacije[index], Globalna.nasaAgencija.Hoteli[index2], Globalna.nasaAgencija.Prevozi[index3], reader.GetDouble(15));
+                            Putovanje put = new Putovanje(reader.GetDateTimeOffset(5).DateTime, reader.GetDateTimeOffset(6).DateTime, Convert.ToInt32(reader.GetDouble(7)), Convert.ToInt32(reader.GetDouble(8)), reader.GetString(9), reader.GetBoolean(10), Convert.ToInt32(reader.GetString(11)), Globalna.nasaAgencija.Destinacije[index], Globalna.nasaAgencija.Hoteli[index2], Globalna.nasaAgencija.Prevozi[index3], reader.GetDouble(15));
                             Globalna.nasaAgencija.Putovanja.Add(put);
                         }
                         if (Globalna.nasaAgencija.Putovanja.Count == 0) Globalna.idSvihPutovanja = 0;

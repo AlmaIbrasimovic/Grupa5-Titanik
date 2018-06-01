@@ -55,6 +55,8 @@ namespace TravelBookApp
             if (l.prijaviAgenciju(tNaziv.Text, bSifra.Password.ToString()))
             {
               Frame.Navigate(typeof(PocetnaStranica));
+                l.Poruka = new Windows.UI.Popups.MessageDialog("Putovanja: " + Globalna.nasaAgencija.Putovanja.Count + ", kartice: " + Globalna.nasaAgencija.Kartice.Count + ", agencije: " + Globalna.nasaAgencija.Agencije.Count + ", destinacije: " + Globalna.nasaAgencija.Destinacije.Count + ", hoteli: " + Globalna.nasaAgencija.Hoteli.Count + ", prevozi: " + Globalna.nasaAgencija.Prevozi.Count + "\n ");
+                l.Poruka.ShowAsync();
             }
             else
             {

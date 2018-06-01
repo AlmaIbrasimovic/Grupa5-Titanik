@@ -294,11 +294,11 @@ namespace TravelBookApp
             if (odabraniHotel.Equals("Ništa od ponuđenog"))
             {
                 putovanjeVM.dodajNoviHotel(tHotel.Text, 300, Convert.ToInt32(300 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
-                Hotel hot = new Hotel(tHotel.Text, 500, Convert.ToInt32(500 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
+                noviHotel = new Hotel(tHotel.Text, 500, Convert.ToInt32(500 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
 
                 
                 HotelAzure h = new HotelAzure();
-                h.dodajHotel(hot);
+                h.dodajHotel(noviHotel);
 
             }
             if (jelOK)
@@ -335,6 +335,7 @@ namespace TravelBookApp
             if (odabrano.Equals("Ništa od ponuđenog")) destinacija = tDestinacija.Text;
             if (odabrano != "Ništa od ponuđenog") destinacija = cDestinacije.SelectedItem.ToString();
             autobusi = putovanjeVM.dajListuBusevaPoDestinacijiIKapacitetu(destinacija, Convert.ToInt32(sMax.Value));
+            cPrevoz.Items.Clear();
             foreach (var temp in autobusi) cPrevoz.Items.Add(temp);
             //cPrevoz.Items.Add(avioKompanije);
             gLet.Visibility = Visibility.Collapsed;

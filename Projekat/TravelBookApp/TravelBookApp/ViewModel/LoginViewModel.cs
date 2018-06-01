@@ -20,8 +20,11 @@ namespace TravelBookApp.ViewModel
             {
                 foreach (Agencija nova in Globalna.nasaAgencija.Agencije)
                 {
-
-                    if (nova.NazivAgencije.Equals(korisnickoIme) && nova.Sifra.Equals(password)) Globalna.prijavljenaAgencijaId = nova.Id;
+                    if (nova.NazivAgencije.Equals(korisnickoIme) && nova.Sifra.Equals(password))
+                    {
+                        Globalna.prijavljenaAgencijaId = nova.Id;
+                        break;
+                    }
                 }
                 return true;
             }
