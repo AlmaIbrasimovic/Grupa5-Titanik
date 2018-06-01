@@ -28,9 +28,6 @@ namespace TravelBookApp
            this.InitializeComponent();
            // upisiDummyPodatke(); samo pozvat kad je baza za hotele prevoze i destinacije prazna
             if (Globalna.nasaAgencija.Putovanja.Count == 0 && Globalna.nasaAgencija.Agencije.Count == 0) ucitajBazuUwp();
-        
-
-
         }
 
         public void ucitajBazuUwp()
@@ -48,6 +45,14 @@ namespace TravelBookApp
            
             l.UcitajPrevoze();
             p.UcitajPutovanja();
+
+            if(Globalna.nasaAgencija.Agencije.Count != 0) Globalna.idSvihAgencija = Globalna.nasaAgencija.Agencije.Count;
+            if (Globalna.nasaAgencija.Putovanja.Count != 0) Globalna.idSvihPutovanja = Globalna.nasaAgencija.Putovanja.Count;
+            if (Globalna.nasaAgencija.Kartice.Count != 0) Globalna.idSvihKartica = Globalna.nasaAgencija.Kartice.Count;
+            if (Globalna.nasaAgencija.Hoteli.Count != 0) Globalna.idSvihHotela = Globalna.nasaAgencija.Hoteli.Count;
+            if (Globalna.nasaAgencija.Prevozi.Count != 0) Globalna.idSvihPrevoza = Globalna.nasaAgencija.Prevozi.Count;
+            if (Globalna.nasaAgencija.Destinacije.Count != 0) Globalna.idSvihDestinacija = Globalna.nasaAgencija.Destinacije.Count;
+            if (Globalna.nasaAgencija.Korisnici.Count != 0) Globalna.idSvihKorisnika = Globalna.nasaAgencija.Korisnici.Count;
         }
 
         private void bPrijava_Click(object sender, RoutedEventArgs e)
@@ -55,8 +60,6 @@ namespace TravelBookApp
             if (l.prijaviAgenciju(tNaziv.Text, bSifra.Password.ToString()))
             {
               Frame.Navigate(typeof(PocetnaStranica));
-                l.Poruka = new Windows.UI.Popups.MessageDialog("Putovanja: " + Globalna.nasaAgencija.Putovanja.Count + ", kartice: " + Globalna.nasaAgencija.Kartice.Count + ", agencije: " + Globalna.nasaAgencija.Agencije.Count + ", destinacije: " + Globalna.nasaAgencija.Destinacije.Count + ", hoteli: " + Globalna.nasaAgencija.Hoteli.Count + ", prevozi: " + Globalna.nasaAgencija.Prevozi.Count + "\n ");
-                l.Poruka.ShowAsync();
             }
             else
             {

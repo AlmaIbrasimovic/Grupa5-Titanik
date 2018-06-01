@@ -89,7 +89,7 @@ namespace TravelBookApp.AzureKlase
                             Globalna.nasaAgencija.Putovanja.Add(put);
                         }
                         if (Globalna.nasaAgencija.Putovanja.Count == 0) Globalna.idSvihPutovanja = 0;
-                        else if (Globalna.nasaAgencija.Putovanja.Count != 0) Globalna.idSvihPutovanja = Globalna.nasaAgencija.Putovanja.Count - 1;
+                        else if (Globalna.nasaAgencija.Putovanja.Count != 0) Globalna.idSvihPutovanja = Globalna.nasaAgencija.Putovanja.Count;
                     }
                     c.Close();
                 }

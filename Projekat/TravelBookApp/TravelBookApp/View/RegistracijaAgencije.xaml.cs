@@ -129,13 +129,12 @@ namespace TravelBookApp
 
                 if (tSifra.Password.ToString().Equals(tSifraPonovo.Password.ToString()))
                 {
-                    r.registrujAgneciju(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());  
+                    r.registrujAgneciju(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());
+
                     try
                     {
-                        Agencija a = new Agencija(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());
-
                         AgencijaAzure agen = new AgencijaAzure();                     
-                        agen.dodajAgenciju(a);
+                        agen.dodajAgenciju(Globalna.nasaAgencija.Agencije[Globalna.nasaAgencija.Agencije.Count - 1]);
                         var dialog = new MessageDialog("Uspješno ste registrovali agenciju!");
                         dialog.ShowAsync();
                     }

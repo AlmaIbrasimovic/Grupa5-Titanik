@@ -55,7 +55,7 @@ namespace TravelBookApp.AzureKlase
                             Globalna.nasaAgencija.Prevozi.Add(p);
                         }
                         if (Globalna.nasaAgencija.Prevozi.Count == 0) Globalna.idSvihPrevoza = 0;
-                        else if (Globalna.nasaAgencija.Prevozi.Count != 0) Globalna.idSvihPrevoza = Globalna.nasaAgencija.Prevozi.Count - 1;
+                        else if (Globalna.nasaAgencija.Prevozi.Count != 0) Globalna.idSvihPrevoza = Globalna.nasaAgencija.Prevozi.Count;
                     }
                     c.Close();
                 }

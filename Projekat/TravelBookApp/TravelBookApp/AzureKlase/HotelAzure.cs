@@ -62,7 +62,7 @@ namespace TravelBookApp.AzureKlase
                             Globalna.nasaAgencija.Hoteli.Add(h);
                         }
                         if (Globalna.nasaAgencija.Hoteli.Count == 0) Globalna.idSvihHotela = 0;
-                        else if (Globalna.nasaAgencija.Hoteli.Count != 0) Globalna.idSvihHotela = Globalna.nasaAgencija.Hoteli.Count - 1;
+                        else if (Globalna.nasaAgencija.Hoteli.Count != 0) Globalna.idSvihHotela = Globalna.nasaAgencija.Hoteli.Count;
                     }
                     c.Close();
                 }

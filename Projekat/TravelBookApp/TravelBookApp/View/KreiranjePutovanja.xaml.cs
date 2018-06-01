@@ -21,6 +21,7 @@ using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
 using Microsoft.WindowsAzure.MobileServices;
 using TravelBookApp.AzureKlase;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -296,11 +297,19 @@ namespace TravelBookApp
                 putovanjeVM.dodajNoviHotel(tHotel.Text, 300, Convert.ToInt32(300 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
                 noviHotel = new Hotel(tHotel.Text, 500, Convert.ToInt32(500 - sMax.Value), novaDestinacija, 120, iSlikaHotela);
 
-                
+
                 HotelAzure h = new HotelAzure();
                 h.dodajHotel(noviHotel);
 
             }
+            else {
+                foreach (Hotel h in Globalna.nasaAgencija.Hoteli) 
+                    if (h.Ime.Equals(cHoteli.SelectedItem)) {
+                        noviHotel = h;
+                        break;
+                    }
+            }
+            
             if (jelOK)
             {
                 putovanjeVM.kreirajPutovanje(dPolaska.Date.Value.Date, dPovratka.Date.Value.Date, Convert.ToInt32(sMin.Value), Convert.ToInt32(sMax.Value), "opis putovanja", istaknuto, Globalna.prijavljenaAgencijaId, novaDestinacija, noviHotel, prevoz, Convert.ToDouble(tCijena.Text));

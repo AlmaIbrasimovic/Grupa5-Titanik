@@ -35,27 +35,12 @@ namespace TravelBookApp
                     if (Globalna.trenutnaPutovanja)
                     {
                         if (DateTime.Now <= p.DatumPovratka)
-                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka));
+                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString());
                     }
                     else
                     {
                         if (p.DatumPovratka < DateTime.Now)
-                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka));
-                    }
-                }
-            }
-
-            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
-            {
-                if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
-                {
-                    if ( comboPutovanja.SelectedItem != null && comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
-                    {
-                        tDatumPolaska.Text = p.DatumPolaska.ToString();
-                        tDatumPovratka.Text = p.DatumPovratka.ToString();
-                        txtBrojPutnika.Text = Convert.ToString(p.TrenutniBrojPutnika);
-                        txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
-                        txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
+                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString());
                     }
                 }
             }
@@ -77,12 +62,12 @@ namespace TravelBookApp
             {
                 if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
                 {
-                    if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + Convert.ToString(p.DatumPolaska) + "-" + Convert.ToString(p.DatumPovratka)))
+                    if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString()))
                     {
-                        tDatumPolaska.Text = p.DatumPolaska.ToString();
-                        tDatumPovratka.Text = p.DatumPovratka.ToString();
-                        txtBrojPutnika.Text = Convert.ToString(p.TrenutniBrojPutnika);
-                        txtTipPrevoza.Text = Convert.ToString((int)p.InfoPrevoza.VrstaPrevoza); //sto se krahira??
+                        tDatumPolaska.Text = p.DatumPolaska.ToShortDateString();
+                        tDatumPovratka.Text = p.DatumPovratka.Date.ToShortDateString();
+                        txtBrojPutnika.Text = Convert.ToString(p.MaximalniBrojPutnika); 
+                        txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
                         txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
                     }
                 }

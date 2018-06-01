@@ -14,7 +14,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="490,167,0,0" FontSize="17" Text="Datum povratka:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,298,0,0" FontSize="17" Text="Tip prevoza:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,362,0,0" FontSize="17" Text="Cijena putovanja:" TextWrapping="Wrap" VerticalAlignment="Top" Height="30"/>
-        <ComboBox Name="comboPutovanja" HorizontalAlignment="Left" Margin="490,66,0,0" FontSize="17" VerticalAlignment="Top" Height="30" Width="370" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox Name="comboPutovanja" HorizontalAlignment="Left" Margin="490,66,0,0" FontSize="17" VerticalAlignment="Top" Width="370" SelectionChanged="ComboBox_SelectionChanged"/>
         <TextBox Name="txtBrojPutnika" HorizontalAlignment="Left" Margin="218,224,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
         <TextBox Name="txtTipPrevoza" HorizontalAlignment="Left" Margin="218,289,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
         <TextBox Name="txtCijenaPutovanja" HorizontalAlignment="Left" Margin="218,353,0,0" FontSize="17" Text="" VerticalAlignment="Top" Height="30" Width="200"/>
