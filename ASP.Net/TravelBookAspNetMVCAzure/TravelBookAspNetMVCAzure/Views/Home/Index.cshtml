@@ -150,7 +150,7 @@
         
         @foreach (var item in Model) {
                   <div class="col-md-4">
-                      <img src="https://higherlogicdownload.s3.amazonaws.com/IMANET/0be307fc-98fd-412d-b879-ae9a90f110de/UploadedImages/Moscow.jpg" width="272" height="180" alt="Moskva" class="responsive">
+                      <img src="@Html.Action("vratiSliku", "DestinacijaAzures", new { id= item.idDestinacije })"width="272" height="180" alt="Moskva" class="responsive">
                       <h3>@Html.Action("vratiIme", "DestinacijaAzures", new { id= item.idDestinacije })</h3>                                   
                       <body>
                             <p style="text-align:center">@Html.DisplayFor(modelItem => item.cijena) KM </p>

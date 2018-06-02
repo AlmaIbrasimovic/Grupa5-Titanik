@@ -45,7 +45,18 @@ namespace TravelBookAspNetMVCAzure.Controllers
             }
             return ime;
         }
-   
+
+        public string vratiSliku(string id)
+        {
+            string slika = string.Empty;
+            DestinacijaAzure destinacijaAzure = db.DestinacijaAzures.Find(id);
+            if (destinacijaAzure != null)
+            {
+                slika = destinacijaAzure.slika;
+            }
+            return slika;
+        }
+
         // GET: DestinacijaAzures/Create
         public ActionResult Create()
         {
