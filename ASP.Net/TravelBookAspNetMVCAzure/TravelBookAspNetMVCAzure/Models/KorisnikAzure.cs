@@ -9,21 +9,21 @@ namespace TravelBookAspNetMVCAzure.Models
 
     [Table("KorisnikAzure")]
     public partial class KorisnikAzure
-    {/*
+    {
           [StringLength(255)]
           [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-          public string id { get; set; }
-        
-          public DateTimeOffset createdAt { get; set; }
+          public string id { get; }//set;
+                                   /* 
+                                      public DateTimeOffset createdAt { get; set; }
 
-          public DateTimeOffset? updatedAt { get; set; }
+                                      public DateTimeOffset? updatedAt { get; set; }
 
-          [Column(TypeName = "timestamp")]
-          [MaxLength(8)]
-          [Timestamp]
-          public byte[] version { get; set; }
+                                      [Column(TypeName = "timestamp")]
+                                      [MaxLength(8)]
+                                      [Timestamp]
+                                      public byte[] version { get; set; }
 
-          public bool? deleted { get; set; }*/
+                                      public bool? deleted { get; set; }*/
 
         [Key]
         [DisplayName ("Ime")]

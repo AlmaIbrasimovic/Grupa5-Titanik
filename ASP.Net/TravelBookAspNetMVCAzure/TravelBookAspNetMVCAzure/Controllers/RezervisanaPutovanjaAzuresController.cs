@@ -47,9 +47,9 @@ namespace TravelBookAspNetMVCAzure.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,createdAt,updatedAt,version,deleted,idKorisnika,idPutovanja")] RezervisanaPutovanjaAzure rezervisanaPutovanjaAzure)
-        {
+        { 
             if (ModelState.IsValid)
-            {
+            { 
                 db.RezervisanaPutovanjaAzures.Add(rezervisanaPutovanjaAzure);
                 db.SaveChanges();
                 return RedirectToAction("Index");

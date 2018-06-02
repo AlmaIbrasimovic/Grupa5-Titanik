@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<TravelBookAspNetMVCAzure.Models.PutovanjeAzure>
+    @using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Travel Book";
 
@@ -190,8 +191,8 @@
                                     <body>
                                         @using Microsoft.AspNet.Identity
                                         @if (Request.IsAuthenticated)
-                                        {
-                                            <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
+                                        { 
+                                            <button class="block" onclick="location.href='@Url.Action("PosaljiEmail", "Home",new { destinacija = "Havaji", ime = User.Identity.GetUserName(),idPutovanja = item.id })'">Rezerviši</button>
                                         }
                                         else
                                         {
@@ -233,7 +234,8 @@
 
 <script>
     function myFunction() {
-        alert("Uspješno ste rezervisali putovanje!");
+       // alert("Uspješno ste rezervisali putovanje!");
+       
     }
 </script>
 

@@ -119,7 +119,7 @@ namespace TravelBookAspNetMVCAzure.Models
                 .Property(e => e.datumPovratka)
                 .HasPrecision(3);
 
-            modelBuilder.Entity<RezervisanaPutovanjaAzure>()
+           modelBuilder.Entity<RezervisanaPutovanjaAzure>()
                 .Property(e => e.createdAt)
                 .HasPrecision(3);
 
