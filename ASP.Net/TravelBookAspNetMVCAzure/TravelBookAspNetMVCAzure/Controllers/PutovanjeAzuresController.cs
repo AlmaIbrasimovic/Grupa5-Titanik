@@ -43,6 +43,15 @@ namespace TravelBookAspNetMVCAzure.Controllers
             return View(putovanjeAzure);
         }
 
+        public string vratiDatum (DateTimeOffset datum,DateTimeOffset datum1)
+        {
+            string dat = string.Empty;
+            string dat1 = string.Empty;
+            dat = datum.ToString().Substring(0, 10);
+            dat1 = datum1.ToString().Substring(0, 10);
+            return dat + " - " + dat1;          
+        }
+
         // GET: PutovanjeAzures/Create
         public ActionResult Create()
         {
