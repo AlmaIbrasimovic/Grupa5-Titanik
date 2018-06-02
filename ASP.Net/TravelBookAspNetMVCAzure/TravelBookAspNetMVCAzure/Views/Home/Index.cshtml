@@ -187,7 +187,7 @@
             <body>
                 @using Microsoft.AspNet.Identity
                 @if (Request.IsAuthenticated) {
-                    <button class="block" onclick="location.href='@Url.Action("PosaljiEmail", "Home",new { destinacija = "@Html.Action('vratiIme', 'DestinacijaAzures', new { id= item.idDestinacije })", ime = User.Identity.GetUserName(),idPutovanja = item.id })'">Rezerviši</button>
+                    <button class="block" onclick="location.href='@Url.Action("PosaljiEmail", "Home",new { destinacija = @Html.Action("vratiIme", "DestinacijaAzures", new { id= item.idDestinacije }), ime = User.Identity.GetUserName(),idPutovanja = item.id })'">Rezerviši</button>
                  }
                 else
                 {

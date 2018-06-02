@@ -32,7 +32,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
             RezervisanaPutovanjaAzure r = new RezervisanaPutovanjaAzure();
             r.idPutovanja = idPutovanja;
             r.idKorisnika = rez.id; //id ne valja
-            r.id = "1";
+            r.id = "223"; //bacit ce izuzetak ako je vec upisan taj broj u bazu jer je pk
             r.deleted = false;
             r.createdAt = DateTimeOffset.Now;
             r.updatedAt = DateTimeOffset.Now;
