@@ -1,10 +1,8 @@
 ﻿@model IEnumerable<TravelBookAspNetMVCAzure.Models.PutovanjeAzure>
+
 @{
     ViewBag.Title = "Travel Book";
-
-
 }
-
 
 <!DOCTYPE html>
 <html>
@@ -148,29 +146,25 @@
     <div class="main">
         <div class="jumbotron" resource="">
             <h1>Travel the world!</h1>
-        </div>
-       
-        <div class="group">
-            <div>
-                @foreach (var item in Model) {
-                <div class="pad">
-                    <div class="row grid">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
-                                <img src="https://higherlogicdownload.s3.amazonaws.com/IMANET/0be307fc-98fd-412d-b879-ae9a90f110de/UploadedImages/Moscow.jpg" width="272" height="180" alt="Moskva" class="responsive">
-                                <div class="caption">
-                                     <h3>@Html.DisplayFor(modelItem => item.cijena)</h3>
-                                    <h4></h4>
-                                    <html>
-                                    <body>
-                                        <p style="text-align:center">31.08.-10.09.2018.</p>
-                                    </body>
-                                </html>
-                                <p>
-                                    <head>
-                                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                                        <style>
-                                            .block {
+        </div>      
+        
+        @foreach (var item in Model) {
+                  <div class="col-md-4">
+                      <img src="https://higherlogicdownload.s3.amazonaws.com/IMANET/0be307fc-98fd-412d-b879-ae9a90f110de/UploadedImages/Moscow.jpg" width="272" height="180" alt="Moskva" class="responsive">
+                      <h3>@Html.Action("vratiIme", "DestinacijaAzures", new { id= item.idDestinacije })</h3>                                   
+                      <body>
+                            <p style="text-align:center">@Html.DisplayFor(modelItem => item.cijena) KM </p>
+                      </body>
+                      <html>
+                            <body>
+                                 <p style="text-align:center">@Html.DisplayFor(modelItem => item.datumPolaska.Value.Date)</p>
+                            </body>
+                      </html>
+                      <p>
+                         <head>
+                               <meta name="viewport" content="width=device-width, initial-scale=1">
+                               <style>
+                                      .block {
                                                 display: block;
                                                 width: 100%;
                                                 border: none;
@@ -180,40 +174,30 @@
                                                 font-size: 16px;
                                                 cursor: pointer;
                                                 text-align: center;
-                                            }
-                                            .block:hover {
+                                       }
+                                       .block:hover {
                                                 background-color: #ddd;
                                                 color: black;
-                                            }
-                                        </style>
-                                    </head>
-                                    <body>
-                                        @using Microsoft.AspNet.Identity
-                                        @if (Request.IsAuthenticated)
-                                        {
+                                       }
+                               </style>
+                          </head>
+                          <body>
+                                @using Microsoft.AspNet.Identity
+                                     @if (Request.IsAuthenticated) {
                                             <button class="block" onclick="myFunction()" style="display:normal">Rezerviši</button>
-                                        }
-                                        else
-                                        {
-                                            // <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                                        }
-                                    </body>
-                                </p>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             }
-            </div>
-        </div>
-    </div>
+                                      }
+                                      else {
+                                        // <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                                      }
+                          </body>
+                          </p>
+                     <br> <br />
+                  </div>
+         }
 
 <script>
-
     var dropdown = document.getElementsByClassName("dropdown-btn");
     var i;
-
     for (i = 0; i < dropdown.length; i++) {
         dropdown[i].addEventListener("click", function () {
             this.classList.toggle("active");
@@ -231,9 +215,7 @@
 </html>
 
 
-<script>
-    function myFunction() {
-        alert("Uspješno ste rezervisali putovanje!");
-    }
-</script>
+
+
+
 
