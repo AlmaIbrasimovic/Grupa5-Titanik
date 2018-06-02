@@ -13,7 +13,6 @@ namespace TravelBookAspNetMVCAzure.Controllers
      
     public class HomeController : Controller
     {
-
         private TravelContext db = new TravelContext();
         public ActionResult Index()
         {
@@ -51,11 +50,10 @@ namespace TravelBookAspNetMVCAzure.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public string funkcija (string id)
         {
-            ViewBag.Message = "O agenciji";
-
-            return View();
+            var kontroler = new DestinacijaAzuresController();
+            return kontroler.vratiIme(id);
         }
 
         public void posalji(String destinacija,String email)

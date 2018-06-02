@@ -1,4 +1,4 @@
-namespace TravelBookAspNetMVCAzure.Models
+namespace TravelBookRestAPI.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,15 +6,13 @@ namespace TravelBookAspNetMVCAzure.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PutovanjeAzure")]
-    public partial class PutovanjeAzure
+    [Table("HotelAzure")]
+    public partial class HotelAzure
     {
         [StringLength(255)]
         public string id { get; set; }
 
-       
         public DateTimeOffset createdAt { get; set; }
-
 
         public DateTimeOffset? updatedAt { get; set; }
 
@@ -25,30 +23,16 @@ namespace TravelBookAspNetMVCAzure.Models
 
         public bool? deleted { get; set; }
 
-        
-        public DateTimeOffset? datumPolaska { get; set; }
+        public string ime { get; set; }
 
-      
-        public DateTimeOffset? datumPovratka { get; set; }
+        public string slika { get; set; }
 
-        public double? minBrojPutnika { get; set; }
+        public double? maxKapacitet { get; set; }
 
-        public double? maxBrojPutnika { get; set; }
-
-        public string opisPutovanja { get; set; }
-
-        public bool? istaknuto { get; set; }
-
-        public string idAgencije { get; set; }
+        public double? kapacitet { get; set; }
 
         public string idDestinacije { get; set; }
 
-        public string idHotela { get; set; }
-
-        public string idPrevoz { get; set; }
-
         public double? cijena { get; set; }
-
-
     }
 }

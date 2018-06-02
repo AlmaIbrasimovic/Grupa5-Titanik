@@ -1,4 +1,4 @@
-namespace TravelBookAspNetMVCAzure.Models
+namespace TravelBookRestAPI.Models
 {
     using System;
     using System.Collections.Generic;
@@ -12,9 +12,7 @@ namespace TravelBookAspNetMVCAzure.Models
         [StringLength(255)]
         public string id { get; set; }
 
-       
         public DateTimeOffset createdAt { get; set; }
-
 
         public DateTimeOffset? updatedAt { get; set; }
 
@@ -25,10 +23,8 @@ namespace TravelBookAspNetMVCAzure.Models
 
         public bool? deleted { get; set; }
 
-        
         public DateTimeOffset? datumPolaska { get; set; }
 
-      
         public DateTimeOffset? datumPovratka { get; set; }
 
         public double? minBrojPutnika { get; set; }
@@ -48,7 +44,5 @@ namespace TravelBookAspNetMVCAzure.Models
         public string idPrevoz { get; set; }
 
         public double? cijena { get; set; }
-
-
     }
 }

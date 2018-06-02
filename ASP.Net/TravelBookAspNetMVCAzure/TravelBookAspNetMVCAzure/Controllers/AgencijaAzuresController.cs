@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using TravelBookAspNetMVCAzure.Models;
@@ -15,9 +18,24 @@ namespace TravelBookAspNetMVCAzure.Controllers
         private TravelContext db = new TravelContext();
 
         // GET: AgencijaAzures
-        public ActionResult Index()
+        string apiUrl = "http://travelbookrestapi20180602024728.azurewebsites.net/";
+        public async Task<ActionResult> Index()
         {
-            return View(db.AgencijaAzures.ToList());
+            List<AgencijaAzure> agencije = new List<AgencijaAzure>();
+
+            using (var client = new HttpClient()) {
+                client.BaseAddress = new Uri(apiUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage res = await client.GetAsync("api/AgencijaAzures/");
+                if (res.IsSuccessStatusCode) {
+                    var response = res.Content.ReadAsStringAsync().Result;
+                    agencije = JsonConvert.DeserializeObject<List<AgencijaAzure>>(response);
+                }
+            }
+
+            return View(agencije);
         }
 
         // GET: AgencijaAzures/Details/5
