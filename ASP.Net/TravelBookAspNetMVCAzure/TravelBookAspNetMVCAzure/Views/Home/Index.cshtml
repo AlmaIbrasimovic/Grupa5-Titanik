@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<TravelBookAspNetMVCAzure.Models.PutovanjeAzure>
-    @using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Travel Book";
 
@@ -7,12 +7,13 @@
 }
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
 
-        
-  
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -98,8 +99,7 @@
         }
     </style>
 </head>
-<body>
-
+<body>   
     <div class="sidenav">
         <button class="dropdown-btn">
             Evropa
@@ -150,54 +150,60 @@
         <div class="jumbotron" resource="">
             <h1>Travel the world!</h1>
         </div>
-
-        @foreach (var item in Model) {
-        <div class="col-md-4">
-            <img src="@Html.Action("vratiSliku", "DestinacijaAzures", new { id= item.idDestinacije })" width="272" height="180" alt="Moskva" class="responsive">
-            <h3>@Html.Action("vratiIme", "DestinacijaAzures", new { id = item.idDestinacije })</h3>
-            <body>
-                <p style="text-align:center">@Html.DisplayFor(modelItem => item.cijena) KM </p>
-            </body>
-            <html>
-            <body>
-                <p style="text-align:center">@Html.Action("vratiDatum", "PutovanjeAzures", new { datum = item.datumPolaska, datum1 = item.datumPovratka })</p>
-            </body>
-        </html>
-        <p>
-            <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <style>
-                    .block {
-                        display: block;
-                        width: 100%;
-                        border: none;
-                        background-color: #4CAF50;
-                        color: white;
-                        padding: 14px 28px;
-                        font-size: 16px;
-                        cursor: pointer;
-                        text-align: center;
-                    }
-                    .block:hover {
-                            background-color: #ddd;
-                            color: black;
+        <p>@Html.ValidationMessage("pokazi", new { @style = "color:red" })</p>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <img src="@Html.Action("vratiSliku", "DestinacijaAzures", new { id= item.idDestinacije })" width="272" height="180" alt="Moskva" class="responsive">
+                <h3>@Html.Action("vratiIme", "DestinacijaAzures", new { id = item.idDestinacije })</h3>
+                <h4>
+                    @Html.Action("naziv", "AgencijaAzures", new { id = item.idAgencije })
+                </h4>
+                <body>
+                    <p style="text-align:center">@Html.DisplayFor(modelItem => item.cijena) KM </p>
+                </body>
+                <html>
+                <body>
+                    <p style="text-align:center">@Html.Action("vratiDatum", "PutovanjeAzures", new { datum = item.datumPolaska, datum1 = item.datumPovratka })</p>
+                </body>
+            </html>
+            <p>
+                <head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <style>
+                        .block {
+                            display: block;
+                            width: 100%;
+                            border: none;
+                            background-color: #4CAF50;
+                            color: white;
+                            padding: 14px 28px;
+                            font-size: 16px;
+                            cursor: pointer;
+                            text-align: center;
                         }
-                </style>
-            </head>
-            <body>
-                @using Microsoft.AspNet.Identity
-                @if (Request.IsAuthenticated) {
-                    <button class="block" onclick="location.href='@Url.Action("PosaljiEmail", "Home",new { destinacija = @Html.Action("vratiIme", "DestinacijaAzures", new { id= item.idDestinacije }), ime = User.Identity.GetUserName(),idPutovanja = item.id })'">Rezerviši</button>
-                 }
-                else
-                {
-                    // <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
-                }
-            </body>
-        </p>
-        <br> <br />
-    </div>
-}
+
+                            .block:hover {
+                                background-color: #ddd;
+                                color: black;
+                            }
+                    </style>
+                </head>
+                <body>
+                    @using Microsoft.AspNet.Identity
+                    @if (Request.IsAuthenticated)
+                    {
+                        <button class="block" onclick="location.href='@Url.Action("PosaljiEmail", "Home",new { destinacija = @Html.Action("vratiIme", "DestinacijaAzures", new { id= item.idDestinacije }), ime = User.Identity.GetUserName(), idPutovanja = item.id })'">Rezerviši</button>
+                    }
+                    else
+                    {
+                        // <button class="block" onclick="myFunction()" style="display:none">Rezerviši</button>
+                    }
+                </body>
+            </p>
+            <br> <br />
+        </div>
+    }
 
         <script>
 
@@ -223,8 +229,8 @@
 
 <script>
     function myFunction() {
-       // alert("Uspješno ste rezervisali putovanje!");
-       
+        // alert("Uspješno ste rezervisali putovanje!");
+
     }
 </script>
 

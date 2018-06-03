@@ -59,7 +59,7 @@ namespace TravelBookAspNetMVCAzure.Models
                 .Property(e => e.version)
                 .IsFixedLength();
 
-            modelBuilder.Entity<KarticaAzure>()
+         /*   modelBuilder.Entity<KarticaAzure>()
                 .Property(e => e.createdAt)
                 .HasPrecision(3);
 
@@ -69,7 +69,7 @@ namespace TravelBookAspNetMVCAzure.Models
 
             modelBuilder.Entity<KarticaAzure>()
                 .Property(e => e.version)
-                .IsFixedLength();
+                .IsFixedLength();*/
 
          /*   modelBuilder.Entity<KorisnikAzure>()
                 .Property(e => e.createdAt)

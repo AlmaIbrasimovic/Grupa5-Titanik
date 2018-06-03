@@ -11,8 +11,8 @@ namespace TravelBookAspNetMVCAzure.Models
     public partial class KorisnikAzure
     {
           [StringLength(255)]
-          [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-          public string id { get; }//set;
+         // [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+          public string id { get; set; }//set;
                                    /* 
                                       public DateTimeOffset createdAt { get; set; }
 
@@ -47,7 +47,7 @@ namespace TravelBookAspNetMVCAzure.Models
         [DisplayName("Password")]
         public string sifra { get; set; }
 
-        [DisplayName("ID kartice")]
+        [DisplayName("Kartica")]
         public string idKartice { get; set; }
     }
 }

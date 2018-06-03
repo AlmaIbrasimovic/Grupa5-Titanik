@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -16,130 +17,150 @@ namespace TravelBookAspNetMVCAzure.Controllers
     public class AgencijaAzuresController : Controller
     {
         private TravelContext db = new TravelContext();
+        List<AgencijaAzure> agencije = new List<AgencijaAzure>();
 
         // GET: AgencijaAzures
         string apiUrl = "http://travelbookrestapi20180602024728.azurewebsites.net/";
-        public async Task<ActionResult> Index()
-        {
-            List<AgencijaAzure> agencije = new List<AgencijaAzure>();
+          public async Task<ActionResult> Index()
+          {
+              
 
-            using (var client = new HttpClient()) {
-                client.BaseAddress = new Uri(apiUrl);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+              using (var client = new HttpClient()) {
+                  client.BaseAddress = new Uri(apiUrl);
+                  client.DefaultRequestHeaders.Clear();
+                  client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage res = await client.GetAsync("api/AgencijaAzures/");
-                if (res.IsSuccessStatusCode) {
-                    var response = res.Content.ReadAsStringAsync().Result;
-                    agencije = JsonConvert.DeserializeObject<List<AgencijaAzure>>(response);
-                }
-            }
+                  HttpResponseMessage res = await client.GetAsync("api/AgencijaAzures/");
+                  if (res.IsSuccessStatusCode) {
+                      var response = res.Content.ReadAsStringAsync().Result;
+                      agencije = JsonConvert.DeserializeObject<List<AgencijaAzure>>(response);
+                  }
+              }
 
-            return View(agencije);
+              return RedirectToAction("vratiListu");
         }
 
-        // GET: AgencijaAzures/Details/5
-        public ActionResult Details(string id)
+          public  List<AgencijaAzure> vratiListu()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            Debug.Print(agencije.Count+" agencije");
+            return agencije;
+        }
+
+          // GET: AgencijaAzures/Details/5
+          public ActionResult Details(string id)
+          {
+              if (id == null)
+              {
+                  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+              }
+              AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
+              if (agencijaAzure == null)
+              {
+                  return HttpNotFound();
+              }
+              return View(agencijaAzure);
+          }
+
+        public String naziv(string id)
+        {
+          
             AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
             if (agencijaAzure == null)
             {
-                return HttpNotFound();
+                return "ne postoji";
             }
-            return View(agencijaAzure);
+            return agencijaAzure.naziv;
         }
 
-        // GET: AgencijaAzures/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+          // GET: AgencijaAzures/Create
+          public ActionResult Create()
+          {
+              return View();
+          }
 
-        // POST: AgencijaAzures/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,createdAt,updatedAt,version,deleted,naziv,idKartica,telefon,grad,lokacija,sifra,email")] AgencijaAzure agencijaAzure)
-        {
-            if (ModelState.IsValid)
-            {
-                db.AgencijaAzures.Add(agencijaAzure);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+          // POST: AgencijaAzures/Create
+          // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+          // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+          [HttpPost]
+          [ValidateAntiForgeryToken]
+          public ActionResult Create([Bind(Include = "id,createdAt,updatedAt,version,deleted,naziv,idKartica,telefon,grad,lokacija,sifra,email")] AgencijaAzure agencijaAzure)
+          {
+              if (ModelState.IsValid)
+              {
+                  db.AgencijaAzures.Add(agencijaAzure);
+                  db.SaveChanges();
+                  return RedirectToAction("Index");
+              }
 
-            return View(agencijaAzure);
-        }
+              return View(agencijaAzure);
+          }
 
-        // GET: AgencijaAzures/Edit/5
-        public ActionResult Edit(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
-            if (agencijaAzure == null)
-            {
-                return HttpNotFound();
-            }
-            return View(agencijaAzure);
-        }
+          // GET: AgencijaAzures/Edit/5
+          public ActionResult Edit(string id)
+          {
+              if (id == null)
+              {
+                  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+              }
+              AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
+              if (agencijaAzure == null)
+              {
+                  return HttpNotFound();
+              }
+              return View(agencijaAzure);
+          }
 
-        // POST: AgencijaAzures/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,createdAt,updatedAt,version,deleted,naziv,idKartica,telefon,grad,lokacija,sifra,email")] AgencijaAzure agencijaAzure)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(agencijaAzure).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(agencijaAzure);
-        }
+          // POST: AgencijaAzures/Edit/5
+          // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+          // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+          [HttpPost]
+          [ValidateAntiForgeryToken]
+          public ActionResult Edit([Bind(Include = "id,createdAt,updatedAt,version,deleted,naziv,idKartica,telefon,grad,lokacija,sifra,email")] AgencijaAzure agencijaAzure)
+          {
+              if (ModelState.IsValid)
+              {
+                  db.Entry(agencijaAzure).State = EntityState.Modified;
+                  db.SaveChanges();
+                  return RedirectToAction("Index");
+              }
+              return View(agencijaAzure);
+          }
 
-        // GET: AgencijaAzures/Delete/5
-        public ActionResult Delete(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
-            if (agencijaAzure == null)
-            {
-                return HttpNotFound();
-            }
-            return View(agencijaAzure);
-        }
+          // GET: AgencijaAzures/Delete/5
+          public ActionResult Delete(string id)
+          {
+              if (id == null)
+              {
+                  return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+              }
+              AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
+              if (agencijaAzure == null)
+              {
+                  return HttpNotFound();
+              }
+              return View(agencijaAzure);
+          }
 
-        // POST: AgencijaAzures/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
-        {
-            AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
-            db.AgencijaAzures.Remove(agencijaAzure);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+          // POST: AgencijaAzures/Delete/5
+          [HttpPost, ActionName("Delete")]
+          [ValidateAntiForgeryToken]
+          public ActionResult DeleteConfirmed(string id)
+          {
+              AgencijaAzure agencijaAzure = db.AgencijaAzures.Find(id);
+              db.AgencijaAzures.Remove(agencijaAzure);
+              db.SaveChanges();
+              return RedirectToAction("Index");
+          }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+          protected override void Dispose(bool disposing)
+          {
+              if (disposing)
+              {
+                  db.Dispose();
+              }
+              base.Dispose(disposing);
+          }
+       
     }
+    
 }

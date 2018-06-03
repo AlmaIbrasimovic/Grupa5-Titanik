@@ -11,7 +11,7 @@ namespace TravelBookAspNetMVCAzure.Models
     {
         [StringLength(255)]
         public string id { get; set; }
-
+/*
         public DateTimeOffset createdAt { get; set; }
 
         public DateTimeOffset? updatedAt { get; set; }
@@ -21,7 +21,7 @@ namespace TravelBookAspNetMVCAzure.Models
         [Timestamp]
         public byte[] version { get; set; }
 
-        public bool? deleted { get; set; }
+        public bool? deleted { get; set; }*/
 
         public string vrstaKartice { get; set; }
 

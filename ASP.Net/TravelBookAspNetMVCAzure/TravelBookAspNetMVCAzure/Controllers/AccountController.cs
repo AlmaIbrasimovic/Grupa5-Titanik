@@ -7,6 +7,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -82,20 +83,20 @@ namespace TravelBookAspNetMVCAzure.Controllers
             Debug.Print(korisnikAzure.Count + "");
             Debug.Print(email + " " + sifra);
             Boolean jelDobro = false;
+            String ime = "niko";
             foreach(KorisnikAzure k in korisnikAzure) {
                 if (k.email.Equals(email) && k.sifra.Equals(sifra))
                 {
-                   
+                    ime = k.ime;
                     jelDobro = true; 
                     break;
                 }
             }
-            if (jelDobro)
-            {
+           
                
                 Debug.Print(model.Email+" "+model.Password);
 
-                var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+                var result = await SignInManager.PasswordSignInAsync(ime, model.Password, model.RememberMe, shouldLockout: false);
                 Debug.Print(result.ToString());
                 switch (result)
                 {
@@ -110,13 +111,11 @@ namespace TravelBookAspNetMVCAzure.Controllers
                         ModelState.AddModelError("", "Nije dobar email ili šifra.");
                         return View(model);
 
-                }
-                /*
-                ModelState.AddModelError("", "Nije dobar email ili šifra.");
-                return View(model);*/
+                
+            
             }
-
-            return RedirectToLocal(returnUrl);
+         
+          
 
         }
 
@@ -168,7 +167,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-           // return View()
+           // return View();
             return View("~/Views/KorisnikAzures/Create.cshtml");
            // return View();
         }
