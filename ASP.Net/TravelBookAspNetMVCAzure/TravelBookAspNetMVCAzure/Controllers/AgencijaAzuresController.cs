@@ -17,37 +17,45 @@ namespace TravelBookAspNetMVCAzure.Controllers
     public class AgencijaAzuresController : Controller
     {
         private TravelContext db = new TravelContext();
-        List<AgencijaAzure> agencije = new List<AgencijaAzure>();
+         
 
         // GET: AgencijaAzures
         string apiUrl = "http://travelbookrestapi20180602024728.azurewebsites.net/";
-          public async Task<ActionResult> Index()
+          public async Task<ActionResult> Index1()
           {
-              
 
-              using (var client = new HttpClient()) {
+            List<AgencijaAzure> agencije = new List<AgencijaAzure>();
+
+            using (var client = new HttpClient()) {
                   client.BaseAddress = new Uri(apiUrl);
                   client.DefaultRequestHeaders.Clear();
                   client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-
+                
                   HttpResponseMessage res = await client.GetAsync("api/AgencijaAzures/");
                   if (res.IsSuccessStatusCode) {
                       var response = res.Content.ReadAsStringAsync().Result;
                       agencije = JsonConvert.DeserializeObject<List<AgencijaAzure>>(response);
-                  }
+                   
+                }
               }
+           
 
-              return RedirectToAction("vratiListu");
+            return View(agencije);           
         }
 
-          public  List<AgencijaAzure> vratiListu()
+        [AllowAnonymous]
+        public ActionResult Contact()
         {
-            Debug.Print(agencije.Count+" agencije");
-            return agencije;
+            return RedirectToAction("Contact", "Home");
+        }
+        [AllowAnonymous]
+        public ActionResult Index()
+        {
+            return RedirectToAction("Index", "Home");
         }
 
-          // GET: AgencijaAzures/Details/5
-          public ActionResult Details(string id)
+        // GET: AgencijaAzures/Details/5
+        public ActionResult Details(string id)
           {
               if (id == null)
               {

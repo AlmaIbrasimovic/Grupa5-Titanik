@@ -298,7 +298,7 @@
     <Content Include="Views\AgencijaAzures\Delete.cshtml" />
     <Content Include="Views\AgencijaAzures\Details.cshtml" />
     <Content Include="Views\AgencijaAzures\Edit.cshtml" />
-    <Content Include="Views\AgencijaAzures\Index.cshtml" />
+    <Content Include="Views\AgencijaAzures\Index1.cshtml" />
     <Content Include="Views\DestinacijaAzures\Create.cshtml" />
     <Content Include="Views\DestinacijaAzures\Delete.cshtml" />
     <Content Include="Views\DestinacijaAzures\Details.cshtml" />

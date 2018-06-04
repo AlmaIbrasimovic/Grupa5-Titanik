@@ -18,7 +18,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
         static String error = "ok";
         public ActionResult Index()
         {
-            Debug.Print(error);
+            
             if(error != "ok") ModelState.AddModelError("pokazi", error);
             error = "ok";
             
@@ -33,9 +33,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
                         where a.ime.Equals(ime)
                         select a;
             var rez = query.FirstOrDefault();
-            Debug.Print(rez.email+" "+destinacija+" "+idPutovanja);
             String rezultat = rezervacija(idPutovanja, rez.id);
-            Debug.Print(rezultat + " to je rezultat");
             error = rezultat;
             if(rezultat == "ok") posalji(destinacija,rez.email); //validan email
             return RedirectToAction("Index");
@@ -51,8 +49,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
             if (rez1.minBrojPutnika >= rez1.maxBrojPutnika - 1)
             {                
                 return "Sva mjesta su popunjena!";
-            }
-            Debug.Print(rez1.minBrojPutnika + " broj max");
+            }           
             var samoZaID = db.RezervisanaPutovanjaAzures.ToList();
             String id = samoZaID.Count.ToString();
 
@@ -70,7 +67,7 @@ namespace TravelBookAspNetMVCAzure.Controllers
                 putovanja.AddRange(q.ToList());
             }
 
-           // Debug.Print(rez1.datumPovratka >=  + "");
+          
             foreach (PutovanjeAzure p in putovanja)
             {
                 if (rez1.datumPolaska <= p.datumPolaska && rez1.datumPovratka <= p.datumPovratka) return "Imate već rezervisano putovanje u tom terminu!";
@@ -79,16 +76,15 @@ namespace TravelBookAspNetMVCAzure.Controllers
                 else if(rez1.datumPolaska >= p.datumPolaska && rez1.datumPovratka <= p.datumPovratka) return "Imate već rezervisano putovanje u tom terminu!";
                 
             }
-            Debug.Print("doso do ovdeeeeee");
+            
             RezervisanaPutovanjaAzure r = new RezervisanaPutovanjaAzure();
             r.idPutovanja = rez1.id;
-            r.idKorisnika = idKorisnika; //id ne valja
-            r.id = id; //bacit ce izuzetak ako je vec upisan taj broj u bazu jer je pk
+            r.idKorisnika = idKorisnika; 
+            r.id = id; 
             r.deleted = false;
             r.createdAt = DateTimeOffset.Now;
             r.updatedAt = DateTimeOffset.Now;
             rez1.minBrojPutnika = rez1.minBrojPutnika + 1;
-            Debug.Print(rez1.minBrojPutnika + "  povecan ");
             db.RezervisanaPutovanjaAzures.Add(r);
             db.SaveChanges();
             return "ok";
@@ -100,10 +96,14 @@ namespace TravelBookAspNetMVCAzure.Controllers
             ViewBag.Message = "O agenciji";
 
             return View();
-        }
+        }    
+
+
         public ActionResult Contact()
         {
-            return View();
+            //iskoristen api
+           return RedirectToAction("Index1", "AgencijaAzures");       
+
         }
 
         public string funkcija (string id)
@@ -114,10 +114,8 @@ namespace TravelBookAspNetMVCAzure.Controllers
 
         public void posalji(String destinacija,String email)
         {
-            Debug.Print("tu");
             MailMessage mail = new MailMessage();
-            mail.To.Add("zlatakaric@hotmail.com");
-            //mail.To.Add("amit_jain_online@yahoo.com");
+            mail.To.Add("zlatakaric@hotmail.com"); //treba email stavit
             mail.From = new MailAddress("travelbookTB@gmail.com");
             mail.Subject = "TravelBook";
             string Body = "Uspješno ste rezervisali Vaše putovanje za "+destinacija;
@@ -127,13 +125,11 @@ namespace TravelBookAspNetMVCAzure.Controllers
             SmtpClient smtp = new SmtpClient();
             smtp.UseDefaultCredentials = false;
             smtp.Port = 587;
-            smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
-            smtp.Credentials = new System.Net.NetworkCredential("travelbookTB@gmail.com", "sifra123");
-            //Or your Smtp Email ID and Password
+            smtp.Host = "smtp.gmail.com"; 
+            smtp.Credentials = new System.Net.NetworkCredential("travelbookTB@gmail.com", "sifra123");            
             smtp.EnableSsl = true;
-            smtp.Send(mail);
+            smtp.Send(mail);        
          
-            Debug.Print("tu1");
         }
     }
 }
