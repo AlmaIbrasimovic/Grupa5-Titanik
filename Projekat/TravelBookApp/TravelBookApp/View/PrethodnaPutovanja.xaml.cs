@@ -66,7 +66,7 @@ namespace TravelBookApp
                     {
                         tDatumPolaska.Text = p.DatumPolaska.ToShortDateString();
                         tDatumPovratka.Text = p.DatumPovratka.Date.ToShortDateString();
-                        txtBrojPutnika.Text = Convert.ToString(p.MaximalniBrojPutnika); 
+                        txtBrojPutnika.Text = Convert.ToString(p.MinimalniBrojPutnika); //trenutni broj putnika
                         txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
                         txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
                     }
