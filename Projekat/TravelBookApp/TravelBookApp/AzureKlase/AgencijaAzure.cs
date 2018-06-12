@@ -37,7 +37,6 @@ namespace TravelBookApp.AzureKlase
         {
             try
             {
-
                 string query = "SELECT * FROM AgencijaAzure;";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection c = new SqlConnection(s.konekcija))
@@ -52,19 +51,16 @@ namespace TravelBookApp.AzureKlase
                         {
                             int index = -1;
                             for(int i = 0; i < Globalna.nasaAgencija.Kartice.Count; i++)
-                            {
-                                
+                            {                              
                                 if (Globalna.nasaAgencija.Kartice[i].Id.ToString() == reader.GetString(6))
                                 {
                                     index = i;
                                     break;
                                 }
                             }
-                            //id ne cita
                             Agencija a = new Agencija(reader.GetString(5), Globalna.nasaAgencija.Kartice[index], reader.GetString(7), reader.GetString(11), reader.GetString(8), reader.GetString(9), reader.GetString(10));
                             Globalna.nasaAgencija.Agencije.Add(a);
-                        }
-                       
+                        }                       
                     }
                     c.Close();
                 }
@@ -72,9 +68,7 @@ namespace TravelBookApp.AzureKlase
             catch (Exception e)
             {
                 Debug.WriteLine("Exception AgencijaAzure1: " + e.Message);
-
             }
-
         }
 
         public int dodajAgenciju(Agencija a)
@@ -140,9 +134,6 @@ namespace TravelBookApp.AzureKlase
                 Debug.WriteLine("Exception AgencijaAzure2: " + e.Message);
                 return 0;
             }
-
         }
-            
-
     }
 }

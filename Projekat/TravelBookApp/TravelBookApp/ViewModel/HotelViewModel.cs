@@ -18,8 +18,7 @@ namespace TravelBookApp.ViewModel
         public List<String> dajListuNazivaHotelaPoLokaciji(String destinacija)
         {
             List<String> lista = new List<string>();
-            foreach(Hotel h in Globalna.nasaAgencija.Hoteli)
-            {
+            foreach(Hotel h in Globalna.nasaAgencija.Hoteli) {
                 if (h.Lokacija.Naziv == destinacija) lista.Add(h.Ime);
             }
             return lista;

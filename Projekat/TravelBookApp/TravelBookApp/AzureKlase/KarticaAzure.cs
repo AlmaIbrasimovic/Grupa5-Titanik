@@ -26,19 +26,15 @@ namespace TravelBookApp.AzureKlase
             broj = _broj;
             csc = _csc;
         }
-
         public void UcitajKartice()
         {
             try
-            {
-                
+            {               
                 string query = "SELECT * FROM KarticaAzure";
-                 ConnectionStringAzure s = new ConnectionStringAzure();
-               
+                ConnectionStringAzure s = new ConnectionStringAzure();           
                 using (SqlConnection c = new SqlConnection(s.konekcija))
                 {
-                    c.Open();
-                    
+                    c.Open();                   
                     if (c.State == System.Data.ConnectionState.Open)
                     {
                         SqlCommand sc = c.CreateCommand();
@@ -59,9 +55,7 @@ namespace TravelBookApp.AzureKlase
             catch (Exception e)
             {
                 Debug.WriteLine("Exception KarticaAzure1: " + e.Message);
-
             }
-
         }
 
         public int dodajKarticu(Kartica k)
@@ -112,8 +106,7 @@ namespace TravelBookApp.AzureKlase
             {
                 Debug.WriteLine("Exception KarticaAzure2: " + e.Message);
                 return 0;
-            }
-           
+            }          
         }
     }
 }

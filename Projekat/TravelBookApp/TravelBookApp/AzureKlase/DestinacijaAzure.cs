@@ -30,7 +30,6 @@ namespace TravelBookApp.AzureKlase
         public void UcitajDestinacije() {
             try
             {
-
                 string query = "SELECT * FROM DestinacijaAzure;";
                 ConnectionStringAzure s = new ConnectionStringAzure();
                 using (SqlConnection c = new SqlConnection(s.konekcija))
@@ -45,8 +44,6 @@ namespace TravelBookApp.AzureKlase
                         {
                             Kontinenti kont = (Kontinenti)Enum.Parse(typeof(Kontinenti), reader.GetString(7));
                             Destinacija d = new Destinacija(reader.GetString(5), reader.GetString(6), kont);
-                            //sliku kad uspijemo dodat reader.GetString(8)
-
                             Globalna.nasaAgencija.Destinacije.Add(d);
                         }
                         if (Globalna.nasaAgencija.Destinacije.Count == 0) Globalna.idSvihDestinacija = 0;
@@ -58,7 +55,6 @@ namespace TravelBookApp.AzureKlase
             catch (Exception e)
             {
                 Debug.WriteLine("Exception DestinacijaAzure1: " + e.Message);
-
             }
         }
 
@@ -93,7 +89,7 @@ namespace TravelBookApp.AzureKlase
                     cmd.Parameters.Add(kontinent);
 
                     SqlParameter slika = new SqlParameter();
-                    slika.Value = "not null";  //d.SlikeDestinacije;
+                    slika.Value = "not null";
                     slika.ParameterName = "slika";
                     cmd.Parameters.Add(slika);
 
@@ -102,7 +98,6 @@ namespace TravelBookApp.AzureKlase
                     cmd.Dispose();
                     con.Close();
                     return r;
-
                 }
             }
             catch (Exception e)

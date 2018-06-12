@@ -30,7 +30,6 @@ namespace TravelBookApp.Model
             Lokacija = adresa;
             Sifra = sifra;
         }
-
         public int Id { get => id;  }
         public string NazivAgencije { get => nazivAgencije; set => nazivAgencije = value; }
         public Kartica PodaciOBankovnomRacunu { get => podaciOBankovnomRacunu; set => podaciOBankovnomRacunu = value; }
@@ -47,7 +46,5 @@ namespace TravelBookApp.Model
                                  "Kontakt telefon: {2}" + Environment.NewLine +
                                  "Adresa: {3}", NazivAgencije, EmailAdresa, KontaktTelefon, Lokacija);
         }
-
-
     }
 }

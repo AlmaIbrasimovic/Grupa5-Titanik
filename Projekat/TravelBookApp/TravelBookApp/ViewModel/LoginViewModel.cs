@@ -29,7 +29,6 @@ namespace TravelBookApp.ViewModel
                 return true;
             }
             return false;
-
         }
     }
 }

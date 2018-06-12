@@ -16,7 +16,6 @@ namespace TravelBookApp.Model
         private String kontaktTelefon;
         private String emailAdresa;
 
-
         public Korisnik(String ime, String prezime, String jmbg, DateTime datumRodjenja, String brojTelefona, String email)
         {
             id = Globalna.idSvihKorisnika++;
@@ -27,7 +26,6 @@ namespace TravelBookApp.Model
             KontaktTelefon = brojTelefona;
             EmailAdresa = email;
         }
-
         public int Id { get => id; }
         public string ImeKorisnika { get => imeKorisnika; set => imeKorisnika = value; }
         public string PrezimeKorisnika { get => prezimeKorisnika; set => prezimeKorisnika = value; }
@@ -35,8 +33,7 @@ namespace TravelBookApp.Model
         public DateTime DatumRodjenjaKorisnika { get => datumRodjenjaKorisnika; set => datumRodjenjaKorisnika = value; }
         public string KontaktTelefon { get => kontaktTelefon; set => kontaktTelefon = value; }
         public string EmailAdresa { get => emailAdresa; set => emailAdresa = value; }
-
-       
+     
         public virtual string IspisiString()
         {
             return string.Format("Ime: {0}" + Environment.NewLine +

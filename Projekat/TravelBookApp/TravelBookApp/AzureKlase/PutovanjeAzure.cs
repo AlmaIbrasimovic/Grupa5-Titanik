@@ -97,7 +97,6 @@ namespace TravelBookApp.AzureKlase
             catch (Exception e)
             {
                 Debug.WriteLine("Exception PutovanjeAzure1: " + e.Message);
-
             }
         }
 
@@ -177,7 +176,6 @@ namespace TravelBookApp.AzureKlase
                     cmd.Dispose();
                     con.Close();
                     return r;
-
                 }
             }
             catch (Exception e)

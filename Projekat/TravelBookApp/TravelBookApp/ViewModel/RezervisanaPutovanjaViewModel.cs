@@ -11,20 +11,17 @@ namespace TravelBookApp.ViewModel
     {
         public List<Putovanje> izlistajPutovanjaAgencije(int idAgencije) {
             List<Putovanje> putovanjaAgencije = new List<Putovanje>();
-
-            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
-                if (p.IdAgencije == idAgencije) putovanjaAgencije.Add(p);
-
+            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja) if (p.IdAgencije == idAgencije) putovanjaAgencije.Add(p);
             return putovanjaAgencije;
         }
+
         public List<Putovanje> izlistajPutovanjaKorisnika() {
             List<Putovanje> putovanjaKorisnika = new List<Putovanje>();
-
             return putovanjaKorisnika;
         }
+
         public List<Korisnik> izlistajKorisnikeNaPutovanju() {
             List<Korisnik> korisniciNaPutovanju = new List<Korisnik>();
-
             return korisniciNaPutovanju;
         }
     }

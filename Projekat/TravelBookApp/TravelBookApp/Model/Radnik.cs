@@ -11,7 +11,6 @@ namespace TravelBookApp.Model
         public Radnik(String ime, String prezime, String jmbg, DateTime datumRodjenja, Double plata)
          : base(ime, prezime, jmbg, datumRodjenja, plata) { }
 
-
         public override string IspisiString()
         {
             return string.Format("Ime: {0}" + Environment.NewLine +

@@ -32,7 +32,6 @@ namespace TravelBookApp
         public RegistracijaAgencije()
         {
             this.InitializeComponent();
-
             tTipKartice.Items.Add(VrstaKartice.VISA);
             tTipKartice.Items.Add(VrstaKartice.MasterCard);
             tTipKartice.Items.Add(VrstaKartice.AmericanExpress);
@@ -47,12 +46,9 @@ namespace TravelBookApp
         private bool provjeriDatumIsteka (string datum)
         {
             bool jelOK = false;
-            if (datum[0] >= '0' && datum[1] <= '9')
-            {
-                if (datum[2] == '/')
-                {
-                    if (datum[3] >= '0' && datum[4] <= '9')
-                    {
+            if (datum[0] >= '0' && datum[1] <= '9') {
+                if (datum[2] == '/') {
+                    if (datum[3] >= '0' && datum[4] <= '9') {
                         jelOK = true;
                     }
                 }
@@ -62,75 +58,58 @@ namespace TravelBookApp
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             bool jelOK = true;
-
-            //AKO JE UREDU
-            if (tCSC.Text.Length == 3)
-            {
+            if (tCSC.Text.Length == 3) {
                 jelOK = true;
                 greska.Visibility = Visibility.Collapsed;
             }
-            if (tDatumIsteka.Text.Length != 0)
-            {
+            if (tDatumIsteka.Text.Length != 0) {
                 if (provjeriDatumIsteka(tDatumIsteka.Text))
                 {
                     greska1.Visibility = Visibility.Collapsed;
                     jelOK = true;
                 }
             }
-            if (tTipKartice.SelectedIndex >= 0)
-            {
+            if (tTipKartice.SelectedIndex >= 0) {
                 greska2.Visibility = Visibility.Collapsed;
                 jelOK = true;
 
             }
-            if (tNaziv.Text.Length != 0 && tTelefon.Text.Length != 0 && tGrad.Text.Length != 0 && tAdresa.Text.Length != 0 && tMail.Text.Length != 0 && tBrojKartice.Text.Length != 0)
-            {
-                jelOK = true;
-            }
+            if (tNaziv.Text.Length != 0 && tTelefon.Text.Length != 0 && tGrad.Text.Length != 0 && tAdresa.Text.Length != 0 && tMail.Text.Length != 0 && tBrojKartice.Text.Length != 0) jelOK = true;
 
-            //AKO NIJE UREDU
-            if (tCSC.Text.Length != 3)
-            {
+            //Ukoliko validacija nije uredu
+            if (tCSC.Text.Length != 3)  {
                 jelOK = false;
                 greska.Visibility = Visibility.Visible;
             }
-            if (tDatumIsteka.Text.Length == 0)
-            {
+            if (tDatumIsteka.Text.Length == 0) {
                 greska1.Visibility = Visibility.Visible;
                 jelOK = false; 
             }
-            if (tDatumIsteka.Text.Length != 0)
-            {
-                if (!provjeriDatumIsteka(tDatumIsteka.Text))
-                {
+            if (tDatumIsteka.Text.Length != 0)  {
+                if (!provjeriDatumIsteka(tDatumIsteka.Text)) {
                     greska1.Visibility = Visibility.Visible;
                     jelOK = false;
                 }
             }
-            if (tTipKartice.SelectedIndex < 0)
-            {
+            if (tTipKartice.SelectedIndex < 0) {
                 greska2.Visibility = Visibility.Visible;
                 jelOK = false;
 
             }
-            if (tNaziv.Text.Length == 0 || tTelefon.Text.Length==0 || tGrad.Text.Length == 0 || tAdresa.Text.Length == 0 || tMail.Text.Length == 0 || tBrojKartice.Text.Length == 0)
-            {
+            if (tNaziv.Text.Length == 0 || tTelefon.Text.Length==0 || tGrad.Text.Length == 0 || tAdresa.Text.Length == 0 || tMail.Text.Length == 0 || tBrojKartice.Text.Length == 0) {
                 var dialog = new MessageDialog("Nisu popunjena sva polja!");
                 dialog.ShowAsync();
                 jelOK = false;
             }
-
             if (jelOK)
             {
                 Kartica nova = new Kartica((VrstaKartice)tTipKartice.SelectedItem, tDatumIsteka.Text, tBrojKartice.Text, Convert.ToInt32(tCSC.Text));
                 Globalna.nasaAgencija.Kartice.Add(nova);
                 KarticaAzure kart = new KarticaAzure();               
                 kart.dodajKarticu(nova);
-
                 if (tSifra.Password.ToString().Equals(tSifraPonovo.Password.ToString()))
                 {
                     r.registrujAgneciju(tNaziv.Text, nova, tTelefon.Text, tMail.Text, tGrad.Text, tAdresa.Text, tSifra.Password.ToString());
-
                     try
                     {
                         AgencijaAzure agen = new AgencijaAzure();                     
@@ -142,18 +121,15 @@ namespace TravelBookApp
                     {
                         MessageDialog msgDialogError = new MessageDialog("Error : " + ex.ToString());
                         msgDialogError.ShowAsync();
-                    }
-                       
+                    }                       
                     Frame.Navigate(typeof(Prijava));
                 }
                 else
                 {
                     r.Poruka = new MessageDialog("Pogrešna šifra! Pokušajte ponovno.");
                     r.Poruka.ShowAsync();
-                }
-              
-            }
-               
+                }              
+            }              
         }
     }
 }

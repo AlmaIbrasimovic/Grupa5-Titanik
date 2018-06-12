@@ -18,16 +18,10 @@ namespace TravelBookApp.ViewModel
         public List<String> dajListuDestinacija() 
         {
             List<String> lista = new List<string>();
-            foreach(Destinacija d in Globalna.nasaAgencija.Destinacije)
-            {
+            foreach(Destinacija d in Globalna.nasaAgencija.Destinacije) {
                 lista.Add(d.Naziv + " - " + d.Drzava + " - " + d.Kontinent);
             }
             return lista;
-        }
-
-        public List<String> dajDestinacijePoKontinentu(Kontinenti kontinent) //dodat
-        {
-            return null;
         }
     }
 }

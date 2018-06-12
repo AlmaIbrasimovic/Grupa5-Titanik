@@ -12,15 +12,11 @@ namespace TravelBookApp.ViewModel
     public class RegistracijaViewModel
     {
         public MessageDialog Poruka { get; set; }
-
-
-        //registracija
         public String NazivAgencije { get; set; }
         public Kartica PodaciOBankovnomRacunu { get; set; }
         public String KontaktTelefon { get; set; }
         public String EmailAdresa { get; set; }
         public String Lokacija { get; set; }
-
 
         public RegistracijaViewModel()
         {
@@ -30,7 +26,6 @@ namespace TravelBookApp.ViewModel
             EmailAdresa = "";
             Lokacija = "";
         }
-
         public bool validirajEmail()
         {
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
@@ -39,36 +34,24 @@ namespace TravelBookApp.ViewModel
             {
                 return true;
             }
-
             return false;
         }
 
-        public bool jednakiRacuni(Kartica neka, Kartica trenutna)  // jel samo po brojevima gledam?
+        public bool jednakiRacuni(Kartica neka, Kartica trenutna)  
         {
             return neka.Broj == trenutna.Broj;
         }
 
-
         public void registrujAgneciju(String naziv, Kartica kartica, String telefon, String email,String grad, String adresa, String sifra)
         {
             Agencija nova = new Agencija(naziv, kartica, telefon, email, grad, adresa,sifra);
-          /*  if (!validirajEmail())
-            {
-                Poruka = new MessageDialog("Neispravna mail adresa.");
-                Poruka.ShowAsync();
-               // return;
-            }*/
-            if (Globalna.nasaAgencija.Agencije.Any(agencije => agencije.NazivAgencije.Equals(nova.NazivAgencije) || agencije.KontaktTelefon.Equals(nova.KontaktTelefon) || jednakiRacuni(agencije.PodaciOBankovnomRacunu, nova.PodaciOBankovnomRacunu) || agencije.EmailAdresa.Equals(nova.EmailAdresa)))
-            {
+            if (Globalna.nasaAgencija.Agencije.Any(agencije => agencije.NazivAgencije.Equals(nova.NazivAgencije) || agencije.KontaktTelefon.Equals(nova.KontaktTelefon) || jednakiRacuni(agencije.PodaciOBankovnomRacunu, nova.PodaciOBankovnomRacunu) || agencije.EmailAdresa.Equals(nova.EmailAdresa))) {
                 Poruka = new MessageDialog("Neki od navedenih podataka već postoje.");
                 Poruka.ShowAsync();
-
             }
-            else
-            {
+            else {
                 Globalna.nasaAgencija.Agencije.Add(nova);
             }
         }
-
     }
 }

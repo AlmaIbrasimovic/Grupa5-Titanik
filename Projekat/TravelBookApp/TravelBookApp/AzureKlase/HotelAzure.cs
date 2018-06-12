@@ -31,7 +31,6 @@ namespace TravelBookApp.AzureKlase
             idDestinacije = _idDestinacije;
             cijena = _cijena;
         }
-
         public void UcitajHotele()
         {
             try
@@ -70,7 +69,6 @@ namespace TravelBookApp.AzureKlase
             catch (Exception e)
             {
                 Debug.WriteLine("Exception HotelAzure1: " + e.Message);
-
             }
         }
 
@@ -96,7 +94,7 @@ namespace TravelBookApp.AzureKlase
                     cmd.Parameters.Add(ime);
 
                     SqlParameter slika = new SqlParameter();
-                    slika.Value = "not null slika";  //h.SlikeHotela;
+                    slika.Value = "not null slika";  
                     slika.ParameterName = "slika";
                     cmd.Parameters.Add(slika);
 

@@ -17,7 +17,6 @@ namespace TravelBookApp.Model
              PodaciOKreditnojKartici = podaciKartica;
         }
 
-  
         public Kartica PodaciOKreditnojKartici { get => podaciOKreditnojKartici; set => podaciOKreditnojKartici = value; }
         public string SifraProfila { get => sifraProfila; set => sifraProfila = value; }
 

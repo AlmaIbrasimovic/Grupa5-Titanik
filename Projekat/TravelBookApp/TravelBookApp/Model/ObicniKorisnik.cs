@@ -8,10 +8,8 @@ namespace TravelBookApp.Model
 {
     public class ObicniKorisnik : Korisnik
     {
-
         public ObicniKorisnik(String ime, String prezime, String jmbg, DateTime datumRodjenja, String brojTelefona, String email)
           : base(ime, prezime, jmbg, datumRodjenja, brojTelefona, email) { }
-
 
         public override string IspisiString()
         {
@@ -20,6 +18,5 @@ namespace TravelBookApp.Model
                "Maticni broj: {2}" + Environment.NewLine +
                "Datum rođenja: {3}", ImeKorisnika, PrezimeKorisnika, JmbgKorisnika, DatumRodjenjaKorisnika);
         }
-
     }
 }

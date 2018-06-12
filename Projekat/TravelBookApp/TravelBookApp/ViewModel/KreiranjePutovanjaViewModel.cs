@@ -19,29 +19,23 @@ namespace TravelBookApp.ViewModel
         {
             Putovanje putovanje =  new Putovanje(datumPolaska, datumPovratka, minimalniBrojPutnika, maximalniBrojPutnika, opisPutovanja, istaknutoPutovanje, idAgencije, infoDestinacije, infoHotela, infoPrevoza, cijenaPutovanja);
             Globalna.nasaAgencija.Putovanja.Add(putovanje);
-
         }
         public void dodajNoviHotel(string ime, int maximalniKapacitet, int kapacitet, Destinacija lokacija, double cijenaPoOsobi, Image slikeHotela = null)
         {
-            Hotel h = new Hotel(ime, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi, slikeHotela); //moze fixna da ne dodajemo sve
+            Hotel h = new Hotel(ime, maximalniKapacitet, kapacitet, lokacija, cijenaPoOsobi, slikeHotela); 
             Globalna.nasaAgencija.Hoteli.Add(h);
-
         }
 
         public void dodajNovuDestinaciju(string naziv, String drzava, Kontinenti kontinent, Image slikeDestinacije)
         {
             Destinacija de = new Destinacija(naziv, drzava, kontinent, slikeDestinacije);
             Globalna.nasaAgencija.Destinacije.Add(de);
+        }      
 
-        }
-
-        
-
-        public List<String> dajListuBusevaPoDestinacijiIKapacitetu(String destinacija, int kapacitet) // dodat
+        public List<String> dajListuBusevaPoDestinacijiIKapacitetu(String destinacija, int kapacitet) 
         {
             List<String> lista = new List<string>();
-            foreach(Prevoz p in Globalna.nasaAgencija.Prevozi)
-            {
+            foreach(Prevoz p in Globalna.nasaAgencija.Prevozi) {
                 if (p.PrevozDestinacija.Equals(destinacija) && p.Kapacitet >= kapacitet) lista.Add(p.Ime + ", " + p.CijenaPoOsobi + "KM");
             }
             return lista;

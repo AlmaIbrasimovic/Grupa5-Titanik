@@ -27,7 +27,6 @@ namespace TravelBookApp.Model
             CijenaPoOsobi = cijenaPoOsobi;
             SlikeHotela = slikeHotela;
         }
-
         public string Ime { get => ime; set => ime = value; }
         public Image SlikeHotela { get => slikeHotela; set => slikeHotela = value; }
         public int MaximalniKapacitet { get => maximalniKapacitet; set => maximalniKapacitet = value; }

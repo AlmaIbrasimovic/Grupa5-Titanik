@@ -21,12 +21,10 @@ namespace TravelBookApp
     public sealed partial class Prijava : Page
     {
         static LoginViewModel l = new LoginViewModel();
-      //  public String konekcija = "Server=tcp:travelbookserver.database.windows.net,1433;Initial Catalog=TravelBookDB;Persist Security Info=False;User ID=mujo;Password=Fata123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
         public Prijava()
         {
            this.InitializeComponent();
-           // upisiDummyPodatke(); samo pozvat kad je baza za hotele prevoze i destinacije prazna
+           // upisiDummyPodatke(); Pozvati ukoliko je baza za hotele, prevoze i destinacije prazna.
             if (Globalna.nasaAgencija.Putovanja.Count == 0 && Globalna.nasaAgencija.Agencije.Count == 0) ucitajBazuUwp();
         }
 
@@ -57,12 +55,10 @@ namespace TravelBookApp
 
         private void bPrijava_Click(object sender, RoutedEventArgs e)
         {
-            if (l.prijaviAgenciju(tNaziv.Text, bSifra.Password.ToString()))
-            {
+            if (l.prijaviAgenciju(tNaziv.Text, bSifra.Password.ToString())) {
               Frame.Navigate(typeof(PocetnaStranica));
             }
-            else
-            {
+            else {
                 l.Poruka = new Windows.UI.Popups.MessageDialog("Agencija ne postoji ili su podaci netačni.");
                 l.Poruka.ShowAsync();
             }
@@ -78,10 +74,9 @@ namespace TravelBookApp
             CoreApplication.Exit();
         }
 
-
         public void upisiDummyPodatke()
         {
-            //destinacije i hoteli
+            //Destinacije i hoteli
             Destinacija prva = new Destinacija("Sarajevo", "Bosna i Hercegovina", Kontinenti.Evropa);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
@@ -130,7 +125,7 @@ namespace TravelBookApp
             h = new Hotel("Fulon", 600, 400, prva, 1000);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            //dodavanje prevoza
+            //Dodavanje prevoza
 
             Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Globus", VrstaPrevoza.autobus, 80, 30, 50, "Tokio"));
             Globalna.nasaAgencija.Prevozi.Add(new Prevoz("Centro", VrstaPrevoza.autobus, 150, 80, 100, "Sarajevo"));
@@ -145,7 +140,6 @@ namespace TravelBookApp
             foreach (Hotel hot in Globalna.nasaAgencija.Hoteli) ho.dodajHotel(hot);
             PrevozAzure pr = new PrevozAzure();
             foreach (Prevoz prev in Globalna.nasaAgencija.Prevozi) pr.dodajPrevoz(prev);
-
         }
     }
 }

@@ -18,29 +18,19 @@ using Windows.UI.Xaml.Navigation;
 
 namespace TravelBookApp
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class PrethodnaPutovanja : Page
     {
         public PrethodnaPutovanja()
         {
             this.InitializeComponent();
-
             foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
             {
-                if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
-                {
-
-                    if (Globalna.trenutnaPutovanja)
-                    {
-                        if (DateTime.Now <= p.DatumPovratka)
-                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString());
+                if (p.IdAgencije == Globalna.prijavljenaAgencijaId) {
+                    if (Globalna.trenutnaPutovanja) {
+                        if (DateTime.Now <= p.DatumPovratka) comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString());
                     }
-                    else
-                    {
-                        if (p.DatumPovratka < DateTime.Now)
-                            comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString());
+                    else {
+                        if (p.DatumPovratka < DateTime.Now) comboPutovanja.Items.Add(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString());
                     }
                 }
             }
@@ -58,15 +48,12 @@ namespace TravelBookApp
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja)
-            {
-                if (p.IdAgencije == Globalna.prijavljenaAgencijaId)
-                {
-                    if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString()))
-                    {
+            foreach (Putovanje p in Globalna.nasaAgencija.Putovanja) {
+                if (p.IdAgencije == Globalna.prijavljenaAgencijaId) {
+                    if (comboPutovanja.SelectedItem.Equals(p.InfoDestinacije.Naziv + " " + p.DatumPolaska.ToShortDateString() + "-" + p.DatumPovratka.ToShortDateString())) {
                         tDatumPolaska.Text = p.DatumPolaska.ToShortDateString();
                         tDatumPovratka.Text = p.DatumPovratka.Date.ToShortDateString();
-                        txtBrojPutnika.Text = Convert.ToString(p.MinimalniBrojPutnika); //trenutni broj putnika
+                        txtBrojPutnika.Text = Convert.ToString(p.MinimalniBrojPutnika); //Trenutni broj putnika
                         txtTipPrevoza.Text = Convert.ToString(p.InfoPrevoza.VrstaPrevoza);
                         txtCijenaPutovanja.Text = Convert.ToString(p.Cijena);
                     }

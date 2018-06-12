@@ -13,7 +13,6 @@ namespace TravelBookApp.Model
         private String jmbgUposlenika;
         private DateTime datumRodjenjaUposlenika;
         private Double plataUposlenika;
-
         public Uposlenik(String ime, String prezime, String jmbg, DateTime datumRodjenja, Double plata)
         {
             ImeUposlenika = ime;
@@ -22,7 +21,6 @@ namespace TravelBookApp.Model
             DatumRodjenjaUposlenika = datumRodjenja;
             PlataUposlenika = plata;
         }
-
         public string ImeUposlenika { get => imeUposlenika; set => imeUposlenika = value; }
         public string PrezimeUposlenika { get => prezimeUposlenika; set => prezimeUposlenika = value; }
         public string JmbgUposlenika { get => jmbgUposlenika; set => jmbgUposlenika = value; }

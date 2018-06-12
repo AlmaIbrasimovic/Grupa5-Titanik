@@ -19,9 +19,6 @@ using TravelBookApp.Model;
 
 namespace TravelBookApp
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class PocetnaStranica : Page
     {
         static AgencijaViewModel agencija = new AgencijaViewModel();
@@ -32,8 +29,7 @@ namespace TravelBookApp
             tNazivT.Text= "Naziv agencije:  " + a.NazivAgencije;
             tKontaktTel.Text = "Kontakt telefon:  " + a.KontaktTelefon;
             tLokacija.Text = "Adresa:  " + a.Lokacija + "\nGrad: " + a.Grad;
-            tEmail.Text = "E-mail adresa: " + a.EmailAdresa;
-            
+            tEmail.Text = "E-mail adresa: " + a.EmailAdresa;           
         }
 
         private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

@@ -38,7 +38,6 @@ namespace TravelBookApp.Model
             InfoPrevoza = infoPrevoza;
             Cijena = cijenaPut;
         }
-
         public int Id { get => id; }
         public DateTime DatumPolaska { get => datumPolaska; set => datumPolaska = value; }
         public DateTime DatumPovratka { get => datumPovratka; set => datumPovratka = value; }

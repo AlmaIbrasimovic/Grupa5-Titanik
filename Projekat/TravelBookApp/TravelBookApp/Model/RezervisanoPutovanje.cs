@@ -10,7 +10,6 @@ namespace TravelBookApp.Model
     {
         private int idPutnika;
         private int idPutovanja;
-
         public RezervisanoPutovanje(int idPutnika, int idPutovanja)
         {
             IdPutnika = idPutnika;

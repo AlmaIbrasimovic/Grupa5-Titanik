@@ -18,7 +18,6 @@ namespace TravelBookApp.AzureKlase
         public int kapacitet { get; set; }
         public double cijena { get; set; }
         public string idDestinacije { get; set; }
-
         public PrevozAzure() { }
 
         public PrevozAzure(string _id, string _ime, string _vrstaPrevoza, int _maxKapacitet, int _kapacitet, double _cijena, string _idDestinacije)
@@ -31,7 +30,6 @@ namespace TravelBookApp.AzureKlase
             cijena = _cijena;
             idDestinacije = _idDestinacije;
         }
-
         public void UcitajPrevoze()
         {
             try
@@ -48,9 +46,7 @@ namespace TravelBookApp.AzureKlase
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
                         {
-                            VrstaPrevoza vrsta = (VrstaPrevoza)Enum.Parse(typeof(VrstaPrevoza), reader.GetString(6));
-                            
-                           
+                            VrstaPrevoza vrsta = (VrstaPrevoza)Enum.Parse(typeof(VrstaPrevoza), reader.GetString(6));                         
                             Prevoz p = new Prevoz(reader.GetString(5), vrsta, Convert.ToInt32(reader.GetDouble(7)), Convert.ToInt32(reader.GetDouble(8)), reader.GetDouble(9),reader.GetString(10));
                             Globalna.nasaAgencija.Prevozi.Add(p);
                         }
@@ -63,7 +59,6 @@ namespace TravelBookApp.AzureKlase
             catch (Exception e)
             {
                 Debug.WriteLine("Exception PrevozAzure1: " + e.Message);
-
             }
         }
 
@@ -118,7 +113,6 @@ namespace TravelBookApp.AzureKlase
                     cmd.Dispose();
                     con.Close();
                     return r;
-
                 }
             }
             catch (Exception e)
