@@ -77,49 +77,49 @@ namespace TravelBookApp
         public void upisiDummyPodatke()
         {
             //Destinacije i hoteli
-            Destinacija prva = new Destinacija("Sarajevo", "Bosna i Hercegovina", Kontinenti.Evropa);
+            Destinacija prva = new Destinacija("Sarajevo", "Bosna i Hercegovina", Kontinent.Evropa);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             Hotel h = new Hotel("Radon Plaza", 600, 30, prva, 150);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            prva = new Destinacija("Zagreb", "Hrvatska", Kontinenti.Evropa);
+            prva = new Destinacija("Zagreb", "Hrvatska", Kontinent.Evropa);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             h = new Hotel("Evropa", 300, 100, prva, 100);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            prva = new Destinacija("Tokio", "Japan", Kontinenti.Azija);
+            prva = new Destinacija("Tokio", "Japan", Kontinent.Azija);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             h = new Hotel("Hokaido Hotel", 500, 30, prva, 250);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            prva = new Destinacija("Seul", "Južna Koreja", Kontinenti.Azija);
+            prva = new Destinacija("Seul", "Južna Koreja", Kontinent.Azija);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             h = new Hotel("Husha Kusha", 200, 70, prva, 450);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            prva = new Destinacija("Kairo", "Egipat", Kontinenti.Afrika);
+            prva = new Destinacija("Kairo", "Egipat", Kontinent.Afrika);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             h = new Hotel("Mumija", 600, 530, prva, 250);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            prva = new Destinacija("Adis Abeba", "Etiopija", Kontinenti.Afrika);
+            prva = new Destinacija("Adis Abeba", "Etiopija", Kontinent.Afrika);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             h = new Hotel("Utopija", 400, 200, prva, 550);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            prva = new Destinacija("Otava", "Kanada", Kontinenti.SjevernaAmerika);
+            prva = new Destinacija("Otava", "Kanada", Kontinent.SjevernaAmerika);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             h = new Hotel("Hohol", 450, 100, prva, 650);
             Globalna.nasaAgencija.Hoteli.Add(h);
 
-            prva = new Destinacija("Rio de Janeiro", "Brazil", Kontinenti.JuznaAmerika);
+            prva = new Destinacija("Rio de Janeiro", "Brazil", Kontinent.JuznaAmerika);
             Globalna.nasaAgencija.Destinacije.Add(prva);
 
             h = new Hotel("Fulon", 600, 400, prva, 1000);

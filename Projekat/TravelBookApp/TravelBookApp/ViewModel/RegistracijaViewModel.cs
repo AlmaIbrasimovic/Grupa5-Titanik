@@ -42,9 +42,9 @@ namespace TravelBookApp.ViewModel
             return neka.Broj == trenutna.Broj;
         }
 
-        public void registrujAgneciju(String naziv, Kartica kartica, String telefon, String email,String grad, String adresa, String sifra)
+        public void registrujAgneciju(Agencija nova)
         {
-            Agencija nova = new Agencija(naziv, kartica, telefon, email, grad, adresa,sifra);
+            
             if (Globalna.nasaAgencija.Agencije.Any(agencije => agencije.NazivAgencije.Equals(nova.NazivAgencije) || agencije.KontaktTelefon.Equals(nova.KontaktTelefon) || jednakiRacuni(agencije.PodaciOBankovnomRacunu, nova.PodaciOBankovnomRacunu) || agencije.EmailAdresa.Equals(nova.EmailAdresa))) {
                 Poruka = new MessageDialog("Neki od navedenih podataka već postoje.");
                 Poruka.ShowAsync();

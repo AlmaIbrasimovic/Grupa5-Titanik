@@ -26,7 +26,7 @@ namespace TravelBookApp.ViewModel
             Globalna.nasaAgencija.Hoteli.Add(h);
         }
 
-        public void dodajNovuDestinaciju(string naziv, String drzava, Kontinenti kontinent, Image slikeDestinacije)
+        public void dodajNovuDestinaciju(string naziv, String drzava, Kontinent kontinent, Image slikeDestinacije)
         {
             Destinacija de = new Destinacija(naziv, drzava, kontinent, slikeDestinacije);
             Globalna.nasaAgencija.Destinacije.Add(de);

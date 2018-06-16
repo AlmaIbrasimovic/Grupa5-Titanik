@@ -32,7 +32,7 @@
         <TextBox Name ="tDatumIsteka" HorizontalAlignment="Left" Margin="1007,443,0,0" Text="" VerticalAlignment="Top" Width="293"/>
         <TextBlock Foreground="Black" HorizontalAlignment="Left" FontSize =" 23" Margin="746,509,0,0" Text="CSC (3 cifre):" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.525,0.565"/>
         <TextBox Name ="tCSC" HorizontalAlignment="Left" Margin="1007,509,0,0" Text="" VerticalAlignment="Top" Width="293"/>
-        <Button FontSize =" 21" Content="Registruj se" HorizontalAlignment="Left" Margin="746,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click_1"/>
+        <Button FontSize =" 21" Content="Registruj se" HorizontalAlignment="Left" Margin="746,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Dugme_RegistrujSe"/>
         <Button FontSize =" 21" Content="Odustani" Foreground ="Black"  HorizontalAlignment="Left" Margin="1086,614,0,0" VerticalAlignment="Top" Height="52" Width="214" Click="Button_Click"/>
         <TextBlock x:Name ="greska"  Visibility="Collapsed" Foreground ="Red" FontSize="20" FontWeight ="SemiBold"  HorizontalAlignment="Left" Margin="1305,509,0,0" Text="Dužina mora biti 3!" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name ="greska1" Visibility="Collapsed" Foreground ="Red" FontSize="19" FontWeight ="SemiBold"  HorizontalAlignment="Left" Margin="1305,444,0,0" Text="Format nije uredu!" TextWrapping="Wrap" VerticalAlignment="Top"/>

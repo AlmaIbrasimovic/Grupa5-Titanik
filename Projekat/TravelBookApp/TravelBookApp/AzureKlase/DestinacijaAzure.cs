@@ -42,7 +42,7 @@ namespace TravelBookApp.AzureKlase
                         SqlDataReader reader = sc.ExecuteReader();
                         while (reader.Read())
                         {
-                            Kontinenti kont = (Kontinenti)Enum.Parse(typeof(Kontinenti), reader.GetString(7));
+                            Kontinent kont = (Kontinent)Enum.Parse(typeof(Kontinent), reader.GetString(7));
                             Destinacija d = new Destinacija(reader.GetString(5), reader.GetString(6), kont);
                             Globalna.nasaAgencija.Destinacije.Add(d);
                         }

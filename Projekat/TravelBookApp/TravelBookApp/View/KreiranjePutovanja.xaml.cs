@@ -95,81 +95,88 @@ namespace TravelBookApp
             if (cHoteli.SelectedItem.ToString() != "Ništa od ponuđenog") odabraniHotel = naziviHotela[cHoteli.SelectedIndex];
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        bool validacijaPodataka()
         {
-            Prevoz prevoz = null;
-            string odabranaDestinacija = cDestinacije.SelectedItem.ToString();
-            string odabraniHotel = cHoteli.SelectedItem.ToString();
-            if (rAutobus.IsChecked == true) {
-                foreach (Prevoz p in Globalna.nasaAgencija.Prevozi) {
-                    if (p.Ime.Equals(autobusi[cPrevoz.SelectedIndex].Substring(0, autobusi[cPrevoz.SelectedIndex].IndexOf(","))) && p.PrevozDestinacija.Equals(odabranaDestinacija)) prevoz = p;
-                }
-            }
-            else prevoz = null;          
             Boolean jelOK = true;
-            if (sMin.Value <= sMax.Value) {
+            if (sMin.Value <= sMax.Value)
+            {
                 jelOK = true;
                 greska.Visibility = Visibility.Collapsed;
                 minBroj.Foreground = new SolidColorBrush(Colors.Black);
                 maxBroj.Foreground = new SolidColorBrush(Colors.Black);
             }
-            if (dPolaska.Date < dPovratka.Date) {
+            if (dPolaska.Date < dPovratka.Date)
+            {
                 jelOK = true;
                 greska8.Visibility = Visibility.Collapsed;
-            }           
-            if (rDA.IsChecked == true || rNE.IsChecked == true) {
+            }
+            if (rDA.IsChecked == true || rNE.IsChecked == true)
+            {
                 greska1.Visibility = Visibility.Collapsed;
                 jelOK = true;
             }
-            if (!String.IsNullOrEmpty(tCijena.Text)) {
+            if (!String.IsNullOrEmpty(tCijena.Text))
+            {
                 jelOK = true;
                 greska5.Visibility = Visibility.Collapsed;
             }
-            if (cPrevoz.SelectedIndex != -1) {
+            if (cPrevoz.SelectedIndex != -1)
+            {
                 jelOK = true;
                 greska4.Visibility = Visibility.Collapsed;
             }
-            if (cHoteli.SelectedIndex != -1) {
+            if (cHoteli.SelectedIndex != -1)
+            {
                 jelOK = true;
                 greska3.Visibility = Visibility.Collapsed;
             }
-            if (rAvion.IsChecked == true) {
-                if (comboBox.SelectedIndex != -1) {
+            if (rAvion.IsChecked == true)
+            {
+                if (comboBox.SelectedIndex != -1)
+                {
                     jelOK = true;
                     greska6.Visibility = Visibility.Collapsed;
                 }
-                if (comboBox1.SelectedIndex != -1) {
+                if (comboBox1.SelectedIndex != -1)
+                {
                     jelOK = true;
                     greska7.Visibility = Visibility.Collapsed;
                 }
             }
-            if (sMin.Value > sMax.Value) {
+            if (sMin.Value > sMax.Value)
+            {
                 jelOK = false;
                 greska.Visibility = Visibility.Visible;
                 minBroj.Foreground = new SolidColorBrush(Colors.Red);
                 maxBroj.Foreground = new SolidColorBrush(Colors.Red);
             }
-            if (rDA.IsChecked == false && rNE.IsChecked == false) {
+            if (rDA.IsChecked == false && rNE.IsChecked == false)
+            {
                 greska1.Visibility = Visibility.Visible; //AKTIVACIJA textBloc-a KOJI PRIKAZUJE GREŠKU, KAO errorProvider
                 jelOK = false;
             }
-            if (dPolaska.Date > dPovratka.Date) {
+            if (dPolaska.Date > dPovratka.Date)
+            {
                 jelOK = false;
                 greska8.Visibility = Visibility.Visible;
             }
-            if (String.IsNullOrEmpty(tCijena.Text)) {
+            if (String.IsNullOrEmpty(tCijena.Text))
+            {
                 jelOK = false;
                 greska5.Visibility = Visibility.Visible;
             }
-            if (cPrevoz.SelectedIndex == -1) {
+            if (cPrevoz.SelectedIndex == -1)
+            {
                 jelOK = false;
                 greska4.Visibility = Visibility.Visible;
             }
-            if (cHoteli.SelectedIndex == -1) {
+            if (cHoteli.SelectedIndex == -1)
+            {
                 jelOK = false;
                 greska3.Visibility = Visibility.Visible;
             }
-            if (rAvion.IsChecked == true) {
+            if (rAvion.IsChecked == true)
+            {
                 if (comboBox.SelectedIndex == -1)
                 {
                     jelOK = false;
@@ -181,23 +188,40 @@ namespace TravelBookApp
                     greska7.Visibility = Visibility.Visible;
                 }
             }
+            return jelOK;
+
+        }
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Prevoz prevoz = null;
+            string odabranaDestinacija = cDestinacije.SelectedItem.ToString();
+            string odabraniHotel = cHoteli.SelectedItem.ToString();
+            if (rAutobus.IsChecked == true) {
+                foreach (Prevoz p in Globalna.nasaAgencija.Prevozi) {
+                    if (p.Ime.Equals(autobusi[cPrevoz.SelectedIndex].Substring(0, autobusi[cPrevoz.SelectedIndex].IndexOf(","))) && p.PrevozDestinacija.Equals(odabranaDestinacija)) prevoz = p;
+                }
+            }
+            else prevoz = null;
+            Boolean jelOK = validacijaPodataka();
             if (!jelOK) {
                 var dialog = new MessageDialog("Postoje greške. Popravite pa ponovo kreirajte!");
                 dialog.ShowAsync();
             }
 
-            Destinacija novaDestinacija = new Destinacija("random", "random", Kontinenti.Evropa);
+            Destinacija novaDestinacija = new Destinacija("random", "random", Kontinent.Evropa);
             if (odabranaDestinacija != ("Ništa od ponuđenog")) novaDestinacija = Globalna.nasaAgencija.Destinacije[cDestinacije.SelectedIndex];
             if (odabranaDestinacija.Equals("Ništa od ponuđenog"))
             {
-                Kontinenti kon = new Kontinenti();
-                if (cKontinent.SelectedItem.ToString().Equals("Evropa")) kon = Kontinenti.Evropa;
-                if (cKontinent.SelectedItem.ToString().Equals("Azija")) kon = Kontinenti.Azija;
-                if (cKontinent.SelectedItem.ToString().Equals("Afrika")) kon = Kontinenti.Afrika;
-                if (cKontinent.SelectedItem.ToString().Equals("Sjeverna Amerika")) kon = Kontinenti.SjevernaAmerika;
-                if (cKontinent.SelectedItem.ToString().Equals("Južna Amerika")) kon = Kontinenti.JuznaAmerika;
-                if (cKontinent.SelectedItem.ToString().Equals("Antartika")) kon = Kontinenti.Antartika;
-                if (cKontinent.SelectedItem.ToString().Equals("Australija")) kon = Kontinenti.Australija;
+                Kontinent kon = new Kontinent();
+                if (cKontinent.SelectedItem.ToString().Equals("Evropa")) kon = Kontinent.Evropa;
+                if (cKontinent.SelectedItem.ToString().Equals("Azija")) kon = Kontinent.Azija;
+                if (cKontinent.SelectedItem.ToString().Equals("Afrika")) kon = Kontinent.Afrika;
+                if (cKontinent.SelectedItem.ToString().Equals("Sjeverna Amerika")) kon = Kontinent.SjevernaAmerika;
+                if (cKontinent.SelectedItem.ToString().Equals("Južna Amerika")) kon = Kontinent.JuznaAmerika;
+                if (cKontinent.SelectedItem.ToString().Equals("Antartika")) kon = Kontinent.Antartika;
+                if (cKontinent.SelectedItem.ToString().Equals("Australija")) kon = Kontinent.Australija;
                 novaDestinacija = new Destinacija(tDestinacija.Text, tDrzava.Text, kon, iSlikaDestinacije);
                 putovanjeVM.dodajNovuDestinaciju(tDestinacija.Text, tDrzava.Text, kon, iSlikaDestinacije);         
                 DestinacijaAzure d = new DestinacijaAzure();
@@ -259,7 +283,7 @@ namespace TravelBookApp
         }
         private void bDodajDestinaciju_Click_1(object sender, RoutedEventArgs e)
         {
-            putovanjeVM.dodajNovuDestinaciju(tDestinacija.Text, "-", Kontinenti.Afrika, null); 
+            putovanjeVM.dodajNovuDestinaciju(tDestinacija.Text, "-", Kontinent.Afrika, null); 
         }
       
         private async void bUcitajHotel_Click(object sender, RoutedEventArgs e)
