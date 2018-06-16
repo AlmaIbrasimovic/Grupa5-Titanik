@@ -28,7 +28,7 @@ namespace TravelBookApp
             if (Globalna.nasaAgencija.Putovanja.Count == 0 && Globalna.nasaAgencija.Agencije.Count == 0) ucitajBazuUwp();
         }
 
-        public void ucitajBazuUwp()
+        private void ucitajBazuUwp()
         {
             AgencijaAzure a = new AgencijaAzure();
             DestinacijaAzure d = new DestinacijaAzure();

@@ -95,7 +95,7 @@ namespace TravelBookApp
             if (cHoteli.SelectedItem.ToString() != "Ništa od ponuđenog") odabraniHotel = naziviHotela[cHoteli.SelectedIndex];
         }
 
-        bool validacijaPodataka()
+        private bool validacijaPodataka()
         {
             Boolean jelOK = true;
             if (sMin.Value <= sMax.Value)
@@ -336,8 +336,7 @@ namespace TravelBookApp
         private void cKontinent_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string destinacija = tDestinacija.Text;
-            List<string> hoteli = putovanjeVM.dajListuHotelaPoDestinaciji(destinacija);
-            foreach (var temp in hoteli) cHoteli.Items.Add(temp);
+            foreach (var temp in putovanjeVM.dajListuHotelaPoDestinaciji(destinacija)) cHoteli.Items.Add(temp);
             cHoteli.Items.Add("Ništa od ponuđenog");
         }
     }

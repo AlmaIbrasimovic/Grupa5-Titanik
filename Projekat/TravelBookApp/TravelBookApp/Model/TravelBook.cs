@@ -22,14 +22,22 @@ namespace TravelBookApp.Model
         private List<Hotel> hoteli = new List<Hotel>();
         private List<Prevoz> prevozi = new List<Prevoz>();
         private List<Kartica> kartice = new List<Kartica>();
+        const string _Naziv = "TravelBook";
+        const string _lokacija = "Bosanska 77";
+        const string _emailAdresa = "travelBookInfo@hotmail.com";
+        const string _kontaktTelefon = "062/555-555";
+        const string _bankovniRacun = "1321000256000080";
+        const double _cijenaUsluge = 1000;
+        const double _cijenaIstaknutogPutovanja = 500;
+
         public TravelBook() {
-            Naziv = "TravelBook";
-            Lokacija = "Bosanska 77";
-            EmailAdresa = "travelBookInfo@hotmail.com";
-            KontaktTelefon = "062/555-555";
-            BankovniRacun = "1321000256000080"; //16 brojeva
-            CijenaUsluge = 1000;
-            CijenaIstaknutogPutovanja = 500;
+            Naziv = _Naziv;
+            Lokacija = _lokacija;
+            EmailAdresa = _emailAdresa;
+            KontaktTelefon = _kontaktTelefon; ;
+            BankovniRacun = _bankovniRacun;
+            CijenaUsluge = _cijenaUsluge;
+            CijenaIstaknutogPutovanja = _cijenaIstaknutogPutovanja;
             Agencije = new List<Agencija>();
             Korisnici = new List<Korisnik>();
             Putovanja = new List<Putovanje>();

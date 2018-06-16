@@ -46,7 +46,6 @@ namespace TravelBookApp
         private bool provjeriDatumIstekaKartice (string datum)
         {
             const int validnaDuzinaUnesenogDatuma = 5;
-
             if (datum.Length != validnaDuzinaUnesenogDatuma) return false;
             Boolean jelValidanDatum = datum[0] >= '0' && datum[1] <= '9' && datum[2] == '/' && datum[3] >= '1' && datum[4] <= '9';           
             return jelValidanDatum;
